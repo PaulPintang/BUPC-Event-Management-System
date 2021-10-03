@@ -16,24 +16,33 @@ scrollbar-width: none;  /* Firefox */
     <div class="bg-white rounded-lg h-96 w-full p-6 shadow-sm ">
     <!-- start -->  
         <div class="flex justify-between items-center pb-2">
-            <h1 class="font-medium text-gray-700  " styke="top:40px">User <span class="text-yellow-400">Logs</span></h1>
-             <a href="process.php?clear=<?php echo $ID;?>" name="clear" class="bg-red-300 text-white rounded hover:bg-red-400 px-2 py-1">Clear logs</a>
+            <h1 class="font-medium text-gray-700  " styke="top:40px">BUPC <span class="text-yellow-400">Events</span></h1>
+              <a href="#" class="py-1 px-3 bg-yellow-400 rounded text-white hover:bg-yellow-300" onclick="toggleModal('event')">
+                    <div class="flex items-center gap-2">
+                        <div>
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div>
+                            <span>Add event</span>
+                        </div>
+                    </div>
+             </a>
         </div>
         <div class="overflow-y-auto example" style="height: 300px">
         <table class="min-w-full divide-y divide-gray-200 border-collapse w-full">
             <thead class="sticky top-0">
                 <tr>
                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
-                       Username
+                        Event title
                     </th>
                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
                         Date
                     </th>
                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
-                        Login Time
+                        Start Time
                     </th>
                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
-                        Logout Time
+                        End Time
                     </th>
                 </tr>
             </thead>

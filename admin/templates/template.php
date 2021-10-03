@@ -70,7 +70,8 @@
             <div class="flex justify-between items-center w-full">
                 <div class="flex gap-3 items-center ">
                     <a href="../home.php" class="text-gray-400 hover:text-yellow-400 active:text-blue-400 font-medium">Home</a>
-                    <a href="../logs" class="text-blue-400 active:text-blue-400 hover:text-yellow-400 font-medium">Logs</a>
+                    <a href="../events" class="text-blue-400 hover:text-yellow-400 active:text-blue-400 font-medium">Events</a>
+                    <a href="../logs" class="text-gray-400 active:text-blue-400 hover:text-yellow-400 font-medium">Logs</a>
                 </div>
                 <div>
                    <a href="#" onclick="toggleModal('about_log_modal')">
@@ -92,6 +93,7 @@
     </div>
 
     <div><?php include '../logs/modals/about_modal.php';?></div>
+    <div><?php include '../events/modals/events_modal.php';?></div>
 
    </body>
    <!-- script for modal -->

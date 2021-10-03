@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "fullcalendar": "^5.9.0",
+    "tailwindcss": "^2.2.15"
+  }
+}

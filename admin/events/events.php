@@ -36,28 +36,27 @@ scrollbar-width: none;  /* Firefox */
                         Event title
                     </th>
                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
-                        Date
+                       <span class="font-extrabold text-green-500">Start</span> date/time
                     </th>
                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
-                        Start Time
+                        <span class="font-extrabold text-red-400">Edit</span> date/time
                     </th>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
-                        End Time
+                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
+                        Rules
                     </th>
+                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
+                       
+                    </th>
+          
                 </tr>
             </thead>
             <tbody class=" divide-y divide-gray-200 overflow-auto">
-            <?php $logs = mysqli_query($db, "SELECT * FROM logs ORDER BY ID DESC"); ?>
-            <?php while ($row = mysqli_fetch_array($logs)) { ?>
+            <?php $events = mysqli_query($db, "SELECT * FROM events ORDER BY ID DESC"); ?>
+            <?php while ($row = mysqli_fetch_array($events)) { ?>
                 <tr>
                     <td class="px-6 py-2 whitespace-nowrap">
-                        <div class="flex items-center">
-                        <div class="flex-shrink-0 h-10 w-10">
-                            <img class="h-10 w-10 rounded-full" src="../images/undraw_profile.svg" alt="">
-                        </div>
                         <div class="ml-4">
-                            <small><?php echo $row['name']?></small>
-                        </div>
+                            <small><?php echo $row['eName']?></small>
                         </div>
                     </td>
                     <!-- <td class="px-6 py-4 whitespace-nowrap">
@@ -66,36 +65,21 @@ scrollbar-width: none;  /* Firefox */
                         </span>
                     </td> -->
                     <td class="px-6 py-2 whitespace-nowrap">
-                        <small><?php echo $row['date']?></small> 
+                        <small><?php echo $row['startdate']?></small> 
                     </td>
                     <td class="px-6 py-2 whitespace-nowrap">
-                        <small><?php echo $row['login']?></small>
+                        <small><?php echo $row['enddate']?></small>
                     </td>
                     <td class="px-6 py-2 whitespace-nowrap">
-                        <style>
-                            .dot {
-                            height: 5px;
-                            width: 5px;
-                            border-radius: 50%;
-                            display: inline-block;
-                            }
-                        </style>
-                        <?php
-                            $timeOut = $row['logout'];
-                            if ($timeOut == NULL) {
-                                echo '
-                                    <div class="flex gap-1">
-                                        <span class="dot bg-green-400"></span>
-                                        <span class="dot bg-green-400"></span>
-                                        <span class="dot bg-green-400"></span>
-                                    </div>
-                                ';
-                            }else{
-                                echo`
-                                    echo '<small>'$timeOut'</small>';
-                                `;
-                            }
-                        ?>
+                        <small><?php echo $row['startime']?></small>
+                    </td>
+                    <td class="px-6 py-2 whitespace-nowrap space-x-2">
+                         <span onclick="toggleModal('user_modal')" class="w-full">
+                                <a href="home.php?edit=<?php echo $row['id']?>" class="text-blue-400 hover:text-white hover:bg-blue-400 toggle-button w-full px-3 py-1 bg-blue-50 font-semibold rounded transition-colors text-xs">View More</a>
+                         </span>
+                         <span onclick="toggleModal('user_modal')" class="w-full">
+                                <a href="home.php?edit=<?php echo $row['id']?>" class="text-red-300 font-bold hover:text-red-400 toggle-button w-full transition-all">Delete</a>
+                         </span>
                     </td>
                 </tr>
             <?php }?>

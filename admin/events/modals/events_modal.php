@@ -9,7 +9,7 @@
                     <h1 class="font-semibold text-gray-600 text-xl">Add new event</h1>
                     <i class="fas fa-close text-gray-300 cursor-pointer" onclick="toggleModal('event')"></i>
                 </div>
-                <form action="./modals/events_modal_process.php" method="POST">
+                <form action="../events/modals/events_modal_process.php" method="POST">
                     <div class="space-y-4">
                         <div class="space-y-2">
                             <p class="text-sm">Event Name <span class="text-red-500">*</span></p>

@@ -1,6 +1,6 @@
 <?php
 
-  include "../conn.php";
+  include "../../conn.php";
 
    if(isset($_POST['save'])){
         $eName = $_POST['eName'];
@@ -14,6 +14,6 @@
         $query = "INSERT INTO events (eName, eDescription, eLocation, startdate, startime, enddate, endtime) VALUES ('$eName', '$eDescription', '$eLocation', '$startdate', '$startime', '$enddate', '$endtime')";
         mysqli_query($db, $query);
 
-        header("location: ../home.php");
+        header("location: ../index.php");
     }
 ?>

@@ -5,6 +5,7 @@
             include('../../conn.php');
             $users = mysqli_query($db, "SELECT * FROM users");
             $userlogs = mysqli_query($db, "SELECT * FROM logs");
+            $events = mysqli_query($db, "SELECT * FROM events");
 
             $ID = $_SESSION['id'];
             $currentUser = mysqli_query($db, "SELECT * FROM users WHERE id=$ID");
@@ -112,7 +113,6 @@
         // })
 
    </script>
-
 </html>
 <?php
     }else{

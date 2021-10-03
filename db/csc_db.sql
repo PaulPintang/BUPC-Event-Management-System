@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 03, 2021 at 05:55 AM
+-- Generation Time: Oct 03, 2021 at 10:09 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -43,7 +43,12 @@ CREATE TABLE `events` (
 --
 
 INSERT INTO `events` (`id`, `eName`, `eDescription`, `eLocation`, `startdate`, `startime`, `enddate`, `endtime`) VALUES
-(1, 'asdas', 'dadas', 'dasdas', 'dasd', 'asdad', 'asdasd', 'asdas');
+(1, 'asdas', 'dadas', 'dasdas', 'dasd', 'asdad', 'asdasd', 'asdas'),
+(2, 'pota', 'pota', 'pota', 'pota', 'pota', 'pota', 'pota'),
+(3, 'sadasd', 'asdas', 'asdasd', 'asdasd', 'asdasd', 'asdasd', 'asdasd'),
+(4, 'dasdasd', 'asdsadasd', 'asdas', 'dasdasd', 'sdasd', 'asdasda', 'asdasdad'),
+(5, 'daasd', 'asdasd', 'asdasd', 'asdas', 'dasdasd', 'dasdas', 'asdasdas'),
+(6, 'sadasd', 'asdas', 'dasdas', 'dasdas', 'asdas', 'dasdasd', 'dasdas');
 
 -- --------------------------------------------------------
 
@@ -58,6 +63,13 @@ CREATE TABLE `logs` (
   `login` varchar(255) NOT NULL,
   `logout` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `logs`
+--
+
+INSERT INTO `logs` (`id`, `name`, `date`, `login`, `logout`) VALUES
+(1, 'jusswaaa', 'Sun Oct 03, 2021', '04:04: PM', NULL);
 
 -- --------------------------------------------------------
 
@@ -142,13 +154,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `studentsAcc`

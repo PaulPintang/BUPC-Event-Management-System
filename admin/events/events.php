@@ -92,54 +92,6 @@ scrollbar-width: none;  /* Firefox */
         </div>
     <!-- end -->
     </div>
-    <div class="bg-white rounded-lg p-6 shadow-sm" style="width: 500px">
-        <div class="flex justify-between pb-2">
-            <h1 class="font-medium text-gray-700">Users</h1>
-        </div>
-        <table class="min-w-full divide-y divide-gray-200">
-            <thead class="">
-                <tr>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        Name
-                    </th>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        Status
-                    </th>
-                </tr>
-            </thead>
-        <tbody class="bg-white divide-y divide-gray-200">
-            <?php while ($row = mysqli_fetch_array($users)) { ?>
-                <tr>
-                    <td class="px-6 py-2 whitespace-nowrap">
-                        <div class="flex items-center">
-                        <div class="flex-shrink-0 h-10 w-10">
-                            <img class="h-10 w-10 rounded-full" src="../images/undraw_profile.svg" alt="">
-                        </div>
-                        <div class="ml-4">
-                            <small><?php echo $row['name']?></small>
-                        </div>
-                        </div>
-                    </td>
-                        <td class="px-6 py-4 whitespace-nowrap">
-                         <?php
-                         if ($row['status'] == 'Online') {
-                            echo'
-                                <span class="px-2 inline-flex leading-5 font-semibold rounded-full bg-green-100 text-green-800" style="font-size: 10px">
-                                    Online
-                                </span>
-                             ';
-                         }else{
-                             echo '
-                               <span class="px-2 inline-flex leading-5 font-semibold rounded-full bg-red-100 text-green-800" style="font-size: 10px">
-                                        Offline
-                                </span>
-                             ';
-                         }
-                         ?>
-                        </td>
-                </tr>
-            <?php } ?>
-            </tbody>
-        </table>
+    <div class='datepicker'>
+        <div class="datepicker-header"></div>
     </div>
-</div>

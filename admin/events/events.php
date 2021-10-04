@@ -54,7 +54,7 @@ scrollbar-width: none;  /* Firefox */
             <?php $events = mysqli_query($db, "SELECT * FROM events ORDER BY ID DESC"); ?>
             <?php while ($row = mysqli_fetch_array($events)) { ?>
                 <tr>
-                    <td class="px-6 py-2 whitespace-nowrap">
+                    <td class="px-2 py-2 whitespace-nowrap">
                         <div class="ml-4">
                             <small><?php echo $row['eName']?></small>
                         </div>
@@ -65,10 +65,16 @@ scrollbar-width: none;  /* Firefox */
                         </span>
                     </td> -->
                     <td class="px-6 py-2 whitespace-nowrap">
-                        <small><?php echo $row['startdate']?></small> 
+                        <div class="flex flex-col">
+                            <small><?php echo $row['startdate']?></small>
+                            <small>- <?php echo $row['startime']?></small>
+                        </div>
                     </td>
                     <td class="px-6 py-2 whitespace-nowrap">
-                        <small><?php echo $row['enddate']?></small>
+                        <div class="flex flex-col">
+                            <small><?php echo $row['enddate']?></small>
+                            <small>- <?php echo $row['endtime']?></small>
+                        </div>
                     </td>
                     <td class="px-6 py-2 whitespace-nowrap">
                         <small><?php echo $row['startime']?></small>

@@ -66,7 +66,6 @@
   </div>
 </div>
 </div> -->
-
 <!-- Start of modal -->
 <div class="flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center" id="user_modal">
              <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>

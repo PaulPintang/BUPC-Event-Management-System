@@ -10,6 +10,20 @@
             $ID = $_SESSION['id'];
             $currentUser = mysqli_query($db, "SELECT * FROM users WHERE id=$ID");
 
+            if(isset($_GET['edit'])){
+                $id = $_GET['edit'];
+                $rec = mysqli_query($db, "SELECT * FROM events WHERE id=$id");
+                $record = mysqli_fetch_array($rec);
+                $eName = $record['eName'];
+                $eDescription = $record['eDescription'];
+                $eLocation = $record['eLocation'];
+                $startdate = $record['startdate'];
+                $startime = $record['startime'];
+                $enddate = $record['enddate'];
+                $endtime = $record['endtime'];
+                $id = $record['id'];
+            }
+
     // end
 
     if (isset($_SESSION['id']) && (isset($_SESSION['username']))) {

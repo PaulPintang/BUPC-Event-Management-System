@@ -1,19 +1,21 @@
 
 <!-- Start of modal -->
-<div class="hidden flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center transition-all duration-150 ease-in-out" id="view_event">
+<div class="flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center transition-all duration-150 ease-in-out" id="view_event">
              <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
             <!-- <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>s -->
             <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all">
             <div class="bg-white mx-5 mb-5 mt-2" style="max-width: 600px">
                 <div class="flex justify-end items-center gap-7 pr-3 pt-4">
-                    <i class="fas fa-trash text-gray-300 cursor-pointer hover:text-red-400 transition-all" style="font-size: 13px" onclick="toggleModal('view_event')"></i>
+                    <a href="process.php?del=<?php echo $id;?>" name="del">
+                         <i class="fas fa-trash text-gray-300 cursor-pointer hover:text-red-400 transition-all" style="font-size: 13px" onclick="toggleModal('view_event')"></i>
+                    </a>
                     <i class="fas fa-close text-gray-300 cursor-pointer hover:text-blue-300 transition-all" style="font-size: 18px" onclick="toggleModal('view_event')"></i>
                 </div>
                 
                 <div class="space-y-5 px-10 pt-6 pb-10">
                     <div class="flex items-center gap-4">
                         <i class="far fa-calendar-check text-gray-300" style="font-size: 25px"></i>
-                        <h1 class="text-2xl font-semibold text-gray-800">Taratakan</h1>
+                        <h1 class="text-2xl font-semibold text-gray-800"><?php echo $eName?></h1>
                     </div>
                     <div>
                         <p class="font-bold text-gray-700 text-lg">Objectives: </p>

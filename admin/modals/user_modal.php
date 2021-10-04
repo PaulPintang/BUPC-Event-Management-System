@@ -42,11 +42,11 @@
                     </div>
                     <div class="space-y-2">
                         <p class="text-sm">Username<span class="text-red-500">*</span></p>
-                        <input type="text" value="<?php echo $name; ?>" autocomplete="off" name="username" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
+                        <input type="text" value="<?php echo $username; ?>" autocomplete="off" name="username" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
                     </div>
                     <div class="space-y-2">
                         <p class="text-sm">Password <span class="text-red-500">*</span></p>
-                        <input type="password" value="<?php echo $name; ?>" autocomplete="off" name="password" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
+                        <input type="password" value="<?php echo $password; ?>" autocomplete="off" name="password" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
                     </div>
                     <div>
                         <small class="text-gray-500">Note: this account can also access this admin page. Thank you!</small>

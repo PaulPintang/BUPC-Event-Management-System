@@ -15,6 +15,8 @@
                 $rec = mysqli_query($db, "SELECT * FROM users WHERE id=$id");
                 $record = mysqli_fetch_array($rec);
                 $name = $record['name'];
+                $username = $record['username'];
+                $password = $record['password'];
                 $id = $record['id'];
             }
     // end

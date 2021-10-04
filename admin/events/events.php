@@ -8,69 +8,6 @@
 -ms-overflow-style: none;  /* IE and Edge */
 scrollbar-width: none;  /* Firefox */
 }
-.datepicker {
-  width: 400px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.2);
-  margin: 50px auto;
-  overflow: hidden;
-}
-.datepicker .datepicker-header {
-  height: 250px;
-  background-image: url("https://cdn.dribbble.com/users/3178178/screenshots/6346366/lifeguard_on_duty.jpg");
-  background-position: center center;
-  background-size: 100%;
-}
-.datepicker .ui-datepicker-inline {
-  padding: 30px;
-}
-.datepicker .ui-datepicker-header {
-  text-align: center;
-  padding-bottom: 1em;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-.datepicker .ui-datepicker-header .ui-datepicker-prev,
-.datepicker .ui-datepicker-header .ui-datepicker-next {
-  display: inline;
-  float: left;
-  cursor: pointer;
-  font-size: 1.4em;
-  padding: 0 10px;
-  margin-top: -10px;
-  color: #ccc;
-}
-.datepicker .ui-datepicker-header .ui-datepicker-next {
-  float: right;
-}
-.datepicker .ui-datepicker-calendar {
-  width: 100%;
-  text-align: center;
-}
-.datepicker .ui-datepicker-calendar thead {
-  color: #ccc;
-}
-.datepicker .ui-datepicker-calendar tr th,
-.datepicker .ui-datepicker-calendar tr td {
-  padding-bottom: 0.5em;
-}
-.datepicker .ui-datepicker-calendar a {
-  color: #444;
-  text-decoration: none;
-  display: block;
-  margin: 0 auto;
-  width: 35px;
-  height: 35px;
-  line-height: 35px;
-  border-radius: 50%;
-  border: 1px solid transparent;
-  cursor: pointer;
-}
-.datepicker .ui-datepicker-calendar .ui-state-highlight {
-  border-color: #d24d57;
-  color: #d24d57;
-}
 
 </style>
 <div class="flex gap-5 py-10 container mx-auto">
@@ -111,7 +48,7 @@ scrollbar-width: none;  /* Firefox */
           
                 </tr>
             </thead>
-            <tbody class=" divide-y divide-gray-200 overflow-auto">
+            <tbody class=" divide-y divide-gray-200 overflow-auto text-gray-700">
             <?php $events = mysqli_query($db, "SELECT * FROM events ORDER BY ID DESC"); ?>
             <?php while ($row = mysqli_fetch_array($events)) { ?>
                 <tr>
@@ -153,22 +90,27 @@ scrollbar-width: none;  /* Firefox */
         </div>
     </div>
   <!-- end -->
+
   <!-- start -->
     
-    <div class="bg-white rounded-lg p-1" style="width: 510px">
-        <div id="inline_cal"></div>
+    <div class="bg-white rounded-lg flex items-center justify-center" style="width: 510px">
+            <div class="flex flex-col h-full w-full font-light">
+                <div class="h-full w-full bg-blue-300 rounded-t flex justify-center items-center">
+                    <span class="day uppercase text-lg text-white"></span>
+                </div>
+                <div class="w-full bg-white flex justify-center items-center py-16 flex-col">
+                     <span class="month text-2xl text-gray-500"></span>
+                     <span class="date uppercase text-7xl text-gray-700 font-extralight"></span>
+                </div>
+                <div class="h-full w-full bg-blue-300 rounded-b flex justify-center items-center">
+                    <span class="year uppercase text-lg text-white"></span>
+                </div>
+            </div>
     </div>
-          
-
   <!-- end -->
-
   </div>
-    
-
-    <script src="../calendar-16/js/jquery-3.3.1.min.js"></script>
-    <!-- <script src="../calendar-16/js/popper.min.js"></script> -->
-    <!-- <script src="../calendar-16/js/bootstrap.min.js"></script> -->
-    <script src="../calendar-16/js/rome.js"></script>
-    <script src="../calendar-16/js/main.js"></script>
-  <!-- end -->
+  <script src="../calendar/js/jquery.min.js"></script>
+  <!-- <script src="../calendar-10/js/popper.js"></script> -->
+  <!-- <script src="../calendar-10/js/bootstrap.min.js"></script> -->
+  <script src="../calendar/js/main.js"></script>
 </div>

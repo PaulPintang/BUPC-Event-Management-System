@@ -74,12 +74,7 @@ scrollbar-width: none;  /* Firefox */
                         <small><?php echo $row['startime']?></small>
                     </td>
                     <td class="px-6 py-2 whitespace-nowrap space-x-2">
-                         <span onclick="toggleModal('user_modal')" class="w-full">
-                                <a href="#" onclick="toggleModal('view_event')" class="text-blue-400 hover:text-white hover:bg-blue-400 toggle-button w-full px-3 py-1 bg-blue-50 font-semibold rounded transition-colors text-xs">View More</a>
-                         </span>
-                         <!-- <span onclick="toggleModal('user_modal')" class="w-full">
-                                <a href="home.php?edit=<?php echo $row['id']?>" class="text-red-300 font-bold hover:text-red-400 toggle-button w-full transition-all">Delete</a>
-                         </span> -->
+                        <a href="#" onclick="toggleModal('view_event')" class="text-blue-400 hover:text-white hover:bg-blue-400 toggle-button w-full px-3 py-1 bg-blue-50 font-semibold rounded transition-colors text-xs">View More</a>
                     </td>
                 </tr>
             <?php }?>

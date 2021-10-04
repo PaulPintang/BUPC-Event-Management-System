@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 04, 2021 at 09:34 AM
+-- Generation Time: Oct 04, 2021 at 12:15 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -39,6 +39,14 @@ CREATE TABLE `events` (
   `eObjectives` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `events`
+--
+
+INSERT INTO `events` (`id`, `eName`, `eDescription`, `eLocation`, `startdate`, `startime`, `enddate`, `endtime`, `eObjectives`) VALUES
+(12, 'Taratakan', 'para sa mga supot', 'BUPC-Gymnasium', 'Mon, October 14 2021', '7:30 am', 'Mon, October 14 2021', '5:30 PM', 'para maubos na ang mga supot'),
+(13, 'Online Sabong', 'su may kwarta sana', 'Sa gym', 'lunes', '7:30 am', 'lunes', '5:30 PM', 'tirigbakan manok');
+
 -- --------------------------------------------------------
 
 --
@@ -52,6 +60,15 @@ CREATE TABLE `logs` (
   `login` varchar(255) NOT NULL,
   `logout` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `logs`
+--
+
+INSERT INTO `logs` (`id`, `name`, `date`, `login`, `logout`) VALUES
+(1, 'jusswaaa', 'Mon Oct 04, 2021', '06:12: PM', '06:12 PM'),
+(2, 'roseanne', 'Mon Oct 04, 2021', '06:12: PM', '06:12 PM'),
+(3, 'tricia', 'Mon Oct 04, 2021', '06:12: PM', NULL);
 
 -- --------------------------------------------------------
 
@@ -95,10 +112,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `password`, `picture`, `role`, `status`) VALUES
-(1, 'Joshua Buban', 'jusswaaa', '1234', 0x313633323937313735312d, 'President', 'Online'),
+(1, 'Joshua Buban', 'jusswaaa', '1234', 0x313633323937313735312d, 'President', 'Offline'),
 (2, 'Ma. Roseanne Pandaan', 'roseanne', '1234', 0x313633323937313835312d, 'Vice President', 'Offline'),
 (3, 'Eddessa Joy Legson', 'eddessa', '1234', 0x313633323937313934312d, 'Secretary', 'Offline'),
-(5, 'Tricia Kaye Moya', 'tricia', '1234', 0x313633323937323031352d, 'Representative', 'Offline');
+(5, 'Tricia Kaye Moya', 'tricia', '1234', 0x313633323937323031352d, 'Representative', 'Online');
 
 --
 -- Indexes for dumped tables
@@ -136,13 +153,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `studentsAcc`

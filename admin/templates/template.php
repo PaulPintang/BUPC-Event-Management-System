@@ -18,6 +18,7 @@
                 $eName = $record['eName'];
                 $eDescription = $record['eDescription'];
                 $eObjectives = $record['eObjectives'];
+                $rules = $record['rules'];
                 $eLocation = $record['eLocation'];
                 $startdate = $record['startdate'];
                 $startime = $record['startime'];

@@ -75,7 +75,21 @@ scrollbar-width: none;  /* Firefox */
                         </div>
                     </td>
                     <td class="px-6 py-2 whitespace-nowrap">
-                        <small><?php echo $row['startime']?></small>
+                        <?php
+
+                            if ($row['rules'] == 'Required') {
+                               echo ' <span class="px-2 inline-flex leading-5 font-extrabold rounded-full bg-yellow-300 text-gray-600"  style="font-size: 10px">
+                                       REQUIRED
+                                </span> ';
+                            }else{
+                                echo '
+                                <span class="px-2 inline-flex leading-5 font-extrabold rounded-full bg-green-100 text-green-900"  style="font-size: 10px">
+                                       NOT REQUIRED
+                                </span>
+                                ';
+                            }
+                        
+                        ?>
                     </td>
                     <td class="px-6 py-2 whitespace-nowrap space-x-2">
                         <a href="?edit=<?php echo $row['id']?>" onclick="toggleModal('view_event')" class="text-blue-400 hover:text-white hover:bg-blue-400 w-full px-3 py-1 bg-blue-50 font-semibold rounded transition-colors text-xs">View More</a>

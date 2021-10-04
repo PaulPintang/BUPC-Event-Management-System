@@ -41,9 +41,19 @@
                         <div class="space-y-5">
                             <div class="flex items-center gap-3">
                                 <i class="fas fa-tags text-gray-400"></i>
-                                <span class="px-2 inline-flex leading-5 font-extrabold rounded-full bg-green-100 text-green-900"  style="font-size: 10px">
-                                        REQUIRED   
-                                </span>
+                                 <?php
+                                    if ($rules == 'Required') {
+                                    echo '  <span class="px-2 inline-flex leading-5 font-extrabold rounded-full bg-yellow-300 text-gray-600"  style="font-size: 10px">
+                                                REQUIRED 
+                                             </span> ';
+                                    }else{
+                                        echo '
+                                         <span class="px-2 inline-flex leading-5 font-extrabold rounded-full bg-green-100 text-green-700"  style="font-size: 10px">
+                                                NOT REQUIRED 
+                                        </span>
+                                        ';
+                                    }
+                                ?>
                             </div>
                             <div>
                                 <div class="flex gap-3 items-center">

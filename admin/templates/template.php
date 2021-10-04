@@ -96,6 +96,7 @@
     <div><?php include '../logs/modals/about_modal.php';?></div>
     <div><?php include '../events/modals/events_modal.php';?></div>
     <div><?php include '../events/modals/view_event_modal.php';?></div>
+    <div><?php include '../events/modals/edit_event_modal.php';?></div>
 
    </body>
    <!-- script for modal -->
@@ -106,13 +107,12 @@
             document.getElementById(modalID).classList.toggle("flex");
             document.getElementById(modalID + "-backdrop").classList.toggle("flex");
         }
-
-        // const toggleButton = document.getElementsByClassName('toggle-button')[0]
-        // const modalCtrl = document.getElementsByClassName('modal')[0]
-        // toggleButton.addEventListener('click', () => {
-        //     modalCtrl.classList.toggle('show')
-        // })
-
+        function event(modalID){
+            document.getElementById(modalID).classList.toggle("hidden");
+            document.getElementById(modalID + "-backdrop").classList.toggle("hidden");
+            document.getElementById(modalID).classList.toggle("flex");
+            document.getElementById(modalID + "-backdrop").classList.toggle("flex");
+        }
    </script>
 </html>
 <?php

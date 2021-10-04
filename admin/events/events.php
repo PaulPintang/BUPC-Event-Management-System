@@ -74,7 +74,8 @@ scrollbar-width: none;  /* Firefox */
                         <small><?php echo $row['startime']?></small>
                     </td>
                     <td class="px-6 py-2 whitespace-nowrap space-x-2">
-                        <a href="#" onclick="toggleModal('view_event')" class="text-blue-400 hover:text-white hover:bg-blue-400 toggle-button w-full px-3 py-1 bg-blue-50 font-semibold rounded transition-colors text-xs">View More</a>
+                        <a href="#" onclick="toggleModal('view_event')" class="text-blue-400 hover:text-white hover:bg-blue-400 w-full px-3 py-1 bg-blue-50 font-semibold rounded transition-colors text-xs">View More</a>
+                        <i class="far fa-edit text-gray-400 cursor-pointer hover:text-blue-300 transition-all" style="font-size: 13px" onclick="toggleModal('edit_event')"></i>
                     </td>
                 </tr>
             <?php }?>

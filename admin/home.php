@@ -154,9 +154,8 @@
                             </td>
 
                             <td class="px-6 py-4 whitespace-nowrap text-right font-medium" style="font-size: 13px">
-                               <!-- <a href="?edit=<?php echo $row['id']?>" onclick="toggleModal('user_modal')" class="text-indigo-600 hover:text-indigo-900 toggle-button w-full">Edit</a> -->
+                               <a href="?edit=<?php echo $row['id']?>" onclick="toggleModal('user_modal')" class="text-indigo-600 hover:text-indigo-900 toggle-button w-full">Edit</a>
                             </td>
-                            <td><a href="javascript:;" class="addAttr" data-id="<?php echo $row['id']?>" onclick="toggleModal('user_modal')" > Edit</a></td>
                         </tr>
                     <?php } ?>
                     </tbody>
@@ -207,22 +206,7 @@
             document.getElementById(modalID + "-backdrop").classList.toggle("flex");
         }
    </script>
-
-   <script>
-        $('.addAttr').click(function() {
-        var id = $(this).data('id');   
-        var name = $(this).data('name'); 
-        var username = $(this).data('username');   
-        var password = $(this).data('password');   
-
-        $('#id').val(id); 
-        $('#name').val(name); 
-        $('#username').val(username); 
-        $('#password').val(password); 
-        } );
-    </script>
    <!-- END -->
-
 </html>
 <?php
     }else{

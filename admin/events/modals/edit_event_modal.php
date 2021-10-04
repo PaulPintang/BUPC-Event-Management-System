@@ -14,16 +14,16 @@
                     <div class="space-y-4">
                         <div class="space-y-2">
                             <p class="text-sm">Event Name <span class="text-red-500">*</span></p>
-                            <input type="text" value="<?php echo $eName?>" autocomplete="off" name="eName" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
+                            <input required type="text" value="<?php echo $eName?>" autocomplete="off" name="eName" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
                         </div>
                         <div class="space-y-2">
                             <p class="text-sm">Event Description <span class="text-red-500">*</span></p>
-                            <textarea rows="2" value="<?php echo $eDescription?>" cols="50" name="eDescription" class="bg-gray-100 text-sm focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full"></textarea>
+                            <textarea required rows="2" value="<?php echo $eDescription?>" cols="50" name="eDescription" class="bg-gray-100 text-sm focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full"></textarea>
                         </div>
                         <div class="space-y-2">
                             <p class="text-sm">Event Objectives <span class="text-red-500">*</span></p>
                             <!-- <input type="text" autocomplete="off" name="eDescription"class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full"> -->
-                            <textarea rows="2" value="<?php echo $eObjectives?>" cols="50" name="eObjectives" class="bg-gray-100 text-sm focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full"></textarea>
+                            <textarea required rows="2" value="<?php echo $eObjectives?>" cols="50" name="eObjectives" class="bg-gray-100 text-sm focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full"></textarea>
                         </div>
                          <div>
                             <label>
@@ -35,28 +35,28 @@
                         </div>
                         <div class="space-y-2">
                             <p class="text-sm">Event Location <span class="text-red-500">*</span></p>
-                            <input type="text" value="<?php echo $eLocation?>" autocomplete="off" name="eLocation" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
+                            <input required type="text" value="<?php echo $eLocation?>" autocomplete="off" name="eLocation" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
                         </div>
 
                         <div class="flex gap-4">
                                 <div class="space-y-2">
                                     <p class="text-sm">Event Start Date</p>
-                                    <input type="text" value="<?php echo $startdate?>" autocomplete="off" name="startdate" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
+                                    <input required type="text" value="<?php echo $startdate?>" autocomplete="off" name="startdate" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
                                 </div>
                                 <div class="space-y-2">
                                     <p class="text-sm">Event Start Time</p>
-                                    <input type="text" value="<?php echo $startime?>" autocomplete="off" name="startime" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
+                                    <input required type="text" value="<?php echo $startime?>" autocomplete="off" name="startime" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
                                 </div>
                         </div>
                         
                         <div class="flex gap-4">
                                 <div class="space-y-2">
                                     <p class="text-sm">Event End Date</p>
-                                    <input type="text" value="<?php echo $enddate?>"  name="enddate" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
+                                    <input required type="text" value="<?php echo $enddate?>"  name="enddate" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
                                 </div>
                                 <div class="space-y-2">
                                     <p class="text-sm">Event End Time</p>
-                                    <input type="text" value="<?php echo $endtime?>" name="endtime" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
+                                    <input required type="text" value="<?php echo $endtime?>" name="endtime" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
                                 </div>
                         </div>
 

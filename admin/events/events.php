@@ -62,16 +62,22 @@ scrollbar-width: none;  /* Firefox */
                             Online
                         </span>
                     </td> -->
+                    <?php
+                    
+                        $startime = $row['startime'];
+                        $endtime = $row['endtime'];
+
+                    ?>
                     <td class="px-6 py-2 whitespace-nowrap">
                         <div class="flex flex-col">
                             <small><?php echo $row['startdate']?></small>
-                            <small>- <?php echo $row['startime']?></small>
+                            <small>- <?php echo $startime?></small>
                         </div>
                     </td>
                     <td class="px-6 py-2 whitespace-nowrap">
                         <div class="flex flex-col">
                             <small><?php echo $row['enddate']?></small>
-                            <small>- <?php echo $row['endtime']?></small>
+                            <small>- <?php echo $endtime?></small>
                         </div>
                     </td>
                     <td class="px-6 py-2 whitespace-nowrap">

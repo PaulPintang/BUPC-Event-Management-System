@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 04, 2021 at 03:22 PM
+-- Generation Time: Oct 04, 2021 at 04:41 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -33,22 +33,27 @@ CREATE TABLE `events` (
   `eDescription` varchar(255) NOT NULL,
   `eLocation` varchar(255) NOT NULL,
   `startdate` varchar(255) NOT NULL,
-  `startime` varchar(255) NOT NULL,
   `enddate` varchar(255) NOT NULL,
   `endtime` varchar(255) NOT NULL,
   `eObjectives` varchar(255) NOT NULL,
-  `rules` varchar(255) NOT NULL
+  `rules` varchar(255) NOT NULL,
+  `startime` varchar(255) CHARACTER SET utf8mb4 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `events`
 --
 
-INSERT INTO `events` (`id`, `eName`, `eDescription`, `eLocation`, `startdate`, `startime`, `enddate`, `endtime`, `eObjectives`, `rules`) VALUES
-(12, 'Taratakan', 'para sa mga supot', 'BUPC-Gymnasium', 'Mon, October 14 2021', '7:30 am', 'Mon, October 14 2021', '5:30 PM', 'para maubos na ang mga supot', 'Not Required'),
-(13, 'Online Sabong', 'su may kwarta sana', 'Sa gym', 'lunes', '7:30 am', 'lunes', '5:30 PM', 'tirigbakan manok', 'Not Required'),
-(14, 'dsadas', 'dasdasd', 'asdasd', 'asdasd', 'asdasd', 'asdasd', 'asdasd', 'asdasdas', 'Required'),
-(15, 'FDSFSD', 'FDSF', 'FSDFS', 'FDSFSD', 'FSDF', 'DSFSF', 'SDF', 'SDFSDF', 'Required');
+INSERT INTO `events` (`id`, `eName`, `eDescription`, `eLocation`, `startdate`, `enddate`, `endtime`, `eObjectives`, `rules`, `startime`) VALUES
+(1, 'dfsad', 'fasdfas', 'sdfasdf', '2021-10-04', '2021-10-04', '15:02', 'dfsadf', 'Required', '03:02'),
+(2, '', '', '', '2021-10-04', '2021-10-04', '17:09', '', 'Required', '09:43'),
+(3, '', '', '', '2021-10-04', '2021-10-04', '14:03', '', 'Required', '10:19'),
+(4, 'dfsd', 'fsdfsd', 'dsfdsf', '2021-10-04', '2021-10-04', '22:23', 'fsdfsdf', 'Required', '10:23'),
+(5, 'dsad', 'asdasda', '', '2021-10-04', '2021-10-04', '16:04', 'sdasd', 'Required', '00:02'),
+(6, 'ffsdf', 'dsfds', 'fsdfsdf', '2021-10-04', '2021-10-04', '17:05', 'fsdf', 'Required', '07:07'),
+(7, 'sdfsd', 'sdfsdf', 'sdfsd', '2021-10-04', '2021-10-04', '', 'dscsdfdsf', 'Required', ''),
+(8, 'dsds', 'fdsf', 'sdfdsf', '2021-10-04', '2021-10-04', '15:12', 'sdfsdf', 'Required', '02:01'),
+(9, 'sdfsdf', 'fsdf', 'sdfsdffsd', '2021-10-04', '2021-10-04', '', 'dsfsdf', 'Required', '10:37 PM');
 
 -- --------------------------------------------------------
 
@@ -157,7 +162,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `logs`

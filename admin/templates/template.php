@@ -3,6 +3,7 @@
     // code for retrieve from database
         // USERS
             include('../../conn.php');
+         
             $users = mysqli_query($db, "SELECT * FROM users");
             $userlogs = mysqli_query($db, "SELECT * FROM logs");
             $events = mysqli_query($db, "SELECT * FROM events");

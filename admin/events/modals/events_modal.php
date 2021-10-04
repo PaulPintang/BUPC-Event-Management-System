@@ -14,16 +14,16 @@
                     <div class="space-y-4">
                         <div class="space-y-2">
                             <p class="text-sm">Event Name <span class="text-red-500">*</span></p>
-                            <input type="text" autocomplete="off" name="eName" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
+                            <input required type="text" autocomplete="off" name="eName" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
                         </div>
                         <div class="space-y-2">
                             <p class="text-sm">Event Description <span class="text-red-500">*</span></p>
-                            <textarea rows="2" cols="50" name="eDescription" class="bg-gray-100 text-sm focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full"></textarea>
+                            <textarea required rows="2" cols="50" name="eDescription" class="bg-gray-100 text-sm focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full"></textarea>
                         </div>
                         <div class="space-y-2">
                             <p class="text-sm">Event Objectives <span class="text-red-500">*</span></p>
                             <!-- <input type="text" autocomplete="off" name="eDescription"class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full"> -->
-                            <textarea rows="2" cols="50" name="eObjectives" class="bg-gray-100 text-sm focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full"></textarea>
+                            <textarea required rows="2" cols="50" name="eObjectives" class="bg-gray-100 text-sm focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full"></textarea>
                         </div>
                         <div>
                             <label>
@@ -35,28 +35,32 @@
                         </div>
                         <div class="space-y-2">
                             <p class="text-sm">Event Location <span class="text-red-500">*</span></p>
-                            <input type="text" autocomplete="off" name="eLocation" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
+                            <input required type="text" autocomplete="off" name="eLocation" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
                         </div>
 
                         <div class="flex gap-4">
-                                <div class="space-y-2">
+                                <div class="space-y-2 w-6/12">
                                     <p class="text-sm">Event Start Date</p>
-                                    <input type="text" autocomplete="off" name="startdate" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
+                                    <?php
+                                       date_default_timezone_set("Asia/Manila");
+                                       $date = date("Y-m-d");
+                                    ?>
+                                    <input required type="date" value="<?php echo $date?>" autocomplete="off" name="startdate" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
                                 </div>
-                                <div class="space-y-2">
+                                <div class="space-y-2 w-6/12">
                                     <p class="text-sm">Event Start Time</p>
-                                    <input type="text" autocomplete="off" name="startime" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
+                                    <input required type="text" autocomplete="off"  name="startime" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
                                 </div>
                         </div>
                         
-                        <div class="flex gap-4">
-                                <div class="space-y-2">
+                        <div class="flex gap-4 w-full">
+                                <div class="space-y-2 w-6/12">
                                     <p class="text-sm">Event End Date</p>
-                                    <input type="text"  name="enddate" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
+                                    <input required type="date" value="<?php echo $date?>" name="enddate" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
                                 </div>
-                                <div class="space-y-2">
+                                <div class="space-y-2 w-6/12">
                                     <p class="text-sm">Event End Time</p>
-                                    <input type="text" name="endtime" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
+                                    <input required type="text" name="endtime"  class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
                                 </div>
                         </div>
 

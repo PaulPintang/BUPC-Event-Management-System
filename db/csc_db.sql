@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 04, 2021 at 03:03 PM
+-- Generation Time: Oct 04, 2021 at 03:22 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -45,8 +45,8 @@ CREATE TABLE `events` (
 --
 
 INSERT INTO `events` (`id`, `eName`, `eDescription`, `eLocation`, `startdate`, `startime`, `enddate`, `endtime`, `eObjectives`, `rules`) VALUES
-(12, 'Taratakan', 'para sa mga supot', 'BUPC-Gymnasium', 'Mon, October 14 2021', '7:30 am', 'Mon, October 14 2021', '5:30 PM', 'para maubos na ang mga supot', ''),
-(13, 'Online Sabong', 'su may kwarta sana', 'Sa gym', 'lunes', '7:30 am', 'lunes', '5:30 PM', 'tirigbakan manok', ''),
+(12, 'Taratakan', 'para sa mga supot', 'BUPC-Gymnasium', 'Mon, October 14 2021', '7:30 am', 'Mon, October 14 2021', '5:30 PM', 'para maubos na ang mga supot', 'Not Required'),
+(13, 'Online Sabong', 'su may kwarta sana', 'Sa gym', 'lunes', '7:30 am', 'lunes', '5:30 PM', 'tirigbakan manok', 'Not Required'),
 (14, 'dsadas', 'dasdasd', 'asdasd', 'asdasd', 'asdasd', 'asdasd', 'asdasd', 'asdasdas', 'Required'),
 (15, 'FDSFSD', 'FDSF', 'FSDFS', 'FDSFSD', 'FSDF', 'DSFSF', 'SDF', 'SDFSDF', 'Required');
 

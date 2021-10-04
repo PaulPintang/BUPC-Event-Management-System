@@ -26,12 +26,12 @@
                             <textarea rows="2" cols="50" name="eObjectives" class="bg-gray-100 text-sm focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full"></textarea>
                         </div>
                         <div>
-                        <label>
-                            <div class="flex gap-2">
-                             <span class="bg-green-200 text-green-800 gap-1 uppercase rounded-full px-3 py-1 text-xs flex items-center"> <input id="optionsRadios1" type="radio" value="Required" name="rules" checked> Required </span>
-                             <span class="bg-blue-200 text-green-900 gap-1 uppercase rounded-full px-3 py-1 text-xs flex items-center"> <input id="optionsRadios2" type="radio" value="Not Required" name="rules">Not Required </span>
-                            </div>
-                        </label>
+                            <label>
+                                <div class="flex gap-2">
+                                <span class="bg-green-200 text-green-800 gap-1 uppercase rounded-full px-3 py-1 text-xs flex items-center"> <input id="optionsRadios1" type="radio" value="Required" name="rules" checked> Required </span>
+                                <span class="bg-blue-200 text-green-900 gap-1 uppercase rounded-full px-3 py-1 text-xs flex items-center"> <input id="optionsRadios2" type="radio" value="Not Required" name="rules">Not Required </span>
+                                </div>
+                            </label>
                         </div>
                         <div class="space-y-2">
                             <p class="text-sm">Event Location <span class="text-red-500">*</span></p>

@@ -75,7 +75,7 @@
                             <input type="hidden" name="username" value="<?php echo $_SESSION['username']?>">
                             <!-- end -->
                             <button type="submit" name="logout">
-                                <i class="fas fa-sign-out-alt text-gray-400 hover:text-red-300"></i>
+                                <i class="fas fa-sign-out-alt text-gray-400 hover:text-red-300 transition-all"></i>
                             </button>
                         </form>
                 </div>
@@ -88,13 +88,13 @@
             <div class="h-4 bg-gray-200" style="width: 1.2px"></div>
             <div class="flex justify-between items-center w-full">
                 <div class="flex gap-3 items-center ">
-                    <a href="../home.php" class="text-gray-400 hover:text-yellow-400 active:text-blue-400 font-medium">Home</a>
-                    <a href="../events" class="text-blue-400 hover:text-yellow-400 active:text-blue-400 font-medium">Events</a>
-                    <a href="../logs" class="text-gray-400 active:text-blue-400 hover:text-yellow-400 font-medium">Logs</a>
+                    <a href="../home.php" class="text-gray-400 hover:text-yellow-400 active:text-blue-400 font-medium transition-all">Home</a>
+                    <a href="../events" class="text-blue-400 hover:text-yellow-400 active:text-blue-400 font-medium transition-all">Events</a>
+                    <a href="../logs" class="text-gray-400 active:text-blue-400 hover:text-yellow-400 font-medium transition-all">Logs</a>
                 </div>
                 <div>
                    <a href="#" onclick="toggleModal('about_log_modal')">
-                         <i class="fas fa-info-circle fa-lg text-gray-400 cursor-pointer"></i>
+                         <i class="fas fa-info-circle fa-lg text-gray-400 cursor-pointer hover:text-blue-300 transition-all"></i>
                      </a>
                 </div>
             </div>

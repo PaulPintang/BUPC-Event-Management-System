@@ -28,8 +28,8 @@
                         <div>
                             <label>
                                 <div class="flex gap-2">
-                                <span class="bg-green-200 text-green-800 gap-1 uppercase rounded-full px-3 py-1 text-xs flex items-center"> <input id="optionsRadios1" type="radio" value="Required" name="rules" checked> Required </span>
-                                <span class="bg-blue-200 text-green-900 gap-1 uppercase rounded-full px-3 py-1 text-xs flex items-center"> <input id="optionsRadios2" type="radio" value="Not Required" name="rules">Not Required </span>
+                                <span class="bg-yellow-300 text-gray-600 gap-1 uppercase rounded-full px-3 py-1 text-xs flex items-center"> <input id="optionsRadios1" type="radio" value="Required" name="rules" checked> Required </span>
+                                <span class="bg-green-100 text-green-900 gap-1 uppercase rounded-full px-3 py-1 text-xs flex items-center"> <input id="optionsRadios2" type="radio" value="Not Required" name="rules">Not Required </span>
                                 </div>
                             </label>
                         </div>
@@ -69,7 +69,7 @@
                                 <button type="button" onclick="toggleModal('event')" class="px-6 py-2 bg-gray-100 rounded text-gray-500">
                                     Cancel
                                 </button>
-                                <button class="px-6 bg-yellow-500 focus:bg-yellow-600 py-2 text-white rounded ml-3" name="save" type="submit">
+                                <button class="px-6 bg-yellow-500 hover:bg-yellow-400 py-2 text-white rounded ml-3 transition-all" name="save" type="submit">
                                     Submit
                                 </button>
                             </div>

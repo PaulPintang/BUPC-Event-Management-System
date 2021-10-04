@@ -17,7 +17,7 @@ scrollbar-width: none;  /* Firefox */
     <!-- start -->  
         <div class="flex justify-between items-center pb-2">
             <h1 class="font-medium text-gray-700  " styke="top:40px">User <span class="text-yellow-400">Logs</span></h1>
-             <a href="process.php?clear=<?php echo $ID;?>" name="clear" class="bg-red-300 text-white rounded hover:bg-red-400 px-2 py-1">Clear logs</a>
+             <a href="process.php?clear=<?php echo $ID;?>" name="clear" class="bg-red-300 text-white rounded hover:bg-red-400 px-2 py-1 transition-all">Clear logs</a>
         </div>
         <div class="overflow-y-auto example" style="height: 300px">
         <table class="min-w-full divide-y divide-gray-200 border-collapse w-full">

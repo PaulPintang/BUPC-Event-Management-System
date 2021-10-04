@@ -11,6 +11,7 @@
                 </div>
                  <div class="overflow-y-auto example" style="height: 470px">
                 <form action="../events/modals/events_modal_process.php" method="POST">
+                <input type="hidden" name="id" value="<?php echo $id; ?>">
                     <div class="space-y-4">
                         <div class="space-y-2">
                             <p class="text-sm">Event Name <span class="text-red-500">*</span></p>
@@ -18,18 +19,18 @@
                         </div>
                         <div class="space-y-2">
                             <p class="text-sm">Event Description <span class="text-red-500">*</span></p>
-                            <textarea required rows="2" value="<?php echo $eDescription?>" cols="50" name="eDescription" class="bg-gray-100 text-sm focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full"></textarea>
+                            <textarea required rows="2" value="<?php echo $eDescription?>" cols="50" name="eDescription" class="bg-gray-100 text-sm focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full"><?php echo $eDescription?></textarea>
                         </div>
                         <div class="space-y-2">
                             <p class="text-sm">Event Objectives <span class="text-red-500">*</span></p>
                             <!-- <input type="text" autocomplete="off" name="eDescription"class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full"> -->
-                            <textarea required rows="2" value="<?php echo $eObjectives?>" cols="50" name="eObjectives" class="bg-gray-100 text-sm focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full"></textarea>
+                            <textarea required rows="2" value="<?php echo $eObjectives?>" cols="50" name="eObjectives" class="bg-gray-100 text-sm focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full"><?php echo $eObjectives?></textarea>
                         </div>
                          <div>
                             <label>
                                 <div class="flex gap-2">
-                                <span class="bg-green-200 text-green-800 gap-1 uppercase rounded-full px-3 py-1 text-xs flex items-center"> <input id="optionsRadios1" type="radio" value="Required" name="rules" <?php if($rules=="Required") {echo "checked";}?> > Required </span>
-                                <span class="bg-blue-200 text-green-900 gap-1 uppercase rounded-full px-3 py-1 text-xs flex items-center"> <input id="optionsRadios2" type="radio" value="Not Required" name="rules" <?php if($rules=="Not Required") {echo "checked";}?> >Not Required </span>
+                                <span class="bg-yellow-300 text-gray-600  gap-1 uppercase rounded-full px-3 py-1 text-xs flex items-center"> <input id="optionsRadios1" type="radio" value="Required" name="rules" <?php if($rules=="Required") {echo "checked";}?> > Required </span>
+                                <span class="bg-green-100 text-green-900 gap-1 uppercase rounded-full px-3 py-1 text-xs flex items-center"> <input id="optionsRadios2" type="radio" value="Not Required" name="rules" <?php if($rules=="Not Required") {echo "checked";}?> >Not Required </span>
                                 </div>
                             </label>
                         </div>

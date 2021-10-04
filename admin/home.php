@@ -73,7 +73,7 @@
                             
                             <!-- end -->
                             <button type="submit" name="logout">
-                                <i class="fas fa-sign-out-alt text-gray-400 hover:text-red-300"></i>
+                                <i class="fas fa-sign-out-alt text-gray-400 hover:text-red-300 transition-all"></i>
                             </button>
                         </form>
                 </div>
@@ -86,13 +86,13 @@
             <div class="h-4 bg-gray-200" style="width: 1.2px"></div>
             <div class="flex items-center justify-between w-full">
                 <div class="flex gap-3 items-center ">
-                    <a href="home.php" class="text-blue-400 hover:text-yellow-400 active:text-blue-400 font-medium">Home</a>
-                    <a href="./events" class="text-gray-400 hover:text-yellow-400 active:text-blue-400 font-medium">Events</a>
-                    <a href="./logs" class="text-gray-400 active:text-blue-400 hover:text-yellow-400 font-medium">Logs</a>
+                    <a href="home.php" class="text-blue-400 hover:text-yellow-400 active:text-blue-400 font-medium transition-all">Home</a>
+                    <a href="./events" class="text-gray-400 hover:text-yellow-400 active:text-blue-400 font-medium transition-all">Events</a>
+                    <a href="./logs" class="text-gray-400 active:text-blue-400 hover:text-yellow-400 font-medium transition-all">Logs</a>
                 </div>
                 <div>
                      <a href="#" onclick="toggleModal('about_modal')">
-                         <i class="fas fa-info-circle fa-lg text-gray-400 cursor-pointer"></i>
+                         <i class="fas fa-info-circle fa-lg text-gray-400 cursor-pointer hover:text-blue-300 transition-all"></i>
                      </a>
                 </div>
             </div>
@@ -106,7 +106,7 @@
                     <div class="w-2/4">
                         <h1 class="text-4xl font-bold text-gray-700"> <span class="text-yellow-400">BUPC</span>  College Student Council <span class="border-b-2 border-yellow-100">Admin page</span> </h1>
                         <p class="text-gray-400 py-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident, dicta. Lorem ipsum dolor sit amet.</p>
-                        <a href="#" class="py-2 px-5 bg-yellow-400 rounded text-white hover:bg-yellow-300">Official website</a>
+                        <a href="#" class="py-2 px-5 bg-yellow-400 rounded text-white hover:bg-yellow-300 transition-all">Official website</a>
                     </div>
                     <div class="w-2/4">
                           <img src="./images/admin.svg" alt="" style="width: 100%">

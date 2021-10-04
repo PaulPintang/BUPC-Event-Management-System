@@ -156,7 +156,7 @@
                             </td>
 
                             <td class="px-6 py-4 whitespace-nowrap text-right font-medium" style="font-size: 13px">
-                               <a href="?edit=<?php echo $row['id']?>" onclick="toggleModal('user_modal')" class="text-indigo-600 hover:text-indigo-900 toggle-button w-full">Edit</a>
+                               <a href="?edit=<?php echo $row['id']?>" onclick="toggleModal('user_modal')" class="text-indigo-600 hover:text-indigo-900 toggle-button w-full transition-all">Edit</a>
                             </td>
                         </tr>
                     <?php } ?>

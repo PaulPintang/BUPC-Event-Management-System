@@ -3,16 +3,77 @@
 .example::-webkit-scrollbar {
     display: none;
 }
-
 /* Hide scrollbar for IE, Edge and Firefox */
 .example {
 -ms-overflow-style: none;  /* IE and Edge */
 scrollbar-width: none;  /* Firefox */
-
-
 }
+.datepicker {
+  width: 400px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.2);
+  margin: 50px auto;
+  overflow: hidden;
+}
+.datepicker .datepicker-header {
+  height: 250px;
+  background-image: url("https://cdn.dribbble.com/users/3178178/screenshots/6346366/lifeguard_on_duty.jpg");
+  background-position: center center;
+  background-size: 100%;
+}
+.datepicker .ui-datepicker-inline {
+  padding: 30px;
+}
+.datepicker .ui-datepicker-header {
+  text-align: center;
+  padding-bottom: 1em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.datepicker .ui-datepicker-header .ui-datepicker-prev,
+.datepicker .ui-datepicker-header .ui-datepicker-next {
+  display: inline;
+  float: left;
+  cursor: pointer;
+  font-size: 1.4em;
+  padding: 0 10px;
+  margin-top: -10px;
+  color: #ccc;
+}
+.datepicker .ui-datepicker-header .ui-datepicker-next {
+  float: right;
+}
+.datepicker .ui-datepicker-calendar {
+  width: 100%;
+  text-align: center;
+}
+.datepicker .ui-datepicker-calendar thead {
+  color: #ccc;
+}
+.datepicker .ui-datepicker-calendar tr th,
+.datepicker .ui-datepicker-calendar tr td {
+  padding-bottom: 0.5em;
+}
+.datepicker .ui-datepicker-calendar a {
+  color: #444;
+  text-decoration: none;
+  display: block;
+  margin: 0 auto;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+.datepicker .ui-datepicker-calendar .ui-state-highlight {
+  border-color: #d24d57;
+  color: #d24d57;
+}
+
 </style>
-<div class="flex gap-7 py-10 container mx-auto">
+<div class="flex gap-5 py-10 container mx-auto">
     <div class="bg-white rounded-lg h-96 w-full p-6 shadow-sm ">
     <!-- start -->  
         <div class="flex justify-between items-center pb-2">
@@ -90,8 +151,24 @@ scrollbar-width: none;  /* Firefox */
             </tbody>
         </table>
         </div>
-    <!-- end -->
     </div>
-    <div class='datepicker'>
-        <div class="datepicker-header"></div>
+  <!-- end -->
+  <!-- start -->
+    
+    <div class="bg-white rounded-lg p-1" style="width: 510px">
+        <div id="inline_cal"></div>
     </div>
+          
+
+  <!-- end -->
+
+  </div>
+    
+
+    <script src="../calendar-16/js/jquery-3.3.1.min.js"></script>
+    <!-- <script src="../calendar-16/js/popper.min.js"></script> -->
+    <!-- <script src="../calendar-16/js/bootstrap.min.js"></script> -->
+    <script src="../calendar-16/js/rome.js"></script>
+    <script src="../calendar-16/js/main.js"></script>
+  <!-- end -->
+</div>

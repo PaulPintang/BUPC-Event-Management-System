@@ -3,6 +3,7 @@
    include('../../conn.php');
 
    if(isset($_POST['save'])){
+
         $name = $_POST['name'];
         $username = $_POST['username'];
         $password = $_POST['password'];
@@ -38,7 +39,8 @@
         header("location: ../home.php");
     }
 
-   if (isset($_POST['update'])) {
+   
+    if (isset($_POST['update'])) {
         $id = $_POST['id'];
         $name = $_POST['name'];
         $username = $_POST['username'];

@@ -4,6 +4,9 @@
         // USERS
             include('../conn.php');
             $users = mysqli_query($db, "SELECT * FROM users");
+            // in user modal
+            $userEdit = mysqli_query($db, "SELECT * FROM users");
+            // end
             $ID = $_SESSION['id'];
             $currentUser = mysqli_query($db, "SELECT * FROM users WHERE id=$ID");
             $userlogs = mysqli_query($db, "SELECT * FROM logs");
@@ -30,16 +33,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script
-    src=//code.jquery.com/jquery-3.5.1.slim.js
-    integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM="
-    crossorigin=anonymous></script>
-    <script script src=//code.jquery.com/jquery-3.3.1.slim.min.js integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin=anonymous></script>
-    <script src=//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin=anonymous></script>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>College Student Council 2021</title>
+    
 </head>
 <body>
     <section class="">
@@ -156,7 +154,7 @@
                             </td>
 
                             <td class="px-6 py-4 whitespace-nowrap text-right font-medium" style="font-size: 13px">
-                               <a href="?edit=<?php echo $row['id']?>" onclick="toggleModal('user_modal')" class="text-indigo-600 hover:text-indigo-900 toggle-button w-full transition-all">Edit</a>
+                                <a href="#edit<?php echo $row['id'];?>" data-toggle="modal" class="text-indigo-600 hover:text-indigo-900 w-full transition-all">Edit</a>
                             </td>
                         </tr>
                     <?php } ?>
@@ -192,14 +190,16 @@
     </div>
 
     <!-- MODALS -->
-    <div><?php include './modals/about_modal.php';?></div>
-    <div><?php include './modals/user_modal.php';?></div>
-    <div><?php include './modals/events_modal.php';?></div>
-
+        <div><?php include './modals/about_modal.php';?></div>
+        <div><?php include './modals/user_modal.php';?></div>
+        <div><?php include './modals/events_modal.php';?></div>
    <!-- END -->
 
    </body>
    <!-- script for modal -->
+   <script src="./js/jquery-1.12.4.js"></script>
+   <script src="./js/bootstrap.min.js"></script>
+
    <script type="text/javascript">
         function toggleModal(modalID){
             document.getElementById(modalID).classList.toggle("hidden");
@@ -228,6 +228,7 @@
     }
   </script>
   <!-- end -->
+
 </html>
 <?php
     }else{

@@ -7,6 +7,10 @@
             $users = mysqli_query($db, "SELECT * FROM users");
             $userlogs = mysqli_query($db, "SELECT * FROM logs");
             $events = mysqli_query($db, "SELECT * FROM events");
+            // use for modals
+            $eventsEdit = mysqli_query($db, "SELECT * FROM events");
+            $viewEvent = mysqli_query($db, "SELECT * FROM events");
+            // end
 
             $ID = $_SESSION['id'];
             $currentUser = mysqli_query($db, "SELECT * FROM users WHERE id=$ID");
@@ -126,6 +130,8 @@
             document.getElementById(modalID + "-backdrop").classList.toggle("flex");
         }
    </script>
+   <script src="../js/jquery-1.12.4.js"></script>
+   <script src="../js/bootstrap.min.js"></script>
 </html>
 <?php
     }else{

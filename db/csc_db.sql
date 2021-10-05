@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 04, 2021 at 04:41 PM
+-- Generation Time: Oct 05, 2021 at 05:15 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -45,15 +45,7 @@ CREATE TABLE `events` (
 --
 
 INSERT INTO `events` (`id`, `eName`, `eDescription`, `eLocation`, `startdate`, `enddate`, `endtime`, `eObjectives`, `rules`, `startime`) VALUES
-(1, 'dfsad', 'fasdfas', 'sdfasdf', '2021-10-04', '2021-10-04', '15:02', 'dfsadf', 'Required', '03:02'),
-(2, '', '', '', '2021-10-04', '2021-10-04', '17:09', '', 'Required', '09:43'),
-(3, '', '', '', '2021-10-04', '2021-10-04', '14:03', '', 'Required', '10:19'),
-(4, 'dfsd', 'fsdfsd', 'dsfdsf', '2021-10-04', '2021-10-04', '22:23', 'fsdfsdf', 'Required', '10:23'),
-(5, 'dsad', 'asdasda', '', '2021-10-04', '2021-10-04', '16:04', 'sdasd', 'Required', '00:02'),
-(6, 'ffsdf', 'dsfds', 'fsdfsdf', '2021-10-04', '2021-10-04', '17:05', 'fsdf', 'Required', '07:07'),
-(7, 'sdfsd', 'sdfsdf', 'sdfsd', '2021-10-04', '2021-10-04', '', 'dscsdfdsf', 'Required', ''),
-(8, 'dsds', 'fdsf', 'sdfdsf', '2021-10-04', '2021-10-04', '15:12', 'sdfsdf', 'Required', '02:01'),
-(9, 'sdfsdf', 'fsdf', 'sdfsdffsd', '2021-10-04', '2021-10-04', '', 'dsfsdf', 'Required', '10:37 PM');
+(1, 'Taratakan', 'para sa mga supot', 'gym', '2021-10-04', '2021-10-04', '5:30 PM', 'maubos ang mga supot. lorem fasdas dsadasd dasdsad dasdasd dasdasd dasdasd dasdasda dasdasd dasdasdas dasdasd dasdasd dasdasd adasdas dasdasdas dasdasdasd dasdasdas ddasdasd sadasd', 'Required', '7:30 AM');
 
 -- --------------------------------------------------------
 
@@ -74,10 +66,10 @@ CREATE TABLE `logs` (
 --
 
 INSERT INTO `logs` (`id`, `name`, `date`, `login`, `logout`) VALUES
-(1, 'jusswaaa', 'Mon Oct 04, 2021', '06:12: PM', '06:12 PM'),
-(2, 'roseanne', 'Mon Oct 04, 2021', '06:12: PM', '06:12 PM'),
-(3, 'tricia', 'Mon Oct 04, 2021', '06:12: PM', NULL),
-(4, 'jusswaaa', 'Mon Oct 04, 2021', '08:25: PM', NULL);
+(1, 'roseanne', 'Tue Oct 05, 2021', '10:41: PM', '10:45 PM'),
+(2, 'jusswaaa', 'Tue Oct 05, 2021', '10:57: PM', '11:01 PM'),
+(3, 'jusswaaa', 'Tue Oct 05, 2021', '11:02: PM', '11:13 PM'),
+(4, 'roseanne', 'Tue Oct 05, 2021', '11:13: PM', NULL);
 
 -- --------------------------------------------------------
 
@@ -111,7 +103,7 @@ CREATE TABLE `users` (
   `name` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `picture` longblob NOT NULL,
+  `picture` varchar(255) NOT NULL,
   `role` varchar(255) NOT NULL,
   `status` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -121,10 +113,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `password`, `picture`, `role`, `status`) VALUES
-(1, 'Joshua Buban', 'jusswaaa', '1234', 0x313633323937313735312d, 'President', 'Online'),
-(2, 'Ma. Roseanne Pandaan', 'roseanne', '1234', 0x313633323937313835312d, 'Vice President', 'Offline'),
-(3, 'Eddessa Joy Legson', 'eddessa', '1234', 0x313633323937313934312d, 'Secretary', 'Offline'),
-(5, 'Tricia Kaye Moya', 'tricia', '1234', 0x313633323937323031352d, 'Representative', 'Online');
+(1, 'Joshua Booban', 'jusswaaa', '1234', '1633443226-', 'President', 'Offline'),
+(2, 'Ma. Roseanne Pandaan', 'roseanne', '1234', '1633364673-', 'Vice President', 'Online'),
+(3, 'Eddessa Joy Legson', 'eddessa', '1234', '1632971941-', 'Secretary', 'Offline'),
+(5, 'Tricia Kaye Moya', 'tricia', '1234', '1632972015-', 'Representative', 'Offline');
 
 --
 -- Indexes for dumped tables
@@ -162,7 +154,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `logs`

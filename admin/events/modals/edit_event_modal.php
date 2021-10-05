@@ -21,18 +21,18 @@
                         </div>
                         <div class="space-y-2">
                             <p class="text-sm">Event Description <span class="text-red-500">*</span></p>
-                            <textarea required rows="2" value="<?php echo $row['eDescription']?>" cols="50" name="eDescription" class="bg-gray-100 text-sm focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full"><?php echo $eDescription?></textarea>
+                            <textarea required rows="4" value="<?php echo $row['eDescription']?>" cols="50" name="eDescription" class="bg-gray-100 text-sm focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full"><?php echo $row['eDescription']?></textarea>
                         </div>
                         <div class="space-y-2">
                             <p class="text-sm">Event Objectives <span class="text-red-500">*</span></p>
                             <!-- <input type="text" autocomplete="off" name="eDescription"class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full"> -->
-                            <textarea required rows="2" value="<?php echo $row['eObjectives']?>" cols="50" name="eObjectives" class="bg-gray-100 text-sm focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full"><?php echo $eObjectives?></textarea>
+                            <textarea required rows="4" value="<?php echo $row['eObjectives']?>" cols="50" name="eObjectives" class="bg-gray-100 text-sm focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full"><?php echo $row['eObjectives']?></textarea>
                         </div>
                          <div>
                             <label>
                                 <div class="flex gap-2">
-                                <span class="bg-yellow-300 text-gray-600  gap-1 uppercase rounded-full px-3 py-1 text-xs flex items-center"> <input id="optionsRadios1" type="radio" value="Required" name="rules" <?php if($rules=="Required") {echo "checked";}?> > Required </span>
-                                <span class="bg-green-100 text-green-900 gap-1 uppercase rounded-full px-3 py-1 text-xs flex items-center"> <input id="optionsRadios2" type="radio" value="Not Required" name="rules" <?php if($rules=="Not Required") {echo "checked";}?> >Not Required </span>
+                                <span class="bg-yellow-300 text-gray-600  gap-1 uppercase rounded-full px-3 py-1 text-xs flex items-center"> <input id="optionsRadios1" type="radio" value="Required" name="rules" <?php if($row['rules']=="Required") {echo "checked";}?> > Required </span>
+                                <span class="bg-green-100 text-green-900 gap-1 uppercase rounded-full px-3 py-1 text-xs flex items-center"> <input id="optionsRadios2" type="radio" value="Not Required" name="rules" <?php if($row['rules']=="Not Required") {echo "checked";}?> >Not Required </span>
                                 </div>
                             </label>
                         </div>

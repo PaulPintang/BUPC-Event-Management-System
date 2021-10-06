@@ -10,8 +10,8 @@ scrollbar-width: none;  /* Firefox */
 }
 
 </style>
-<div class="flex gap-5 py-10 container mx-auto">
-    <div class="bg-white rounded-lg h-96 w-full p-6 shadow-sm ">
+<div class="block md:flex lg:flex gap-5 py-10 mx-6 container">
+    <div class="bg-white md:rounded-lg lg:rounded-lg h-96 w-full p-6 shadow-sm ">
     <!-- start -->  
         <div class="flex justify-between items-center pb-2">
             <h1 class="font-medium text-gray-700  " styke="top:40px">BUPC <span class="text-yellow-400">Events</span></h1>
@@ -30,16 +30,16 @@ scrollbar-width: none;  /* Firefox */
         <table class="min-w-full divide-y divide-gray-200 border-collapse w-full">
             <thead class="sticky top-0">
                 <tr>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
+                    <th scope="col" class="md:px-6 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
                         Event title
                     </th>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
-                       <span class="font-extrabold text-green-500">Start</span> date/time
+                    <th scope="col" class="hidden md:table-cell lg:table-cell px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
+                        <span class="font-extrabold text-green-500">Start</span> date/time
                     </th>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
+                    <th scope="col" class="hidden md:table-cell lg:table-cell px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
                         <span class="font-extrabold text-red-400">Edit</span> date/time
                     </th>
-                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
+                     <th scope="col" class=" hidden md:table-cell lg:table-cell px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
                         Rules
                     </th>
                      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
@@ -52,8 +52,8 @@ scrollbar-width: none;  /* Firefox */
             <?php $events = mysqli_query($db, "SELECT * FROM events ORDER BY ID DESC"); ?>
             <?php while ($row = mysqli_fetch_array($events)) { ?>
                 <tr>
-                    <td class="px-2 py-2 whitespace-nowrap">
-                        <div class="ml-4">
+                    <td class="md:px-2 lg:px-2 py-2 whitespace-nowrap">
+                        <div class="md:ml-4 lg:ml-4">
                             <small><?php echo $row['eName']?></small>
                         </div>
                     </td>
@@ -68,19 +68,19 @@ scrollbar-width: none;  /* Firefox */
                         $endtime = $row['endtime'];
 
                     ?>
-                    <td class="px-6 py-2 whitespace-nowrap">
+                    <td class="hidden md:table-cell lg:table-cell px-6 py-2 whitespace-nowrap">
                         <div class="flex flex-col">
                             <small><?php echo $row['startdate']?></small>
                             <small>- <?php echo $startime?></small>
                         </div>
                     </td>
-                    <td class="px-6 py-2 whitespace-nowrap">
+                    <td class="hidden md:table-cell lg:table-cell px-6 py-2 whitespace-nowrap">
                         <div class="flex flex-col">
                             <small><?php echo $row['enddate']?></small>
                             <small>- <?php echo $endtime?></small>
                         </div>
                     </td>
-                    <td class="px-6 py-2 whitespace-nowrap">
+                    <td class="hidden md:table-cell lg:table-cell px-6 py-2 whitespace-nowrap">
                         <?php
 
                             if ($row['rules'] == 'Required') {
@@ -97,8 +97,10 @@ scrollbar-width: none;  /* Firefox */
                         
                         ?>
                     </td>
-                    <td class="px-6 py-2 whitespace-nowrap space-x-2">
-                        <a href="#view<?php echo $row['id'];?>" data-toggle="modal" class="text-blue-400 hover:text-white hover:bg-blue-400 w-full px-3 py-1 bg-blue-50 font-semibold rounded transition-colors text-xs">View More</a>
+                    <td class="text-right md:px-6 lg:px-6 py-2 whitespace-nowrap space-x-2">
+                        <!-- <a href="#view<?php echo $row['id'];?>" data-toggle="modal" class="sm:hidden md:hidden lg:hidden"><i class="fas fa-info text-gray-400 cursor-pointer hover:text-blue-300 transition-all" style="font-size:12px"></i></a> -->
+                        <a href="#view<?php echo $row['id'];?>" data-toggle="modal" class=" sm:hidden md:hidden lg:hidden text-blue-400 hover:text-white hover:bg-blue-400 w-full px-3 py-1 bg-blue-50 font-semibold rounded transition-colors text-xs">View</a>
+                        <a href="#view<?php echo $row['id'];?>" data-toggle="modal" class="hidden sm:inline md:inline lg:inline text-blue-400 hover:text-white hover:bg-blue-400 w-full px-3 py-1 bg-blue-50 font-semibold rounded transition-colors text-xs">View More</a>
                         <a href="#edit<?php echo $row['id'];?>" data-toggle="modal" >
                             <i class="far fa-edit text-gray-400 cursor-pointer hover:text-blue-300 transition-all" style="font-size: 13px"></i>
                         </a> 
@@ -113,7 +115,7 @@ scrollbar-width: none;  /* Firefox */
 
   <!-- start -->
     
-    <div class="bg-white rounded-lg flex items-center justify-center" style="width: 510px">
+    <div class="bg-white rounded-lg flex items-center justify-center pt-10 md:pt-0 lg:pt-0 w-full lg:w-5/12">
             <div class="flex flex-col h-full w-full font-light">
                 <div class="h-full w-full bg-blue-300 rounded-t flex justify-center items-center">
                     <span class="day uppercase text-lg text-white"></span>

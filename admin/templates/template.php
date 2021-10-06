@@ -49,7 +49,7 @@
     <title>College Student Council 2021</title>
 </head>
 <body>
-    <section class="">
+    <section class="px-6">
         <div class="flex mx-auto container justify-between items-center">
             <div class="flex items-center gap-3 py-7">
                  <img class="h-8 w-auto sm:h-10" src="../images/index.jpg" >
@@ -59,13 +59,13 @@
             </div>
             <div class="flex items-center gap-2">
                 <?php while ($row = mysqli_fetch_array($currentUser)) { ?>
-                    <div class="flex items-center text-sm text-gray-600">
+                    <div class="hidden md:flex items-center text-sm text-gray-600">
                        <p> Hello,</p>
                        <img src="../images/wave.gif" alt="" style="width: 30px">
                        <span> <?php echo $row['name']?> </span>
                     </div>
                     <div class="flex-shrink-0 h-10 w-10 pl-2">
-                        <img class="h-10 w-10 rounded-full" src="../images/undraw_profile_3.svg" alt="">
+                        <img class="h-10 w-10 rounded-full block" src="../images/undraw_profile_3.svg" alt="">
                     </div>
                 <?php } ?>
                 <div class="opacity-10">|</div>
@@ -105,7 +105,7 @@
         </div>
     </section>
 
-    <section class="bg-gray-50 ">
+    <section class="md:bg-gray-50 lg:bg-gray-50 lg:mx-0 ">
         <div class="container mx-auto h-full flex justify-center items-center">
             <?php require_once $content; ?> 
         </div>

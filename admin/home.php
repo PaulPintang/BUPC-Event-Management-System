@@ -97,7 +97,7 @@
         </div>
     </section>
 
-    <section class="md:bg-gray-50 lg:bg-gray-50 px-6 lg:mx-0">
+    <section class="md:bg-gray-50 lg:bg-gray-50 px-1 lg:mx-0">
         <div class="block md:flex lg:flex gap-7 py-10 container mx-auto">
             <div class="bg-white rounded-lg h-auto md:h-96 lg:h-96 w-full flex justify-center items-start md:items-center md:shadow-sm lg:shadow-sm mb-9 md:mb-0 lg:mb-0">
                 <div class="h-auto block md:flex lg:flex justify-center lg:justify-between md:justify-between p-10 text-center md:text-right lg:text-left w-full">

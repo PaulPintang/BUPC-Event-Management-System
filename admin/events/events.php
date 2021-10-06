@@ -11,7 +11,7 @@ scrollbar-width: none;  /* Firefox */
 
 </style>
 <div class="block md:flex lg:flex gap-5 py-10 mx-6 container">
-    <div class="bg-white md:rounded-lg lg:rounded-lg h-96 w-full p-6 shadow-sm ">
+    <div class="bg-white md:rounded-lg lg:rounded-lg h-96 w-full p-6 shadow-sm">
     <!-- start -->  
         <div class="flex justify-between items-center pb-2">
             <h1 class="font-medium text-gray-700  " styke="top:40px">BUPC <span class="text-yellow-400">Events</span></h1>

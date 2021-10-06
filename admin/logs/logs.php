@@ -12,8 +12,8 @@ scrollbar-width: none;  /* Firefox */
 
 }
 </style>
-<div class="flex gap-7 py-10 container mx-auto">
-    <div class="bg-white rounded-lg h-96 w-full p-6 shadow-sm ">
+<div class="block md:flex lg:flex gap-5 py-10 container">
+    <div class="bg-white md:rounded-lg lg:rounded-lg h-96 w-full p-6 shadow-sm">
     <!-- start -->  
         <div class="flex justify-between items-center pb-2">
             <h1 class="font-medium text-gray-700  " styke="top:40px">User <span class="text-yellow-400">Logs</span></h1>
@@ -23,25 +23,28 @@ scrollbar-width: none;  /* Firefox */
         <table class="min-w-full divide-y divide-gray-200 border-collapse w-full">
             <thead class="sticky top-0">
                 <tr>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
+                    <th scope="col" class="px-3 md:px-6 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
                        Username
                     </th>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
+                    <th scope="col" class="hidden md:table-cell lg:table-cell px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
                         Date
                     </th>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
+                    <th scope="col" class="px-3 md:px-6 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
                         Login Time
                     </th>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
+                    <th scope="col" class="hidden md:table-cell lg:table-cell px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
                         Logout Time
+                    </th>
+                     <th scope="col" class="md:hidden lg:hidden px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
+                       
                     </th>
                 </tr>
             </thead>
-            <tbody class=" divide-y divide-gray-200 overflow-auto">
+            <tbody class=" divide-y divide-gray-200 overflow-auto text-gray-700">
             <?php $logs = mysqli_query($db, "SELECT * FROM logs ORDER BY ID DESC"); ?>
             <?php while ($row = mysqli_fetch_array($logs)) { ?>
                 <tr>
-                    <td class="px-6 py-2 whitespace-nowrap">
+                    <td class="px-3 md:px-6 lg:px-6 py-2 whitespace-nowrap">
                         <div class="flex items-center">
                         <div class="flex-shrink-0 h-10 w-10">
                             <img class="h-10 w-10 rounded-full" src="../images/undraw_profile.svg" alt="">
@@ -51,18 +54,13 @@ scrollbar-width: none;  /* Firefox */
                         </div>
                         </div>
                     </td>
-                    <!-- <td class="px-6 py-4 whitespace-nowrap">
-                        <span class="px-2 inline-flex leading-5 font-semibold rounded-full bg-green-100 text-green-800" style="font-size: 10px">
-                            Online
-                        </span>
-                    </td> -->
-                    <td class="px-6 py-2 whitespace-nowrap">
+                    <td class=" hidden md:table-cell lg:table-cell px-6 py-2 whitespace-nowrap">
                         <small><?php echo $row['date']?></small> 
                     </td>
-                    <td class="px-6 py-2 whitespace-nowrap">
+                    <td class="px-3 md:px-6 lg:px-6 py-2 whitespace-nowrap">
                         <small><?php echo $row['login']?></small>
                     </td>
-                    <td class="px-6 py-2 whitespace-nowrap">
+                    <td class="hidden md:table-cell lg:table-cell px-3 md:px-6 lg:px-6 py-2 whitespace-nowrap">
                         <style>
                             .dot {
                             height: 5px;
@@ -88,6 +86,9 @@ scrollbar-width: none;  /* Firefox */
                             }
                         ?>
                     </td>
+                      <td class="px-0 py-2 whitespace-nowrap">
+                        <a href="#view<?php echo $row['id'];?>" data-toggle="modal" class="md:hidden lg:hidden text-blue-400 hover:text-white hover:bg-blue-400 w-full px-3 py-1 bg-blue-50 font-semibold rounded transition-colors text-xs">View</a>
+                    </td>
                 </tr>
             <?php }?>
             </tbody>
@@ -95,25 +96,25 @@ scrollbar-width: none;  /* Firefox */
         </div>
     <!-- end -->
     </div>
-    <div class="bg-white rounded-lg p-6 shadow-sm" style="width: 500px">
+    <div class="bg-white rounded-lg p-6 shadow-sm w-full lg:w-5/12">
         <div class="flex justify-between pb-2">
-            <h1 class="font-medium text-gray-700">Users</h1>
+            <h1 class="font-medium text-gray-700">User <span class="text-yellow-400">Status</span></h1>
         </div>
         <table class="min-w-full divide-y divide-gray-200">
             <thead class="">
                 <tr>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Name
                     </th>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th scope="col" class="px-3 md:px-6 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Status
                     </th>
                 </tr>
             </thead>
-        <tbody class="bg-white divide-y divide-gray-200">
+        <tbody class="bg-white divide-y divide-gray-200 text-gray-700">
             <?php while ($row = mysqli_fetch_array($users)) { ?>
                 <tr>
-                    <td class="px-6 py-2 whitespace-nowrap">
+                    <td class="px-3 py-2 whitespace-nowrap">
                         <div class="flex items-center">
                         <div class="flex-shrink-0 h-10 w-10">
                             <img class="h-10 w-10 rounded-full" src="../images/undraw_profile.svg" alt="">
@@ -123,23 +124,23 @@ scrollbar-width: none;  /* Firefox */
                         </div>
                         </div>
                     </td>
-                        <td class="px-6 py-4 whitespace-nowrap">
-                         <?php
-                         if ($row['status'] == 'Online') {
-                            echo'
-                                <span class="px-2 inline-flex leading-5 font-semibold rounded-full bg-green-100 text-green-800" style="font-size: 10px">
-                                    Online
-                                </span>
-                             ';
-                         }else{
-                             echo '
-                               <span class="px-2 inline-flex leading-5 font-semibold rounded-full bg-red-100 text-green-800" style="font-size: 10px">
-                                        Offline
-                                </span>
-                             ';
-                         }
-                         ?>
-                        </td>
+                    <td class="px-3 md:px-6 lg:px-6 py-4 whitespace-nowrap">
+                        <?php
+                        if ($row['status'] == 'Online') {
+                        echo'
+                            <span class="px-2 inline-flex leading-5 font-semibold rounded-full bg-green-100 text-green-800" style="font-size: 10px">
+                                Online
+                            </span>
+                            ';
+                        }else{
+                            echo '
+                            <span class="px-2 inline-flex leading-5 font-semibold rounded-full bg-red-100 text-green-800" style="font-size: 10px">
+                                    Offline
+                            </span>
+                            ';
+                        }
+                        ?>
+                    </td>
                 </tr>
             <?php } ?>
             </tbody>

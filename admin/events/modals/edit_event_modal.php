@@ -31,8 +31,8 @@
                          <div>
                             <label>
                                 <div class="flex gap-2">
-                                <span class="bg-yellow-300 text-gray-600  gap-1 uppercase rounded-full px-3 py-1 text-xs flex items-center"> <input id="optionsRadios1" type="radio" value="Required" name="rules" <?php if($row['rules']=="Required") {echo "checked";}?> > Required </span>
-                                <span class="bg-green-100 text-green-900 gap-1 uppercase rounded-full px-3 py-1 text-xs flex items-center"> <input id="optionsRadios2" type="radio" value="Not Required" name="rules" <?php if($row['rules']=="Not Required") {echo "checked";}?> >Not Required </span>
+                                <span class="bg-yellow-50 text-yellow-400 font-extrabold gap-1 uppercase rounded-full px-3 py-1 text-xs flex items-center"> <input id="optionsRadios1" type="radio" value="Required" name="rules" <?php if($row['rules']=="Required") {echo "checked";}?> > Required </span>
+                                <span class="bg-green-50 text-green-400 font-extrabold gap-1 uppercase rounded-full px-3 py-1 text-xs flex items-center"> <input id="optionsRadios2" type="radio" value="Not Required" name="rules" <?php if($row['rules']=="Not Required") {echo "checked";}?> >Not Required </span>
                                 </div>
                             </label>
                         </div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 05, 2021 at 05:15 PM
+-- Generation Time: Oct 06, 2021 at 04:38 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -45,7 +45,8 @@ CREATE TABLE `events` (
 --
 
 INSERT INTO `events` (`id`, `eName`, `eDescription`, `eLocation`, `startdate`, `enddate`, `endtime`, `eObjectives`, `rules`, `startime`) VALUES
-(1, 'Taratakan', 'para sa mga supot', 'gym', '2021-10-04', '2021-10-04', '5:30 PM', 'maubos ang mga supot. lorem fasdas dsadasd dasdsad dasdasd dasdasd dasdasd dasdasda dasdasd dasdasdas dasdasd dasdasd dasdasd adasdas dasdasdas dasdasdasd dasdasdas ddasdasd sadasd', 'Required', '7:30 AM');
+(1, 'Taratakan', 'para sa mga supot', 'gym', '2021-10-04', '2021-10-04', '5:30 PM', 'maubos ang mga supot. lorem fasdas dsadasd dasdsad dasdasd dasdasd dasdasd dasdasda dasdasd dasdasdas dasdasd dasdasd dasdasd adasdas dasdasdas dasdasdasd dasdasdas ddasdasd sadasd', 'Required', '7:30 AM'),
+(3, 'dsafsaf', 'dasfasd', 'fasdfa', '2021-10-06', '2021-10-06', 'asdfasf', 'fasdf', 'Not Required', 'dsfasf');
 
 -- --------------------------------------------------------
 
@@ -66,10 +67,7 @@ CREATE TABLE `logs` (
 --
 
 INSERT INTO `logs` (`id`, `name`, `date`, `login`, `logout`) VALUES
-(1, 'roseanne', 'Tue Oct 05, 2021', '10:41: PM', '10:45 PM'),
-(2, 'jusswaaa', 'Tue Oct 05, 2021', '10:57: PM', '11:01 PM'),
-(3, 'jusswaaa', 'Tue Oct 05, 2021', '11:02: PM', '11:13 PM'),
-(4, 'roseanne', 'Tue Oct 05, 2021', '11:13: PM', NULL);
+(1, 'roseanne', 'Wed Oct 06, 2021', '09:54: AM', NULL);
 
 -- --------------------------------------------------------
 
@@ -81,16 +79,17 @@ CREATE TABLE `studentsAcc` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `course` varchar(255) NOT NULL,
-  `studentId` varchar(255) NOT NULL
+  `studentId` varchar(255) NOT NULL,
+  `buEmail` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `studentsAcc`
 --
 
-INSERT INTO `studentsAcc` (`id`, `name`, `course`, `studentId`) VALUES
-(3, 'paul', 'BSIS-4A', '2000'),
-(4, 'joshua', 'BSIS-4A', '2000');
+INSERT INTO `studentsAcc` (`id`, `name`, `course`, `studentId`, `buEmail`) VALUES
+(3, 'paul', 'BSIS-4A', '2000', ''),
+(4, 'joshua', 'BSIS-4A', '2000', '');
 
 -- --------------------------------------------------------
 
@@ -154,13 +153,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `studentsAcc`

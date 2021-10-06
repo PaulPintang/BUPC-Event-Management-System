@@ -104,7 +104,7 @@
                     <div class="w-2/4">
                         <h1 class="text-4xl font-bold text-gray-700"> <span class="text-yellow-400">BUPC</span>  College Student Council <span class="border-b-2 border-yellow-100">Admin page</span> </h1>
                         <p class="text-gray-400 py-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident, dicta. Lorem ipsum dolor sit amet.</p>
-                        <a href="#" class="py-2 px-5 bg-yellow-400 rounded text-white hover:bg-yellow-300 transition-all">Official website</a>
+                        <a href="../index.php" class="py-2 px-5 bg-yellow-400 rounded text-white hover:bg-yellow-300 transition-all">Official website</a>
                     </div>
                     <div class="w-2/4">
                           <img src="./images/admin.svg" alt="" style="width: 100%">

@@ -45,12 +45,12 @@
                                     <i class="fas fa-tags text-gray-400"></i>
                                     <?php
                                         if ($row['rules'] == 'Required') {
-                                        echo '  <span class="px-2 inline-flex leading-5 font-extrabold rounded-full bg-yellow-300 text-gray-600"  style="font-size: 10px">
+                                        echo '  <span class="px-2 inline-flex leading-5 font-extrabold rounded-full bg-yellow-50 text-yelllow-400"  style="font-size: 10px">
                                                     REQUIRED 
                                                 </span> ';
                                         }else{
                                             echo '
-                                            <span class="px-2 inline-flex leading-5 font-extrabold rounded-full bg-green-100 text-green-700"  style="font-size: 10px">
+                                            <span class="px-2 inline-flex leading-5 font-extrabold rounded-full bg-green-50 text-green-400"  style="font-size: 10px">
                                                     NOT REQUIRED 
                                             </span>
                                             ';

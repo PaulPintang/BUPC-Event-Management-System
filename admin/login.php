@@ -36,16 +36,15 @@
             // binutang ko ide kading insert to database para pag tama lang su username and pass saka lang sya maga insert sa database. 
             // pag sala su username and pass diman da mangyayare na INSERT INTO database.
             if(mysqli_num_rows($result)) {
-
                 
                  if (isset($_POST['login'])) {
-                        $name = $_POST['username'];
+                        $username = $_POST['username'];
                         $date = date("D M d, Y");
                         $login = date("h:i: A");
                         // data to insert to user table
                         $status = $_POST['status'];
-                        mysqli_query($db, "INSERT INTO logs (name, date, login) VALUES ('$name', '$date', '$login')");
-                        mysqli_query($db, "UPDATE users SET status='$status' WHERE username='$name'");
+                        mysqli_query($db, "INSERT INTO logs (username, date, login) VALUES ('$username', '$date', '$login')");
+                        mysqli_query($db, "UPDATE users SET status='$status' WHERE username='$username'");
 
                     }  
                     $row = mysqli_fetch_assoc($result);

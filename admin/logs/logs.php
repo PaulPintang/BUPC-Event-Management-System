@@ -35,7 +35,7 @@ scrollbar-width: none;  /* Firefox */
                     <th scope="col" class="hidden md:table-cell lg:table-cell px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
                         Logout Time
                     </th>
-                     <th scope="col" class="md:hidden lg:hidden px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
+                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
                        
                     </th>
                 </tr>
@@ -50,7 +50,7 @@ scrollbar-width: none;  /* Firefox */
                             <img class="h-10 w-10 rounded-full" src="../images/undraw_profile.svg" alt="">
                         </div>
                         <div class="ml-4">
-                            <small><?php echo $row['name']?></small>
+                            <small><?php echo $row['username']?></small>
                         </div>
                         </div>
                     </td>
@@ -87,7 +87,7 @@ scrollbar-width: none;  /* Firefox */
                         ?>
                     </td>
                       <td class="px-0 py-2 whitespace-nowrap">
-                        <a href="#view<?php echo $row['id'];?>" data-toggle="modal" class="md:hidden lg:hidden text-blue-400 hover:text-white hover:bg-blue-400 w-full px-3 py-1 bg-blue-50 font-semibold rounded transition-colors text-xs">View</a>
+                        <a href="#view<?php echo $row['id'];?>" data-toggle="modal" class="text-blue-400 hover:text-white hover:bg-blue-400 w-full px-3 py-1 bg-blue-50 font-semibold rounded transition-colors text-xs">Activity log</a>
                     </td>
                 </tr>
             <?php }?>

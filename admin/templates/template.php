@@ -11,6 +11,7 @@
             // use for modals
             $eventsEdit = mysqli_query($db, "SELECT * FROM events");
             $viewEvent = mysqli_query($db, "SELECT * FROM events");
+            $viewActivity = mysqli_query($db, "SELECT * FROM logs");
             // end
 
             $ID = $_SESSION['id'];
@@ -116,6 +117,7 @@
     </div>
 
     <div><?php include '../logs/modals/about_modal.php';?></div>
+    <div><?php include '../logs/modals/view_activity_modal.php';?></div>
     <div><?php include '../events/modals/events_modal.php';?></div>
     <div><?php include '../events/modals/view_event_modal.php';?></div>
     <div><?php include '../events/modals/edit_event_modal.php';?></div>

@@ -2,7 +2,6 @@
 
 
     include('../conn.php');
-
     $inputVal = '';
     $users = mysqli_query($db, "SELECT * FROM users WHERE username='$inputVal'");
 
@@ -50,6 +49,7 @@
                             <input type="text" placeholder="enter your password" name="password" class="border border-gray-100 focus:border-gray-300 focus:outline-none py-1.5 px-2 text-gray-500 w-full">
                         </div>
                         <input type="hidden" name="status" value="Online">
+                        <!-- <input type="hidden" name="name" value="pota"> -->
                         <?php if (isset($_GET['error'])) { ?>
                             <div class="flex justify-center pb-3">
                                 <small class="text-red-300 text-center text-xs">
@@ -59,7 +59,7 @@
                         <?php } ?>
                         <!-- include name of user/and insert it into logs -->
                         <?php while ($row = mysqli_fetch_array($users)) { ?>
-                                <input type="text" value="<?php echo $row['name']?>">
+                             <input type="hidden" name="name" value="<?php echo $row['name'] ?>">
                         <?php } ?>
 
                         <button class="bg-yellow-400 py-1.5 mt-2 w-full text-white" type="submit" name="login">Sign in</button>
@@ -68,5 +68,6 @@
             </div>
         </div>
     </div>
+
 </body>
 </html>

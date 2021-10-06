@@ -24,7 +24,7 @@
         if (mysqli_num_rows($rec)>0) {
             $body = "
                 <h1>Hi pota ka !!</h1>
-                <p>Please join this event POTA !!</p>
+                <p>Please join this events <b> $eName </b> POTA !!</p>
             ";
 
             $mail = new PHPMailer\PHPMailer\PHPMailer();
@@ -36,13 +36,13 @@
             $mail->Password = "Y203NDB1Znd2aWQw";
             $mail->SMTPSecure = "tls";
             $mail->Port = "2525";
-            $mail->From = "educdepartment@bicol-u.edu.ph";
-            $mail->FromName = "BUPC Education Department";
+            $mail->From = "bupccsc@bicol-u.edu.ph";
+            $mail->FromName = "BUPC College Student Council 2021";
             while ($x=mysqli_fetch_assoc($rec)) {
                 $mail->addAddress($x['buEmail']);
             }
             $mail->isHTML(true);
-            $mail->Subject = "Your Account has been verified";
+            $mail->Subject = "EVENT: $eName";
             $mail->Body = $body;
             $mail->AltBody = "This is the plain text version of the email content!";
 

@@ -1,5 +1,6 @@
 <?php
     session_start();
+
     // code for retrieve from database
         // USERS
             include('../../conn.php');
@@ -36,7 +37,6 @@
 
     if (isset($_SESSION['id']) && (isset($_SESSION['username']))) {
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

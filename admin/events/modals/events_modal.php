@@ -10,6 +10,7 @@
                     <i class="fas fa-close text-gray-300 cursor-pointer" onclick="toggleModal('event')"></i>
                 </div>
                  <div class="overflow-y-auto example" style="height: 470px">
+                <!-- <form action="../events/modals/events_modal_process.php" method="POST"> -->
                 <form action="../events/modals/events_modal_process.php" method="POST">
                     <div class="space-y-4">
                         <div class="space-y-2">

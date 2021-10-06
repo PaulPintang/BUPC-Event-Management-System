@@ -97,9 +97,9 @@
         </div>
     </section>
 
-    <section class="bg-gray-50 mx-6 lg:mx-0">
-        <div class="block md:flex lg:flex gap-7 gap-y-7 py-10 container mx-auto">
-            <div class="bg-white rounded-lg h-96 w-full flex justify-center items-center shadow-sm mb-9 md:mb-0 lg:mb-0">
+    <section class="md:bg-gray-50 lg:bg-gray-50 px-6 lg:mx-0">
+        <div class="block md:flex lg:flex gap-7 py-10 container mx-auto">
+            <div class="bg-white rounded-lg h-auto md:h-96 lg:h-96 w-full flex justify-center items-start md:items-center md:shadow-sm lg:shadow-sm mb-9 md:mb-0 lg:mb-0">
                 <div class="h-auto block md:flex lg:flex justify-center lg:justify-between md:justify-between p-10 text-center md:text-right lg:text-left w-full">
                     <div class="w-full lg:w-2/4">
                         <h1 class=" text-3xl lg:text-4xl font-bold text-gray-700"> <span class="text-yellow-400">BUPC</span>  College Student Council <span class="border-b-2 border-yellow-100">Admin page</span> </h1>
@@ -111,7 +111,7 @@
                     </div>
                 </div>
             </div>
-            <div class="bg-white rounded-lg p-6 shadow-sm">
+            <div class="bg-white rounded-lg p-6 md:shadow-sm lg:shadow-sm">
                 <div class="flex justify-between pb-5">
                     <h1 class="font-medium text-gray-700">Users</h1>
                     <div>
@@ -142,7 +142,7 @@
                                 <div class="flex-shrink-0 h-10 w-10">
                                     <img class="h-10 w-10 rounded-full" src="./images/undraw_profile_3.svg" alt="">
                                 </div>
-                                <div class="ml-4">
+                                <div class="ml-4 text-gray-800">
                                     <small><?php echo $row['name']?></small>
                                 </div>
                                 </div>

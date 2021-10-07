@@ -6,8 +6,8 @@
                 <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
                 <!-- <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>s -->
                 <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all">
-                <div class="bg-white mx-5 mb-5 mt-2 w-96" style="width:">
-                    <div class="flex justify-end items-center gap-7 pr-3 pt-4">
+                <div class="bg-white mx-5 mb-5 mt-2 w-full md:w-96 lg:w-96" style="width:">
+                    <div class="flex justify-end items-center gap-7 pr-12 md:pr-3 pt-4 lg:pr-3">
                         <a href="process.php?del=<?php echo $row['id'];?>" name="del">
                             <i class="fas fa-trash text-gray-300 cursor-pointer hover:text-red-400 transition-all" style="font-size: 13px" onclick="toggleModal('activity')"></i>
                         </a>

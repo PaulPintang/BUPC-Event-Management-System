@@ -87,7 +87,8 @@ scrollbar-width: none;  /* Firefox */
                         ?>
                     </td>
                       <td class="px-0 py-2 whitespace-nowrap">
-                        <a href="#view<?php echo $row['id'];?>" data-toggle="modal" class="text-blue-400 hover:text-white hover:bg-blue-400 w-full px-3 py-1 bg-blue-50 font-semibold rounded transition-colors text-xs">Activity log</a>
+                        <a href="#view<?php echo $row['id'];?>" data-toggle="modal" class="md:hidden lg:hidden text-blue-400 hover:text-white hover:bg-blue-400 w-full px-3 py-1 bg-blue-50 font-semibold rounded transition-colors text-xs">Activity</a>
+                        <a href="#view<?php echo $row['id'];?>" data-toggle="modal" class="hidden md:inline lg:inline text-blue-400 hover:text-white hover:bg-blue-400 w-full px-3 py-1 bg-blue-50 font-semibold rounded transition-colors text-xs">Activity log</a>
                     </td>
                 </tr>
             <?php }?>

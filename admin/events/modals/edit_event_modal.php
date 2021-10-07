@@ -63,7 +63,7 @@
                                 </div>
                         </div>
                         <?php } ?>
-                        <?php while ($row = mysqli_fetch_array($toActEdit)) { ?>
+                        <?php while ($row = mysqli_fetch_array($showEdit)) { ?>
                             <input type="hidden" name="user" value="<?php echo $row['username'] ?>">    
                         <?php }?>
                         <div class="flex justify-center">

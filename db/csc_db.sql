@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 07, 2021 at 05:57 PM
+-- Generation Time: Oct 07, 2021 at 06:14 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -47,7 +47,7 @@ CREATE TABLE `events` (
 --
 
 INSERT INTO `events` (`id`, `eName`, `eDescription`, `eLocation`, `startdate`, `enddate`, `endtime`, `eObjectives`, `rules`, `startime`, `addby`, `editby`) VALUES
-(42, 'Freshmen Welcome Party 2021', 'cxvxc', 'vcxvxc', '2021-10-07', '2021-10-07', 'vxcv', 'vxcv', 'Required', 'xcvxcv', 'tricia', 'roseanne');
+(1, 'test', 'dasdsadsad', 'dsadasd', '2021-10-08', '2021-10-08', 'asdas', 'asdasd', 'Not Required', 'asdasd', 'eddessa', 'jusswaaa');
 
 -- --------------------------------------------------------
 
@@ -60,19 +60,15 @@ CREATE TABLE `logs` (
   `username` varchar(255) NOT NULL,
   `date` varchar(255) NOT NULL,
   `login` varchar(255) NOT NULL,
-  `logout` varchar(255) DEFAULT NULL,
-  `activity` varchar(255) DEFAULT NULL
+  `logout` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `logs`
 --
 
-INSERT INTO `logs` (`id`, `username`, `date`, `login`, `logout`, `activity`) VALUES
-(1, 'jusswaaa', 'Thu Oct 07, 2021', '09:20: PM', '10:19 PM', 'Freshmen Welcome Party'),
-(2, 'tricia', 'Thu Oct 07, 2021', '10:20: PM', '11:39 PM', NULL),
-(3, 'jusswaaa', 'Thu Oct 07, 2021', '11:39: PM', '11:47 PM', NULL),
-(4, 'roseanne', 'Thu Oct 07, 2021', '11:48: PM', NULL, NULL);
+INSERT INTO `logs` (`id`, `username`, `date`, `login`, `logout`) VALUES
+(1, 'jusswaaa', 'Fri Oct 08, 2021', '12:08: AM', NULL);
 
 -- --------------------------------------------------------
 
@@ -118,8 +114,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `password`, `picture`, `role`, `status`) VALUES
-(1, 'Joshua Booban', 'jusswaaa', '1234', '1633443226-', 'President', 'Offline'),
-(2, 'Ma. Roseanne Pandaan', 'roseanne', '1234', '1633364673-', 'Vice President', 'Online'),
+(1, 'Joshua Booban', 'jusswaaa', '1234', '1633443226-', 'President', 'Online'),
+(2, 'Ma. Roseanne Pandaan', 'roseanne', '1234', '1633364673-', 'Vice President', 'Offline'),
 (3, 'Eddessa Joy Legson', 'eddessa', '1234', '1632971941-', 'Secretary', 'Offline'),
 (5, 'Tricia Kaye Moya', 'tricia', '1234', '1632972015-', 'Representative', 'Offline');
 
@@ -159,13 +155,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `studentsAcc`

@@ -15,6 +15,7 @@
             $eventlogs = mysqli_query($db, "SELECT * FROM logs");
             $toAct = mysqli_query($db, "SELECT * FROM users WHERE id=$ID");
             $toActEdit = mysqli_query($db, "SELECT * FROM users WHERE id=$ID");
+            $showEdit = mysqli_query($db, "SELECT * FROM users WHERE id=$ID");
             $viewActivity = mysqli_query($db, "SELECT * FROM logs");
             $userActivity = mysqli_query($db, "SELECT * FROM userActivity");
             // end

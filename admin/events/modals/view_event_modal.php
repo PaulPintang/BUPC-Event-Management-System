@@ -1,7 +1,7 @@
 
 <!-- Start of modal -->
 <?php while ($row = mysqli_fetch_array($viewEvent)) { ?>
-    <div id="view<?php echo $row['id'] ?>" class="show fade">
+    <div id="viewE<?php echo $row['id'] ?>" class="show fade">
         <div class="flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center transition-all duration-150 ease-in-out" id="view_event">
                 <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
                 <!-- <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>s -->

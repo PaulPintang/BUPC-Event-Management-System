@@ -56,7 +56,19 @@ scrollbar-width: none;  /* Firefox */
                     <td class="md:px-2 lg:px-2 py-2 whitespace-nowrap">
                         <div class="md:ml-4 lg:ml-4">
                             <small><?php echo $row['eName']?></small>
-                            <span class="block text-xs italic text-gray-400 font-light">Recently edit by <?php echo $row['editby']?>...</span>
+                            <?php
+                            
+                            $editby = $row['editby'];
+
+                            if ($editby == NULL) {
+                                echo'';
+                            }else{
+                                echo'
+                                 <span class="block text-xs italic text-gray-400 font-light">Recently edit by <span class="text-gray-500">'.$editby.' </span>...</span>
+                                ';
+                            }
+
+                            ?>
                         </div>
                     </td>
                     <!-- <td class="px-6 py-4 whitespace-nowrap">
@@ -101,8 +113,8 @@ scrollbar-width: none;  /* Firefox */
                     </td>
                     <td class="text-right md:px-6 lg:px-6 py-2 whitespace-nowrap space-x-2">
                         <!-- <a href="#view<?php echo $row['id'];?>" data-toggle="modal" class="sm:hidden md:hidden lg:hidden"><i class="fas fa-info text-gray-400 cursor-pointer hover:text-blue-300 transition-all" style="font-size:12px"></i></a> -->
-                        <a href="#view<?php echo $row['id'];?>" data-toggle="modal" class=" sm:hidden md:hidden lg:hidden text-blue-400 hover:text-white hover:bg-blue-400 w-full px-3 py-1 bg-blue-50 font-semibold rounded transition-colors text-xs">View</a>
-                        <a href="#view<?php echo $row['id'];?>" data-toggle="modal" class="hidden sm:inline md:inline lg:inline text-blue-400 hover:text-white hover:bg-blue-400 w-full px-3 py-1 bg-blue-50 font-semibold rounded transition-colors text-xs">View More</a>
+                        <a href="#viewE<?php echo $row['id'];?>" data-toggle="modal" class=" sm:hidden md:hidden lg:hidden text-blue-400 hover:text-white hover:bg-blue-400 w-full px-3 py-1 bg-blue-50 font-semibold rounded transition-colors text-xs">View</a>
+                        <a href="#viewE<?php echo $row['id'];?>" data-toggle="modal" class="hidden sm:inline md:inline lg:inline text-blue-400 hover:text-white hover:bg-blue-400 w-full px-3 py-1 bg-blue-50 font-semibold rounded transition-colors text-xs">View More</a>
                         <a href="#edit<?php echo $row['id'];?>" data-toggle="modal" >
                             <i class="far fa-edit text-gray-400 cursor-pointer hover:text-blue-300 transition-all" style="font-size: 13px"></i>
                         </a> 

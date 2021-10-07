@@ -72,6 +72,12 @@
                                     <i class="fas fa-map-marker-alt text-gray-400"></i>
                                     <p><?php echo $row['eLocation']?></p>
                                 </div>
+
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-user text-gray-400"></i>
+                                    <p class="text-gray-500 italic text-xs">Username: <span class="text-gray-800 font-bold "><?php echo $row['addby']?></span>  add this event!</p>
+                                </div>
+
                             </div>
                         
                         </div>

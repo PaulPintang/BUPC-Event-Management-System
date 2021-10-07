@@ -3,8 +3,9 @@
   include "../../conn.php";
        require_once("./PHPMailer/src/PHPMailer.php");
        require_once("./PHPMailer/src/SMTP.php");
-  
    if(isset($_POST['save'])){
+        $id = $_POST['id'];
+        $user = $_POST['user'];
         $eName = $_POST['eName'];
         $eDescription = $_POST['eDescription'];
         $eObjectives = $_POST['eObjectives'];
@@ -14,12 +15,17 @@
         $startime = $_POST['startime'];
         $enddate = $_POST['enddate'];
         $endtime = $_POST['endtime'];
+        // $activity = $_POST['activity'];
 
 
         // $rec = mysqli_query($db, "SELECT * FROM studentsAcc WHERE setEmails=1");
 
-        $query = "INSERT INTO events (eName, eDescription, eObjectives, rules, eLocation, startdate, startime, enddate, endtime) VALUES ('$eName', '$eDescription', '$eObjectives', '$rules', '$eLocation', '$startdate', '$startime', '$enddate', '$endtime')";
+        $query = "INSERT INTO events (eName, eDescription, eObjectives, rules, eLocation, startdate, startime, enddate, endtime, addby) VALUES ('$eName', '$eDescription', '$eObjectives', '$rules', '$eLocation', '$startdate', '$startime', '$enddate', '$endtime', '$user')";
         mysqli_query($db, $query);
+        // activity log
+            // mysqli_query($db, "UPDATE logs SET activity='$eName' WHERE id=$id");
+            // mysqli_query($db, "INSERT INTO userActivity (username, activity) VALUES ('$user','$eName')");
+        // end
 
         // if (mysqli_num_rows($rec)>0) {
         //     $body = "
@@ -58,6 +64,7 @@
 
     if (isset($_POST['update'])) {
         $id = $_POST['id'];
+        $user = $_POST['user'];
         $eName = $_POST['eName'];
         $eDescription = $_POST['eDescription'];
         $eObjectives = $_POST['eObjectives'];
@@ -68,7 +75,7 @@
         $enddate = $_POST['enddate'];
         $endtime = $_POST['endtime'];
 
-        mysqli_query($db, "UPDATE events SET eName='$eName', eDescription='$eDescription', eObjectives='$eObjectives', rules='$rules', eLocation='$eLocation', startdate='$startdate', startime='$startime', enddate='$enddate', endtime='$endtime'  WHERE id=$id");
+        mysqli_query($db, "UPDATE events SET eName='$eName', eDescription='$eDescription', eObjectives='$eObjectives', rules='$rules', eLocation='$eLocation', startdate='$startdate', startime='$startime', enddate='$enddate', endtime='$endtime', editby='$user'  WHERE id=$id");
         header('location: ../index.php');
         }
 ?>

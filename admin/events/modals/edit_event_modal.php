@@ -62,7 +62,10 @@
                                     <input required type="text" value="<?php echo $row['endtime']?>" name="endtime" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
                                 </div>
                         </div>
-
+                        <?php } ?>
+                        <?php while ($row = mysqli_fetch_array($toActEdit)) { ?>
+                            <input type="hidden" name="user" value="<?php echo $row['username'] ?>">    
+                        <?php }?>
                         <div class="flex justify-center">
                             <div style="font-size: 14px">
                                 <button type="button"  data-dismiss="modal" class="px-6 py-2 bg-gray-100 rounded text-gray-500">
@@ -80,5 +83,4 @@
     </div>
 </div>
     </div>
-<?php } ?>
  <!-- end modal -->

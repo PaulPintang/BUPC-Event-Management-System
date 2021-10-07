@@ -1,12 +1,13 @@
  <!-- This example requires Tailwind CSS v2.0+ -->
-<div class="hidden fixed z-10 inset-0 overflow-y-auto justify-center items-center" aria-labelledby="modal-title" role="dialog" aria-modal="true" id="about_log_modal">
+<div id="about" class="show fade">
+<div class="flex fixed z-10 inset-0 overflow-y-auto justify-center items-center" aria-labelledby="modal-title" role="dialog" aria-modal="true" id="about_log_modal">
   <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
     <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
     <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
     <div style="max-width: 1000px"class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
       <div class="bg-white p-2 mx-5 mt-4">
             <div class="flex justify-end pb-7">
-                <a href="#" class="fas fa-close text-gray-300 cursor-pointer" onclick="toggleModal('about_log_modal')"></a>
+                <a href="#" class="fas fa-close text-gray-300 cursor-pointer"  data-dismiss="modal"></a>
             </div>
             <div class="flex w-full justify-between mx-auto gap-14">
                 <div>
@@ -35,4 +36,5 @@
             </div>
         </div>
   </div>
+</div>
 </div>

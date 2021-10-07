@@ -28,6 +28,7 @@
                                 <span class="text-gray-900 text-sm">Time: </span>
                                 <span class="text-gray-600 italic text-sm"><?php echo $row['login']?></span>
                             </div>
+
                             <!-- <div class="py-2">
                                 <div class="h-auto bg-gray-200 relative" style="width: 1.5px">
                                 <i class="fas fa-wizards-of-the-coast    "></i>
@@ -35,6 +36,7 @@
                                     <div class="w-3 h-3 bg-gray-200 rounded-full overflow-hidden absolute bottom-9" style="left: -3px"></div>
                                 </div>
                             </div> -->
+             
                             <div class="py-3">
                                 <div class="flex items-center gap-2">
                                     <div class="w-3 h-3 bg-gray-200 rounded-full overflow-hidden"></div>
@@ -42,9 +44,10 @@
                                 </div>
                                 <div class="flex items-center gap-1">
                                     <div class="w-6 bg-blue-300" style="height: 1px"></div>
-                                    <span class="text-gray-500 text-xs italic">  Add new event <span class="text-gray-700 font-extrabold">'Welcome Party 2021'</span> </span>
+                                    <span class="text-gray-500 text-xs italic">  Add new event <span class="text-gray-700 font-extrabold"></span> </span>
                                 </div>
                             </div>
+                           
                         </div>
                     </div>
                 </div>
@@ -54,4 +57,5 @@
     </div>
     </div>
 <?php } ?>
+
  <!-- end modal -->

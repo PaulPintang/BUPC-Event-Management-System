@@ -1,6 +1,7 @@
 
 <!-- Start of modal -->
-<div class="flex hidden overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center" id="event">
+<div id="add" class="show fade">
+<div class="flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center" id="event">
              <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
     <!-- <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>s -->
             <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all">
@@ -12,10 +13,13 @@
                  <div class="overflow-y-auto example" style="height: 470px">
                 <!-- <form action="../events/modals/events_modal_process.php" method="POST"> -->
                 <form action="../events/modals/events_modal_process.php" method="POST">
+                <?php while ($row = mysqli_fetch_array($eventlogs)) { ?>
+                    <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                 <?php }?>
                     <div class="space-y-4">
                         <div class="space-y-2">
                             <p class="text-sm">Event Name <span class="text-red-500">*</span></p>
-                            <input required type="text" autocomplete="off" name="eName" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
+                            <input required type="text" autocomplete="off" id="eName" name="eName" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
                         </div>
                         <div class="space-y-2">
                             <p class="text-sm">Event Description <span class="text-red-500">*</span></p>
@@ -64,7 +68,12 @@
                                     <input required type="text" name="endtime"  class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
                                 </div>
                         </div>
-
+                        <!-- activity log -->
+                        <?php while ($row = mysqli_fetch_array($toAct)) { ?>
+                            <input type="hidden" name="user" value="<?php echo $row['username'] ?>">    
+                        <?php }?>
+                        <input type="text" name="activity">
+                        <!-- end -->
                         <div class="flex justify-center">
                             <div style="font-size: 14px">
                                 <button type="button" onclick="toggleModal('event')" class="px-6 py-2 bg-gray-100 rounded text-gray-500">
@@ -80,5 +89,6 @@
             </div>
             </div>
     </div>
+</div>
 </div>
  <!-- end modal -->

@@ -5,13 +5,18 @@
         // USERS
             include('../../conn.php');
          
+            $ID = $_SESSION['id'];
             $users = mysqli_query($db, "SELECT * FROM users");
             $userlogs = mysqli_query($db, "SELECT * FROM logs");
             $events = mysqli_query($db, "SELECT * FROM events");
             // use for modals
             $eventsEdit = mysqli_query($db, "SELECT * FROM events");
             $viewEvent = mysqli_query($db, "SELECT * FROM events");
+            $eventlogs = mysqli_query($db, "SELECT * FROM logs");
+            $toAct = mysqli_query($db, "SELECT * FROM users WHERE id=$ID");
+            $toActEdit = mysqli_query($db, "SELECT * FROM users WHERE id=$ID");
             $viewActivity = mysqli_query($db, "SELECT * FROM logs");
+            $userActivity = mysqli_query($db, "SELECT * FROM userActivity");
             // end
 
             $ID = $_SESSION['id'];
@@ -21,7 +26,7 @@
             if(isset($_GET['edit'])){
                 $id = $_GET['edit'];
                 $rec = mysqli_query($db, "SELECT * FROM events WHERE id=$id");
-                $record = mysqli_fetch_array($rec);
+                
                 $eName = $record['eName'];
                 $eDescription = $record['eDescription'];
                 $eObjectives = $record['eObjectives'];
@@ -98,7 +103,7 @@
                     <a href="../logs" class="text-gray-400 active:text-blue-400 hover:text-yellow-400 font-medium transition-all">Logs</a>
                 </div>
                 <div>
-                   <a href="#" onclick="toggleModal('about_log_modal')">
+                   <a href="#about" data-toggle="modal">
                          <i class="fas fa-info-circle fa-lg text-gray-400 cursor-pointer hover:text-blue-300 transition-all"></i>
                      </a>
                 </div>
@@ -124,14 +129,14 @@
 
    </body>
    <!-- script for modal -->
-   <script type="text/javascript">
+   <!-- <script type="text/javascript">
         function toggleModal(modalID){
             document.getElementById(modalID).classList.toggle("hidden");
             document.getElementById(modalID + "-backdrop").classList.toggle("hidden");
             document.getElementById(modalID).classList.toggle("flex");
             document.getElementById(modalID + "-backdrop").classList.toggle("flex");
         }
-   </script>
+   </script> -->
    <script src="../js/jquery-1.12.4.js"></script>
    <script src="../js/bootstrap.min.js"></script>
 </html>

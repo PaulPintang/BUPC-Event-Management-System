@@ -15,7 +15,8 @@ scrollbar-width: none;  /* Firefox */
     <!-- start -->  
         <div class="flex justify-between items-center pb-2">
             <h1 class="font-medium text-gray-700  " styke="top:40px">BUPC <span class="text-yellow-400">Events</span></h1>
-              <a href="#" class="py-1 px-3 bg-yellow-400 rounded text-white hover:bg-yellow-300 transition-all" onclick="toggleModal('event')">
+            <a href="#add" data-toggle="modal" class="py-1 px-3 bg-yellow-400 rounded text-white hover:bg-yellow-300 transition-all" >
+              <!-- <a href="#" class="py-1 px-3 bg-yellow-400 rounded text-white hover:bg-yellow-300 transition-all" onclick="toggleModal('event')"> -->
                     <div class="flex items-center gap-2">
                         <div>
                             <i class="fas fa-plus"></i>
@@ -55,6 +56,7 @@ scrollbar-width: none;  /* Firefox */
                     <td class="md:px-2 lg:px-2 py-2 whitespace-nowrap">
                         <div class="md:ml-4 lg:ml-4">
                             <small><?php echo $row['eName']?></small>
+                            <span class="block text-xs italic text-gray-400 font-light">Recently edit by <?php echo $row['editby']?>...</span>
                         </div>
                     </td>
                     <!-- <td class="px-6 py-4 whitespace-nowrap">

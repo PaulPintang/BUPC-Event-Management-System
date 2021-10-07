@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 07, 2021 at 11:34 AM
+-- Generation Time: Oct 07, 2021 at 05:57 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -37,17 +37,17 @@ CREATE TABLE `events` (
   `endtime` varchar(255) NOT NULL,
   `eObjectives` varchar(255) NOT NULL,
   `rules` varchar(255) NOT NULL,
-  `startime` varchar(255) CHARACTER SET utf8mb4 NOT NULL
+  `startime` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+  `addby` varchar(255) NOT NULL,
+  `editby` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `events`
 --
 
-INSERT INTO `events` (`id`, `eName`, `eDescription`, `eLocation`, `startdate`, `enddate`, `endtime`, `eObjectives`, `rules`, `startime`) VALUES
-(25, 'dsfsf', 'dsfsdf', 'sdfds', '2021-10-06', '2021-10-06', 'sdfsd', 'fdsfsdad dasdasd dasdasd asdasda asdasdasd dasdasdasd adasdasd asdsadas dasdasdas dasdasdas dassdas', 'Required', 'dsf'),
-(26, 'fdsfs', 'fsdf', 'dfsdf', '2021-10-07', '2021-10-07', 'dfsdf', 'sdfsd', 'Not Required', 'dsfsdf'),
-(27, 'dasd', 'asdasd', 'sadasd', '2021-10-07', '2021-10-07', 'asdas', 'asd', 'Required', 'asdasd');
+INSERT INTO `events` (`id`, `eName`, `eDescription`, `eLocation`, `startdate`, `enddate`, `endtime`, `eObjectives`, `rules`, `startime`, `addby`, `editby`) VALUES
+(42, 'Freshmen Welcome Party 2021', 'cxvxc', 'vcxvxc', '2021-10-07', '2021-10-07', 'vxcv', 'vxcv', 'Required', 'xcvxcv', 'tricia', 'roseanne');
 
 -- --------------------------------------------------------
 
@@ -60,30 +60,19 @@ CREATE TABLE `logs` (
   `username` varchar(255) NOT NULL,
   `date` varchar(255) NOT NULL,
   `login` varchar(255) NOT NULL,
-  `logout` varchar(255) DEFAULT NULL
+  `logout` varchar(255) DEFAULT NULL,
+  `activity` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `logs`
 --
 
-INSERT INTO `logs` (`id`, `username`, `date`, `login`, `logout`) VALUES
-(1, 'roseanne', 'Wed Oct 06, 2021', '08:28: PM', '08:49 PM'),
-(2, 'roseanne', 'Wed Oct 06, 2021', '08:56: PM', '08:58 PM'),
-(3, 'jusswaaa', 'Wed Oct 06, 2021', '08:58: PM', '08:59 PM'),
-(4, 'jusswaaa', 'Wed Oct 06, 2021', '08:59: PM', '09:00 PM'),
-(5, 'jusswaaa', 'Wed Oct 06, 2021', '09:00: PM', '09:02 PM'),
-(6, 'tricia', 'Wed Oct 06, 2021', '09:04: PM', '09:06 PM'),
-(7, 'roseanne', 'Wed Oct 06, 2021', '09:09: PM', '09:10 PM'),
-(8, 'jusswaaa', 'Wed Oct 06, 2021', '09:26: PM', '09:26 PM'),
-(9, 'jusswaaa', 'Wed Oct 06, 2021', '09:27: PM', '09:30 PM'),
-(10, 'jusswaaa', 'Wed Oct 06, 2021', '09:30: PM', '09:30 PM'),
-(11, 'roseanne', 'Wed Oct 06, 2021', '09:31: PM', '09:32 PM'),
-(12, 'jusswaaa', 'Wed Oct 06, 2021', '09:37: PM', '09:37 PM'),
-(13, 'jusswaaa', 'Wed Oct 06, 2021', '09:37: PM', '09:39 PM'),
-(14, 'jusswaaa', 'Wed Oct 06, 2021', '09:43: PM', NULL),
-(15, 'jusswaaa', 'Thu Oct 07, 2021', '11:19: AM', NULL),
-(16, 'jusswaaa', 'Thu Oct 07, 2021', '04:24: PM', NULL);
+INSERT INTO `logs` (`id`, `username`, `date`, `login`, `logout`, `activity`) VALUES
+(1, 'jusswaaa', 'Thu Oct 07, 2021', '09:20: PM', '10:19 PM', 'Freshmen Welcome Party'),
+(2, 'tricia', 'Thu Oct 07, 2021', '10:20: PM', '11:39 PM', NULL),
+(3, 'jusswaaa', 'Thu Oct 07, 2021', '11:39: PM', '11:47 PM', NULL),
+(4, 'roseanne', 'Thu Oct 07, 2021', '11:48: PM', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -129,8 +118,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `password`, `picture`, `role`, `status`) VALUES
-(1, 'Joshua Booban', 'jusswaaa', '1234', '1633443226-', 'President', 'Online'),
-(2, 'Ma. Roseanne Pandaan', 'roseanne', '1234', '1633364673-', 'Vice President', 'Offline'),
+(1, 'Joshua Booban', 'jusswaaa', '1234', '1633443226-', 'President', 'Offline'),
+(2, 'Ma. Roseanne Pandaan', 'roseanne', '1234', '1633364673-', 'Vice President', 'Online'),
 (3, 'Eddessa Joy Legson', 'eddessa', '1234', '1632971941-', 'Secretary', 'Offline'),
 (5, 'Tricia Kaye Moya', 'tricia', '1234', '1632972015-', 'Representative', 'Offline');
 
@@ -170,13 +159,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `studentsAcc`

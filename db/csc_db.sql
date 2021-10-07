@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 06, 2021 at 04:38 AM
+-- Generation Time: Oct 07, 2021 at 11:34 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -45,8 +45,9 @@ CREATE TABLE `events` (
 --
 
 INSERT INTO `events` (`id`, `eName`, `eDescription`, `eLocation`, `startdate`, `enddate`, `endtime`, `eObjectives`, `rules`, `startime`) VALUES
-(1, 'Taratakan', 'para sa mga supot', 'gym', '2021-10-04', '2021-10-04', '5:30 PM', 'maubos ang mga supot. lorem fasdas dsadasd dasdsad dasdasd dasdasd dasdasd dasdasda dasdasd dasdasdas dasdasd dasdasd dasdasd adasdas dasdasdas dasdasdasd dasdasdas ddasdasd sadasd', 'Required', '7:30 AM'),
-(3, 'dsafsaf', 'dasfasd', 'fasdfa', '2021-10-06', '2021-10-06', 'asdfasf', 'fasdf', 'Not Required', 'dsfasf');
+(25, 'dsfsf', 'dsfsdf', 'sdfds', '2021-10-06', '2021-10-06', 'sdfsd', 'fdsfsdad dasdasd dasdasd asdasda asdasdasd dasdasdasd adasdasd asdsadas dasdasdas dasdasdas dassdas', 'Required', 'dsf'),
+(26, 'fdsfs', 'fsdf', 'dfsdf', '2021-10-07', '2021-10-07', 'dfsdf', 'sdfsd', 'Not Required', 'dsfsdf'),
+(27, 'dasd', 'asdasd', 'sadasd', '2021-10-07', '2021-10-07', 'asdas', 'asd', 'Required', 'asdasd');
 
 -- --------------------------------------------------------
 
@@ -56,7 +57,7 @@ INSERT INTO `events` (`id`, `eName`, `eDescription`, `eLocation`, `startdate`, `
 
 CREATE TABLE `logs` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
   `date` varchar(255) NOT NULL,
   `login` varchar(255) NOT NULL,
   `logout` varchar(255) DEFAULT NULL
@@ -66,8 +67,23 @@ CREATE TABLE `logs` (
 -- Dumping data for table `logs`
 --
 
-INSERT INTO `logs` (`id`, `name`, `date`, `login`, `logout`) VALUES
-(1, 'roseanne', 'Wed Oct 06, 2021', '09:54: AM', NULL);
+INSERT INTO `logs` (`id`, `username`, `date`, `login`, `logout`) VALUES
+(1, 'roseanne', 'Wed Oct 06, 2021', '08:28: PM', '08:49 PM'),
+(2, 'roseanne', 'Wed Oct 06, 2021', '08:56: PM', '08:58 PM'),
+(3, 'jusswaaa', 'Wed Oct 06, 2021', '08:58: PM', '08:59 PM'),
+(4, 'jusswaaa', 'Wed Oct 06, 2021', '08:59: PM', '09:00 PM'),
+(5, 'jusswaaa', 'Wed Oct 06, 2021', '09:00: PM', '09:02 PM'),
+(6, 'tricia', 'Wed Oct 06, 2021', '09:04: PM', '09:06 PM'),
+(7, 'roseanne', 'Wed Oct 06, 2021', '09:09: PM', '09:10 PM'),
+(8, 'jusswaaa', 'Wed Oct 06, 2021', '09:26: PM', '09:26 PM'),
+(9, 'jusswaaa', 'Wed Oct 06, 2021', '09:27: PM', '09:30 PM'),
+(10, 'jusswaaa', 'Wed Oct 06, 2021', '09:30: PM', '09:30 PM'),
+(11, 'roseanne', 'Wed Oct 06, 2021', '09:31: PM', '09:32 PM'),
+(12, 'jusswaaa', 'Wed Oct 06, 2021', '09:37: PM', '09:37 PM'),
+(13, 'jusswaaa', 'Wed Oct 06, 2021', '09:37: PM', '09:39 PM'),
+(14, 'jusswaaa', 'Wed Oct 06, 2021', '09:43: PM', NULL),
+(15, 'jusswaaa', 'Thu Oct 07, 2021', '11:19: AM', NULL),
+(16, 'jusswaaa', 'Thu Oct 07, 2021', '04:24: PM', NULL);
 
 -- --------------------------------------------------------
 
@@ -80,16 +96,17 @@ CREATE TABLE `studentsAcc` (
   `name` varchar(255) NOT NULL,
   `course` varchar(255) NOT NULL,
   `studentId` varchar(255) NOT NULL,
-  `buEmail` varchar(255) NOT NULL
+  `buEmail` varchar(255) NOT NULL,
+  `setEmails` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `studentsAcc`
 --
 
-INSERT INTO `studentsAcc` (`id`, `name`, `course`, `studentId`, `buEmail`) VALUES
-(3, 'paul', 'BSIS-4A', '2000', ''),
-(4, 'joshua', 'BSIS-4A', '2000', '');
+INSERT INTO `studentsAcc` (`id`, `name`, `course`, `studentId`, `buEmail`, `setEmails`) VALUES
+(3, 'paul', 'BSIS-4A', '2000', 'pauljustineprena.pintang@bicol-u.edu.ph', 1),
+(4, 'joshua', 'BSIS-4A', '2000', 'puldyastin@gmail.com', 1);
 
 -- --------------------------------------------------------
 
@@ -112,8 +129,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `password`, `picture`, `role`, `status`) VALUES
-(1, 'Joshua Booban', 'jusswaaa', '1234', '1633443226-', 'President', 'Offline'),
-(2, 'Ma. Roseanne Pandaan', 'roseanne', '1234', '1633364673-', 'Vice President', 'Online'),
+(1, 'Joshua Booban', 'jusswaaa', '1234', '1633443226-', 'President', 'Online'),
+(2, 'Ma. Roseanne Pandaan', 'roseanne', '1234', '1633364673-', 'Vice President', 'Offline'),
 (3, 'Eddessa Joy Legson', 'eddessa', '1234', '1632971941-', 'Secretary', 'Offline'),
 (5, 'Tricia Kaye Moya', 'tricia', '1234', '1632972015-', 'Representative', 'Offline');
 
@@ -153,13 +170,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `studentsAcc`

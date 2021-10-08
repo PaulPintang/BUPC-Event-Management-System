@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 07, 2021 at 06:16 PM
+-- Generation Time: Oct 08, 2021 at 08:06 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -68,7 +68,8 @@ CREATE TABLE `logs` (
 --
 
 INSERT INTO `logs` (`id`, `username`, `date`, `login`, `logout`) VALUES
-(1, 'jusswaaa', 'Fri Oct 08, 2021', '12:08: AM', NULL);
+(1, 'roseanne', 'Fri Oct 08, 2021', '01:52: PM', '01:58 PM'),
+(2, 'jusswaaa', 'Fri Oct 08, 2021', '01:58: PM', NULL);
 
 -- --------------------------------------------------------
 
@@ -161,7 +162,7 @@ ALTER TABLE `events`
 -- AUTO_INCREMENT for table `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `studentsAcc`

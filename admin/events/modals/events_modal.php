@@ -8,7 +8,7 @@
             <div class="bg-white p-5 mx-5 my-3 overflow-auto example" style="max-width: 500px; height: 580px">
                 <div class="flex justify-between items-center pb-8">
                     <h1 class="font-semibold text-gray-600 text-xl">Add event</h1>
-                    <i class="fas fa-close text-gray-300 cursor-pointer" onclick="toggleModal('event')"></i>
+                    <i class="fas fa-close text-gray-300 cursor-pointer" data-dismiss="modal"></i>
                 </div>
                  <div class="overflow-y-auto example" style="height: 470px">
                 <!-- <form action="../events/modals/events_modal_process.php" method="POST"> -->
@@ -76,7 +76,7 @@
                         <!-- end -->
                         <div class="flex justify-center">
                             <div style="font-size: 14px">
-                                <button type="button" onclick="toggleModal('event')" class="px-6 py-2 bg-gray-100 rounded text-gray-500">
+                                <button type="button" data-dismiss="modal" class="px-6 py-2 bg-gray-100 rounded text-gray-500">
                                     Cancel
                                 </button>
                                 <button class="px-6 bg-yellow-500 hover:bg-yellow-400 py-2 text-white rounded ml-3 transition-all" name="save" type="submit">

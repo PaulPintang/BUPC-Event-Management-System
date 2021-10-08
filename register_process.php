@@ -8,9 +8,10 @@
     if(isset($_POST['register'])){
         $name = $_POST['name'];
         $course = $_POST['course'];
+        $buEmail = $_POST['buEmail'];
         $studentId = $_POST['studentId'];
 
-        $query = "INSERT INTO studentsAcc (name, course, studentId) VALUES ('$name', '$course', '$studentId')";
+        $query = "INSERT INTO studentsAcc (name, course, buEmail, studentId, setEmails) VALUES ('$name', '$course', '$buEmail', '$studentId',1)";
         mysqli_query($db, $query);
 
         header("location: index.php");

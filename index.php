@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="./index.css">
     <title>Document</title>
 
 </head>
@@ -44,14 +44,13 @@
               <a href="#" class="font-bold text-gray-500 hover:text-yellow-300">Home</a>
 
               <a href="#officers" class="font-bold text-gray-500 hover:text-yellow-300">Officers</a>
-              <a href="#officers" class="font-bold text-gray-500 hover:text-yellow-300">About</a>
-
+              <a href="#about" class="font-bold text-gray-500 hover:text-yellow-300">About</a>
               <?php
                if (isset($_SESSION['id']) && (isset($_SESSION['name'])))  {
                  echo '<a href="" class="hover:text-yellow-500 text-gray-500 font-bold">Events</a>';
                  echo '<a href="logout.php" class="font-bold text-red-300 hover:text-red-500">Logout</a>';
                } else{
-                 echo '<a href="#" class="font-bold text-indigo-600 hover:text-indigo-500" onclick="toggleModal(`login-id`)">Log in</a>';
+                 echo '<a href="#" onclick="toggleModal(`user_modal`)" class="font-bold text-indigo-600 hover:text-indigo-500" >Log in</a>';
                  echo '
                   <button class="bg-yellow-500 pl-2 pr-2 pt-1 pb-1 rounded hover:bg-yellow-300"  onclick="toggleModal(`modal-id`)">
                     <a href="#" class="font-bold text-white">Register</a>
@@ -72,15 +71,16 @@
             From: "opacity-100 scale-100"
             To: "opacity-0 scale-95"
         -->
-        <div class="absolute z-10 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
+        <div class="modal fade" id="nav">
+        <div class="hidden z-10 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
           <div class="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
             <div class="px-5 pt-4 flex items-center justify-between">
               <div>
-                <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="">
+                <img class="h-8 w-auto" src="./admin/images/index.jpg" alt="">
               </div>
               <div class="-mr-2">
                 <button type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                  <span  class="sr-only">Close main menu</span >
+                  <!-- <span  class="sr-only" data-dissmiss="modal">Close main menu</span > -->
                   <!-- Heroicon name: outline/x -->
                   <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -96,10 +96,20 @@
               <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">About</a>
 
             </div>
-            <a href="#" class="block w-full px-5 py-3 text-center font-medium text-indigo-600 bg-gray-50 hover:bg-gray-100">
+             <?php
+               if (isset($_SESSION['id']) && (isset($_SESSION['name'])))  {
+                 echo '<a href="" class="hover:text-yellow-500 text-gray-500 font-bold">Events</a>';
+                 echo '<a href="logout.php" class="font-bold text-red-300 hover:text-red-500">Logout</a>';
+               } else{
+                 echo '<a href="#"  class="block px-5 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" style="margin-top: -3px" onclick="toggleModal(`login-id`)">Register</a>';
+                 echo '
+                  <a href="#login" data-toggle="modal" class="block w-full px-5 py-3 text-center font-medium text-indigo-600 bg-gray-50 hover:bg-gray-100">
               Log in
-            </a>
+            </a>';
+               }
+              ?>
           </div>
+        </div>
         </div>
       </div>
 
@@ -136,118 +146,117 @@
                 </div>
             </div>
             
-            <div class="flex justify-center">
-                <div>
-             <div class="flex gap-20">
-                 <div class="bg-gray-300 p-4 m-4">
-                     <img src="./officer-images/vp.jpeg" alt="" style="width: 250px">
+         
+            <div class="flex flex-col md:flex-row items-center gap-1 md:gap-20">
+                 <div class="bg-gray-300 p-4 m-4" style="width: 280px">
+                     <img src="./officer-images/vp.jpeg" class="w-full" alt="" >
                      <p class="bg-yellow-500 uppercase mt-2">Ma. Roseanne Pandaan</p>
                      <p class="text-gray-700">Vice President</p>
                  </div>
-                <div class="bg-gray-300 p-4 m-4">
-                    <img src="./officer-images/sec.jpeg" alt="" style="width: 250px">
+                <div class="bg-gray-300 p-4 m-4" style="width: 280px">
+                    <img src="./officer-images/sec.jpeg" class="w-full" alt="" >
                     <p class="bg-yellow-500 uppercase mt-2">Eddessa Joy Legson</p>
                     <p class="text-gray-700">Secretary</p>
                 </div>
             </div>
            
-           <div class="flex gap-20">
-                <div class="bg-gray-300 p-4 m-4">
-                    <img src="./officer-images/tre.jpg" alt="" style="width: 250px">
+              <div class="flex flex-col md:flex-row items-center gap-1 md:gap-20">
+                 <div class="bg-gray-300 p-4 m-4" style="width: 280px">
+                    <img src="./officer-images/tre.jpg" alt="">
                     <p class="bg-yellow-500 uppercase mt-2">Bernadette Riofrio Satuito</p>
                     <p class="text-gray-700">Treasurer</p>
                 </div>
-                <div class="bg-gray-300 p-4 m-4">
-                    <img src="./officer-images/aud.jpeg" alt="" style="width: 250px">
+                 <div class="bg-gray-300 p-4 m-4" style="width: 280px">
+                    <img src="./officer-images/aud.jpeg" alt="">
                     <p class="bg-yellow-500 uppercase mt-2">Josephine Marie A. Almuena</p>
                      <p class="text-gray-700">Auditor</p>
                 </div>
            </div>
 
-           <div class="flex gap-20">
-                <div class="bg-gray-300 p-4 m-4">
-                    <img src="./officer-images/bm.jpeg" alt="" style="width: 250px">
+           <div class="flex flex-col md:flex-row items-center gap-1 md:gap-20">
+                 <div class="bg-gray-300 p-4 m-4" style="width: 280px">
+                    <img src="./officer-images/bm.jpeg" alt="">
                     <p class="bg-yellow-500 uppercase mt-2">John Boy Arellano Pante</p>
                     <p class="text-gray-700">Business Manager</p>
                 </div>
-                <div class="bg-gray-300 p-4 m-4">
-                    <img src="./officer-images/pio.jpeg" alt="" style="width: 250px">
+                <div class="bg-gray-300 p-4 m-4" style="width: 280px">
+                    <img src="./officer-images/pio.jpeg" alt="">
                     <p class="bg-yellow-500 uppercase mt-2">Hannah Paula</p>
                     <p class="text-gray-700">P.I.O</p>
                 </div>
            </div>
         </div>
     </div>
-          
 
-
-           <div class="flex justify-between">
-               <div class="bg-gray-300 p-4 m-4">
-                    <img src="./officer-images/rep1.jpeg" alt="" style="width: 250px">
+        <div class="mx-auto" style="max-width: 1000px">
+           <div class="flex flex-col md:flex-row items-center md:justify-between lg:justify-between">
+                <div class="bg-gray-300 p-4 m-4 text-center" style="width: 280px">
+                    <img src="./officer-images/rep1.jpeg" alt="" >
                     <p class="bg-yellow-500 uppercase mt-2">Tricia Kaye T. Moya</p>
                     <p class="text-gray-700">Representative</p>
                 </div>
-                <div class="bg-gray-300 p-4 m-4">
-                    <img src="./officer-images/rep2.jpeg" alt="" style="width: 250px">
+                  <div class="bg-gray-300 p-4 m-4 text-center" style="width: 280px">
+                    <img src="./officer-images/rep2.jpeg" alt="" >
                     <p class="bg-yellow-500 uppercase mt-2">Stephanie L. Tolosa</p>
                     <p class="text-gray-700">Representative</p>
                  </div>
-                 <div class="bg-gray-300 p-4 m-4">
-                    <img src="./officer-images/rep3.jpeg" alt="" style="width: 250px">
+                  <div class="bg-gray-300 p-4 m-4 text-center" style="width: 280px">
+                    <img src="./officer-images/rep3.jpeg" alt="" >
                     <p class="bg-yellow-500 uppercase mt-2">Ramius C. Aquiler</p>
                     <p class="text-gray-700">Representative</p>
                 </div>
            </div>
 
-           <div class="flex justify-between">
-               <div class="bg-gray-300 p-4 m-4">
-                    <img src="./officer-images/rep4.jpg" alt="" style="width: 250px">
-                    <p class="bg-yellow-500 uppercase mt-2">Vince G. Pagdagdagan</p>
+              <div class="flex flex-col md:flex-row items-center md:justify-between lg:justify-between">
+                <div class="bg-gray-300 p-4 m-4 text-center" style="width: 280px">
+                    <img src="./officer-images/rep4.jpg" alt="">
+                    <p class="bg-yellow-500 uppercase mt-2 ">Vince G. Pagdagdagan</p>
                     <p class="text-gray-700">Representative</p>
                 </div>
-                <div class="bg-gray-300 p-4 m-4">
-                    <img src="./officer-images/rep5.jpeg" alt="" style="width: 250px">
+                               <div class="bg-gray-300 p-4 m-4 text-center" style="width: 280px">
+                    <img src="./officer-images/rep5.jpeg" alt="">
                     <p class="bg-yellow-500 uppercase mt-2">Jodelyn p. Mendoza</p>
                     <p class="text-gray-700">Representative</p>
                  </div>
-                 <div class="bg-gray-300 p-4 m-4">
-                    <img src="./officer-images/rep6.jpeg" alt="" style="width: 250px">
+                               <div class="bg-gray-300 p-4 m-4 text-center" style="width: 280px">
+                    <img src="./officer-images/rep6.jpeg" alt="">
                     <p class="bg-yellow-500 uppercase mt-2">Riena Marie Nimo</p>
                     <p class="text-gray-700">Representative</p>
                 </div>
            </div>
 
-           <div class="flex justify-between">
-               <div class="bg-gray-300 p-4 m-4">
-                    <img src="./officer-images/rep7.jpg" alt="" style="width: 250px">
+                <div class="flex flex-col md:flex-row items-center md:justify-between lg:justify-between">
+                               <div class="bg-gray-300 p-4 m-4 text-center" style="width: 280px">
+                    <img src="./officer-images/rep7.jpg" alt="">
                     <p class="bg-yellow-500 uppercase mt-2">Stephanie J. Allorde</p>
                     <p class="text-gray-700">Representative</p>
                 </div>
-                <div class="bg-gray-300 p-4 m-4">
-                    <img src="./officer-images/rep8.jpeg" alt="" style="width: 250px">
+                               <div class="bg-gray-300 p-4 m-4 text-center" style="width: 280px">
+                    <img src="./officer-images/rep8.jpeg" alt="">
                     <p class="bg-yellow-500 uppercase mt-2">Dave L. Sulit</p>
                     <p class="text-gray-700">Representative</p>
                  </div>
-                 <div class="bg-gray-300 p-4 m-4">
-                    <img src="./officer-images/rep9.jpeg" alt="" style="width: 250px">
+                               <div class="bg-gray-300 p-4 m-4 text-center" style="width: 277px">
+                    <img src="./officer-images/rep9.jpeg" alt="">
                     <p class="bg-yellow-500 uppercase mt-2">Ralph Jessie M. Oco</p>
                     <p class="text-gray-700">Representative</p>
                 </div>
            </div>
-           <div class="flex justify-center">
-   
-                <div class="bg-gray-300 p-4 m-4">
-                    <img src="./officer-images/rep10.jpeg" alt="" style="width: 250px">
+
+                <div class="flex flex-col md:flex-row items-center justify-center gap-1 md:gap-20">
+                  <div class="bg-gray-300 p-4 m-4 text-center" style="width: 280px">
+                    <img src="./officer-images/rep10.jpeg" alt="">
                     <p class="bg-yellow-500 uppercase mt-2">Dave L. Sulit</p>
                     <p class="text-gray-700">Representative</p>
                  </div>
-                 <div class="bg-gray-300 p-4 m-4">
-                    <img src="./officer-images/rep11.jpeg" alt="" style="width: 250px; height: 250px">
+                   <div class="bg-gray-300 p-4 m-4 text-center" style="width: 280px">
+                    <img src="./officer-images/rep11.jpeg" class="w-full" alt="" style="height: 247px">
                     <p class="bg-yellow-500 uppercase mt-2">Ralph Jessie M. Oco</p>
                     <p class="text-gray-700">Representative</p>
                 </div>
            </div>
         </div>
+      </div>
     </div>
 
    <div class="p-8">
@@ -273,9 +282,9 @@
         <p style="font-size: 12px">Copyright &copy; 2021 College Student Council</p>
     </div>
 
-    <?php include './modals/register_modal.php';?>
-    <?php include './modals/login_modal.php';?>
-   
+  <div>  <?php include './modals/register_modal.php';?></div>
+   <div>   <?php include './modals/login_modal.php';?></div>
+
 </body>
                
   <!-- script for modal -->

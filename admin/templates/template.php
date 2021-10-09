@@ -16,6 +16,8 @@
             $toAct = mysqli_query($db, "SELECT * FROM users WHERE id=$ID");
             $toActEdit = mysqli_query($db, "SELECT * FROM users WHERE id=$ID");
             $showEdit = mysqli_query($db, "SELECT * FROM users WHERE id=$ID");
+               $record = mysqli_fetch_array($showEdit);
+               $username = $record['username'];
             $viewActivity = mysqli_query($db, "SELECT * FROM logs");
             $userActivity = mysqli_query($db, "SELECT * FROM userActivity");
             // end
@@ -23,22 +25,22 @@
             $ID = $_SESSION['id'];
             $currentUser = mysqli_query($db, "SELECT * FROM users WHERE id=$ID");
 
-            $id = 0;
-            if(isset($_GET['edit'])){
-                $id = $_GET['edit'];
-                $rec = mysqli_query($db, "SELECT * FROM events WHERE id=$id");
+            // $id = 0;
+            // if(isset($_GET['edit'])){
+            //     $id = $_GET['edit'];
+            //     $rec = mysqli_query($db, "SELECT * FROM events WHERE id=$id");
                 
-                $eName = $record['eName'];
-                $eDescription = $record['eDescription'];
-                $eObjectives = $record['eObjectives'];
-                $rules = $record['rules'];
-                $eLocation = $record['eLocation'];
-                $startdate = $record['startdate'];
-                $startime = $record['startime'];
-                $enddate = $record['enddate'];
-                $endtime = $record['endtime'];
-                $id = $record['id'];
-            }
+            //     $eName = $record['eName'];
+            //     $eDescription = $record['eDescription'];
+            //     $eObjectives = $record['eObjectives'];
+            //     $rules = $record['rules'];
+            //     $eLocation = $record['eLocation'];
+            //     $startdate = $record['startdate'];
+            //     $startime = $record['startime'];
+            //     $enddate = $record['enddate'];
+            //     $endtime = $record['endtime'];
+            //     $id = $record['id'];
+            // }
 
     // end
 

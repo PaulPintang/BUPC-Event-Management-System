@@ -47,7 +47,7 @@
               <a href="#about" class="font-bold text-gray-500 hover:text-yellow-300">About</a>
               <?php
                if (isset($_SESSION['id']) && (isset($_SESSION['name'])))  {
-                 echo '<a href="" class="hover:text-yellow-500 text-gray-500 font-bold">Events</a>';
+                 echo '<a href="events-page.php" class="hover:text-yellow-500 text-gray-500 font-bold">Events</a>';
                  echo '<a href="logout.php" class="font-bold text-red-300 hover:text-red-500">Logout</a>';
                } else{
                  echo '<a href="#" onclick="toggleModal(`user_modal`)" class="font-bold text-indigo-600 hover:text-indigo-500" >Log in</a>';
@@ -94,7 +94,6 @@
               <a href="#officers" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Officers</a>
 
               <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">About</a>
-              <a href="events-page.php" class="hover:text-yellow-500 text-gray-500 font-bold">Events</a>
             </div>
              <?php
                if (isset($_SESSION['id']) && (isset($_SESSION['name'])))  {

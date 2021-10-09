@@ -94,11 +94,11 @@
               <a href="#officers" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Officers</a>
 
               <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">About</a>
-
+              <a href="events-page.php" class="hover:text-yellow-500 text-gray-500 font-bold">Events</a>
             </div>
              <?php
                if (isset($_SESSION['id']) && (isset($_SESSION['name'])))  {
-                 echo '<a href="" class="hover:text-yellow-500 text-gray-500 font-bold">Events</a>';
+                 echo '<a href="events-page.php" class="hover:text-yellow-500 text-gray-500 font-bold">Events</a>';
                  echo '<a href="logout.php" class="font-bold text-red-300 hover:text-red-500">Logout</a>';
                } else{
                  echo '<a href="#"  class="block px-5 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" style="margin-top: -3px" onclick="toggleModal(`login-id`)">Register</a>';

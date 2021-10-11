@@ -26,8 +26,8 @@
     </script>
 </head>
 <body onload=display_ct()>
-    <div class="mx-auto px-3" style="width: 1100px">
-        <div class="flex justify-between items-center h-36">
+    <div class="mx-auto px-6" style="max-width: 1100px">
+        <div class="flex justify-between items-center h-36 w-full">
             <div class="flex items-center gap-9">
                 <a href="index.php" class=" rounded-md text-base font-medium text-gray-700 hover:text-yellow-400">Home</a>
                 <a href="index.php#officers" class=" rounded-md text-base font-medium text-gray-700 hover:text-yellow-400">Officers</a>
@@ -43,8 +43,9 @@
             </div>
         </div>
     </div>
-        <div class="" style="height: calc(100vh - 9rem)">
-         <div class="space-y-3 mx-auto px-3 flex flex-col justify-center items-center h-full" style="width: 1100px">
+
+    <div class="" style="height: calc(100vh - 9rem)">
+         <div class="space-y-3 mx-auto px-3 flex flex-col justify-center items-center h-full" style="max-width: 1100px">
             <div class="text-center w-72">
                <img src="./images/event.svg" class="w-full" alt="">
             </div>
@@ -57,11 +58,35 @@
                <p class="text-5xl text-gray-800">DON'T MISS THE UPCOMING EVENT</p> 
             </div>
             <div>
-                <span id='ct' class="font-bold text-gray-800"></span>
+                <span id='ct' class="font-bold text-gray-500"></span>
             </div>
         </div>
     </div>
 
+    <div class="mx-auto" style="max-width: 1100px; height: 90vh">
+        <div class="flex justify-between items-center gap-5 h-full">
+            <div class="h-96 bg-gray-50" style="width: 900px">
+
+            </div>
+             <div class="bg-white rounded-lg flex items-center justify-center pt-10 md:pt-0 lg:pt-0 w-full lg:w-5/12 h-96">
+                <div class="flex flex-col h-full w-full font-light">
+                    <div class="h-full w-full bg-blue-300 rounded-t flex justify-center items-center">
+                        <span class="day uppercase text-lg text-white"></span>
+                    </div>
+                    <div class="w-full bg-white flex justify-center items-center py-16 flex-col">
+                        <span class="month text-2xl text-gray-500"></span>
+                        <span class="date uppercase text-7xl text-gray-700 font-extralight"></span>
+                    </div>
+                    <div class="h-full w-full bg-blue-300 rounded-b flex justify-center items-center">
+                        <span class="year uppercase text-lg text-white"></span>
+                    </div>
+                </div>
+             </div>
+       </div>
+    </div>
+
+    <script src="./admin/calendar/js/jquery.min.js"></script>
+    <script src="./admin/calendar/js/main.js"></script>
 </body>
 </html>
 <?php

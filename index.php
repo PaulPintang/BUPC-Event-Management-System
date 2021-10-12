@@ -41,18 +41,18 @@
               </div>
             </div>
             <div class="hidden md:block md:ml-8 md:pr-4 md:space-x-8">
-              <a href="#" class="font-bold text-gray-500 hover:text-yellow-300">Home</a>
+              <a href="#" class="font-bold text-gray-500 hover:text-yellow-300 transition-all">Home</a>
 
-              <a href="#officers" class="font-bold text-gray-500 hover:text-yellow-300">Officers</a>
-              <a href="#about" class="font-bold text-gray-500 hover:text-yellow-300">About</a>
+              <a href="#officers" class="font-bold text-gray-500 hover:text-yellow-300 transition-all">Officers</a>
+              <a href="#about" class="font-bold text-gray-500 hover:text-yellow-300 transition-all">About</a>
               <?php
                if (isset($_SESSION['id']) && (isset($_SESSION['name'])))  {
-                 echo '<a href="events-page.php" class="hover:text-yellow-500 text-gray-500 font-bold">Events</a>';
-                 echo '<a href="logout.php" class="font-bold text-red-300 hover:text-red-500">Logout</a>';
+                 echo '<a href="events-page.php" class="hover:text-yellow-500 text-gray-500 font-bold transition-all">Events</a>';
+                 echo '<a href="logout.php" class="font-bold text-red-300 hover:text-red-200 transition-all">Logout</a>';
                } else{
-                 echo '<a href="#" onclick="toggleModal(`user_modal`)" class="font-bold text-indigo-600 hover:text-indigo-500" >Log in</a>';
+                 echo '<a href="#" onclick="toggleModal(`user_modal`)" class="font-bold text-indigo-600 hover:text-indigo-500 transition-all" >Log in</a>';
                  echo '
-                  <button class="bg-yellow-500 pl-2 pr-2 pt-1 pb-1 rounded hover:bg-yellow-300"  onclick="toggleModal(`modal-id`)">
+                  <button class="bg-yellow-500 pl-2 pr-2 pt-1 pb-1 rounded hover:bg-yellow-300 transition-all"  onclick="toggleModal(`modal-id`)">
                     <a href="#" class="font-bold text-white">Register</a>
                   </button>';
                }

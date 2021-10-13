@@ -44,6 +44,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="index.css">
     <title>BUPC Events</title>
+    <style>
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .example::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .example {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+        }
+
+    </style>
 </head>
 <body>
     <div class="shadow-sm">
@@ -128,6 +140,24 @@
              </div>
              <div class="flex justify-between">
                  <div>
+                     <div class="flex items-center gap-4 pb-6">
+                         <div class="flex gap-3 items-center">
+                            <div class="bg-green-300 w-8 h-2"></div>
+                            <small>Today</small>
+                         </div>
+                         <div class="flex gap-3 items-center">
+                            <div class="bg-blue-300 w-8 h-2"></div>
+                            <small>Tommorow</small>
+                         </div>
+                         <div class="flex gap-3 items-center">
+                            <div class="w-8 h-2 bg-pink-300"></div>
+                            <small>Upcoming</small>
+                         </div>
+                         <div class="flex gap-3 items-center">
+                            <div class="bg-yellow-300 w-8 h-2"></div>
+                            <small>Past</small>
+                         </div>
+                     </div>
                      <div class="bg-white md:rounded-lg lg:rounded-lg h-96 w-full p-6 shadow-sm">
                     <!-- start -->  
                         <div class="overflow-y-auto example" style="height: 300px">
@@ -147,8 +177,7 @@
                                         Rules
                                     </th>
                                     <th scope="col" class=" hidden md:table-cell lg:table-cell px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
-                                        Star
-                                    </th>
+                                     </th>
                                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
                                     
                                     </th>
@@ -197,32 +226,37 @@
                                         
                                         ?>
                                     </td>
-                                    <td class="hidden md:table-cell lg:table-cell px-6 py-2 whitespace-nowrap">
-                                        <style>
-                                            .hide{
-                                                display: none;
-                                            }
-                                        </style>
-                                       <?php 
-					                        // determine if user has already liked this post
-                                            $results = mysqli_query($db, "SELECT * FROM studentsAcc WHERE userid=$id AND postid=".$row['id']."");
-                                           if (mysqli_num_rows($results) == 0 ): ?>
-                                                <!-- user already likes post -->
-                                                 <i class="unlike hide fas fa-star text-blue-300 text-xl" data-id="<?php echo $row['id']; ?>"></i>
-                                                 <i class="like far fa-star text-gray-300 hover:text-blue-200 text-xl cursor-pointer transition-all" data-id="<?php echo $row['id']; ?>"></i>
-                                            <?php else: ?>
-                                                <!-- user has not yet liked post -->
-                                                 <i class="like far fa-star text-gray-300 hover:text-blue-200 text-xl cursor-pointer transition-all" data-id="<?php echo $row['id']; ?>"></i>
-                                                 <i class="unlike hide fas fa-star text-blue-300 text-xl" data-id="<?php echo $row['id']; ?>"></i>
-                                            <?php endif ?>
-                                            <span class="likes_count"><?php echo $row['likes']; ?> stars</span>
-                                            <span class="like fa fa-thumbs-o-up" data-id="<?php echo $row['id']; ?>"></span> 
-
-                                    </td>
+                                   
                                     <td class="text-right md:px-6 lg:px-6 py-2 whitespace-nowrap space-x-2">
                                         <!-- <a href="#view<?php echo $row['id'];?>" data-toggle="modal" class="sm:hidden md:hidden lg:hidden"><i class="fas fa-info text-gray-400 cursor-pointer hover:text-blue-300 transition-all" style="font-size:12px"></i></a> -->
                                         <a href="#viewE<?php echo $row['id'];?>" data-toggle="modal" class=" sm:hidden md:hidden lg:hidden text-blue-400 hover:text-white hover:bg-blue-400 w-full px-3 py-1 bg-blue-50 font-semibold rounded transition-colors text-xs">View</a>
                                         <a href="#viewE<?php echo $row['id'];?>" data-toggle="modal" class="hidden sm:inline md:inline lg:inline text-blue-400 hover:text-white hover:bg-blue-400 w-full px-3 py-1 bg-blue-50 font-semibold rounded transition-colors text-xs">View More</a>
+                                    </td>
+
+                                    <td>
+                                        <?php
+                                            date_default_timezone_set("Asia/Manila");
+                                            $currentDate = date("Y-m-d");
+                                            $tommorow = date('Y-m-d', strtotime(' +1 day'));
+                                            $upcoming = date('Y-m-d', strtotime(' +3 day'));
+                                            if ($row['startdate'] == $currentDate) {
+                                                echo '
+                                                    <div class="bg-green-300 w-8 h-2"></div>
+                                                ';
+                                            }else if($row['startdate'] == $tommorow){
+                                                echo'
+                                                    <div class="bg-blue-300 w-8 h-2"></div>
+                                                ';
+                                            }else if($row['startdate'] == $upcoming){
+                                                echo'
+                                                    <div class="bg-pink-300 w-8 h-2"></div>
+                                                ';
+                                            }else {
+                                                echo '
+                                                    <div class="bg-yellow-300 w-8 h-2"></div>
+                                                ';
+                                            }
+                                        ?>
                                     </td>
                                 </tr>
                             <?php }?>

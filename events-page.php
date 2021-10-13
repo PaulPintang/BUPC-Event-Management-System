@@ -215,17 +215,15 @@
                                             $results = mysqli_query($db, "SELECT * FROM likes WHERE userid=1 AND postid=".$row['id']."");
                                            if (mysqli_num_rows($results) == 1 ): ?>
                                                 <!-- user already likes post -->
-                                                 <i 
-                                                    class="unlike hide fas fa-star text-blue-300 text-xl"
-                                                  data-id="<?php echo $row['id']; ?>"></i>
+                                                 <i class="unlike hide fas fa-star text-blue-300 text-xl" data-id="<?php echo $row['id']; ?>"></i>
                                                  <i class="like far fa-star text-gray-300 hover:text-blue-200 text-xl cursor-pointer transition-all" data-id="<?php echo $row['id']; ?>"></i>
                                             <?php else: ?>
                                                 <!-- user has not yet liked post -->
                                                  <i class="like far fa-star text-gray-300 hover:text-blue-200 text-xl cursor-pointer transition-all" data-id="<?php echo $row['id']; ?>"></i>
                                                  <i class="unlike hide fas fa-star text-blue-300 text-xl" data-id="<?php echo $row['id']; ?>"></i>
                                             <?php endif ?>
-                                            <span class="likes_count"><?php echo $row['likes']; ?> likes</span>
-                                            <span class="like fa fa-thumbs-o-up" data-id="<?php echo $row['id']; ?>"></span> 
+                                        <span class="likes_count"><?php echo $row['likes']; ?> likes</span>
+                                        <span class="like fa fa-thumbs-o-up" data-id="<?php echo $row['id']; ?>"></span> 
 
                                     </td>
                                     <td class="text-right md:px-6 lg:px-6 py-2 whitespace-nowrap space-x-2">
@@ -258,41 +256,35 @@
     <script src="./admin/js/jquery-1.12.4.js"></script>
     <script>
         $(document).ready(function(){
-         	$('.like').on('click', function(){
+         	$('.like-btn').on('click', function(){
 			var postid = $(this).data('id');
-			    $post = $(this);
+			    $clicked_btn = $(this);
+                alert(postid);
+                if ($clicked_btn.hasClass('far fa-star')) {
+                    action = 'like';
+                } else if($clicked_btn.hasClass('fas fa-star')){
+                    action =  'unlike';
+                }
 
                 $.ajax({
                     url: 'events-page.php',
                     type: 'post',
                     data: {
-                        'liked': 1,
-                        'postid': postid
+                        'action': action,
+                        'post_id': post_id
                     },
-                    success: function(response){
-                        $post.parent().find('span.likes_count').text(response + " likes");
-                        $post.addClass('hide');
-                        $post.siblings().removeClass('hide');
-                    }
-                });
-            });
-            $('.unlike').on('click', function(){
-                var postid = $(this).data('id');
-                $post = $(this);
+                    success: function(data){
+                        res = JSON.parse(data);
 
-                $.ajax({
-                    url: 'events-page.php',
-                    type: 'post',
-                    data: {
-                        'unliked': 1,
-                        'postid': postid
-                    },
-                    success: function(response){
-                        $post.parent().find('span.likes_count').text(response + " likes");
-                        $post.addClass('hide');
-                        $post.siblings().removeClass('hide');
+                        if (action == 'like') {
+                            $clicked_btn.removeClass('far fa-star');
+                            $clicked_btn.addClass('fas fa-star');
+                        } else if (action == 'unlike') {
+                            $clicked_btn.removeClass('fas fa-star');
+                             $clicked_btn.addClass('far fa-star');
+                        }
                     }
-                });
+                })
             });
         });
     </script>

@@ -1,7 +1,35 @@
 <?php
     session_start();
     include('./conn.php');
-            $viewEvent = mysqli_query($db, "SELECT * FROM events");
+    $id = $_SESSION['id'];
+    $viewEvent = mysqli_query($db, "SELECT * FROM events");
+
+
+	if (isset($_POST['liked'])) {
+		$postid = $_POST['postid'];
+		$result = mysqli_query($db, "SELECT * FROM events WHERE id=$postid");
+		$row = mysqli_fetch_array($result);
+		$n = $row['likes'];
+
+		mysqli_query($db, "UPDATE events SET likes=$n+1 WHERE id=$postid");
+		mysqli_query($db, "INSERT INTO likes (userid, postid) VALUES (1, $postid)");
+
+		echo $n+1;
+		exit();
+	}
+
+    if (isset($_POST['unliked'])) {
+		$postid = $_POST['postid'];
+		$result = mysqli_query($db, "SELECT * FROM events WHERE id=$postid");
+		$row = mysqli_fetch_array($result);
+		$n = $row['likes'];
+
+		mysqli_query($db, "DELETE FROM likes WHERE postid=$postid AND userid=1");
+		mysqli_query($db, "UPDATE events SET likes=$n-1 WHERE id=$postid");
+		
+		echo $n-1;
+		exit();
+	}
 
     if (isset($_SESSION['id']) && (isset($_SESSION['name']))) {
 ?>
@@ -56,7 +84,8 @@
                         <div><p class="text-4xl font-extrabold">Hi, Paul</p></div>
                         <div><small class="text-gray-400 text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit veniam placeat. Omnis, sint accusantium?</small></div>
                         <div class="pt-3 flex items-center gap-3">
-                            <i class="far fa-star text-blue-300 text-xl"></i>
+                            <!-- <i class="far fa-star text-blue-300 text-xl"></i> -->
+                            <i class="fas fa-star text-blue-300 text-2xl"></i>
                             <div class="flex flex-col">
                                 <span class="text-gray-600 italic text-sm" style="margin-bottom: -3px">123 stars</span>
                                 <div class="flex gap-3 items-center">
@@ -117,6 +146,9 @@
                                     <th scope="col" class=" hidden md:table-cell lg:table-cell px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
                                         Rules
                                     </th>
+                                    <th scope="col" class=" hidden md:table-cell lg:table-cell px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
+                                        Star
+                                    </th>
                                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
                                     
                                     </th>
@@ -172,6 +204,30 @@
                                         
                                         ?>
                                     </td>
+                                    <td class="hidden md:table-cell lg:table-cell px-6 py-2 whitespace-nowrap">
+                                        <style>
+                                            .hide{
+                                                display: none;
+                                            }
+                                        </style>
+                                       <?php 
+					                        // determine if user has already liked this post
+                                            $results = mysqli_query($db, "SELECT * FROM likes WHERE userid=1 AND postid=".$row['id']."");
+                                           if (mysqli_num_rows($results) == 1 ): ?>
+                                                <!-- user already likes post -->
+                                                 <i 
+                                                    class="unlike hide fas fa-star text-blue-300 text-xl"
+                                                  data-id="<?php echo $row['id']; ?>"></i>
+                                                 <i class="like far fa-star text-gray-300 hover:text-blue-200 text-xl cursor-pointer transition-all" data-id="<?php echo $row['id']; ?>"></i>
+                                            <?php else: ?>
+                                                <!-- user has not yet liked post -->
+                                                 <i class="like far fa-star text-gray-300 hover:text-blue-200 text-xl cursor-pointer transition-all" data-id="<?php echo $row['id']; ?>"></i>
+                                                 <i class="unlike hide fas fa-star text-blue-300 text-xl" data-id="<?php echo $row['id']; ?>"></i>
+                                            <?php endif ?>
+                                            <span class="likes_count"><?php echo $row['likes']; ?> likes</span>
+                                            <span class="like fa fa-thumbs-o-up" data-id="<?php echo $row['id']; ?>"></span> 
+
+                                    </td>
                                     <td class="text-right md:px-6 lg:px-6 py-2 whitespace-nowrap space-x-2">
                                         <!-- <a href="#view<?php echo $row['id'];?>" data-toggle="modal" class="sm:hidden md:hidden lg:hidden"><i class="fas fa-info text-gray-400 cursor-pointer hover:text-blue-300 transition-all" style="font-size:12px"></i></a> -->
                                         <a href="#viewE<?php echo $row['id'];?>" data-toggle="modal" class=" sm:hidden md:hidden lg:hidden text-blue-400 hover:text-white hover:bg-blue-400 w-full px-3 py-1 bg-blue-50 font-semibold rounded transition-colors text-xs">View</a>
@@ -200,6 +256,46 @@
     <script src="./admin/calendar/js/main.js"></script>
     <script src="./admin/js/bootstrap.min.js"></script>
     <script src="./admin/js/jquery-1.12.4.js"></script>
+    <script>
+        $(document).ready(function(){
+         	$('.like').on('click', function(){
+			var postid = $(this).data('id');
+			    $post = $(this);
+
+                $.ajax({
+                    url: 'events-page.php',
+                    type: 'post',
+                    data: {
+                        'liked': 1,
+                        'postid': postid
+                    },
+                    success: function(response){
+                        $post.parent().find('span.likes_count').text(response + " likes");
+                        $post.addClass('hide');
+                        $post.siblings().removeClass('hide');
+                    }
+                });
+            });
+            $('.unlike').on('click', function(){
+                var postid = $(this).data('id');
+                $post = $(this);
+
+                $.ajax({
+                    url: 'events-page.php',
+                    type: 'post',
+                    data: {
+                        'unliked': 1,
+                        'postid': postid
+                    },
+                    success: function(response){
+                        $post.parent().find('span.likes_count').text(response + " likes");
+                        $post.addClass('hide');
+                        $post.siblings().removeClass('hide');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
 <?php

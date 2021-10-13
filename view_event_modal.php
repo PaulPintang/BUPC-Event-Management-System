@@ -66,10 +66,12 @@
                                 </div>
                             
                                 <div class="flex items-center gap-3">
+                            
                                     <i class="fas fa-map-marker-alt text-gray-400"></i>
                                     <p><?php echo $row['eLocation']?></p>
                                 </div>
                                 <div class="flex items-center gap-3" style="width: 300px">
+                                        <!-- <i class="fas fa-star text-gray-300 hover:text-blue-200 text-xl cursor-pointer transition-all"></i> -->
                                       <i class="far fa-star text-gray-300 hover:text-blue-200 text-xl cursor-pointer transition-all"></i>
                                       <small class="text-xs text-gray-400">Please let us know that your are interested to this event by clicking this star</small>
                                 </div>
@@ -83,5 +85,7 @@
         </div>
     </div>
     </div>
+    <script src="./admin/js/jquery-1.12.4.js"></script>
+
 <?php } ?>
  <!-- end modal -->

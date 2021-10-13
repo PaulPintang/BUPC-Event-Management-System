@@ -12,7 +12,7 @@
 		$n = $row['likes'];
 
 		mysqli_query($db, "UPDATE events SET likes=$n+1 WHERE id=$postid");
-		mysqli_query($db, "INSERT INTO likes (userid, postid) VALUES (1, $postid)");
+		mysqli_query($db, "INSERT INTO studentsAcc (userid, postid) VALUES (1, $postid) WHERE id=$id");
 
 		echo $n+1;
 		exit();
@@ -164,16 +164,9 @@
                                             <small><?php echo $row['eName']?></small>
                                         </div>
                                     </td>
-                                    <!-- <td class="px-6 py-4 whitespace-nowrap">
-                                        <span class="px-2 inline-flex leading-5 font-semibold rounded-full bg-green-100 text-green-800" style="font-size: 10px">
-                                            Online
-                                        </span>
-                                    </td> -->
                                     <?php
-                                    
                                         $startime = $row['startime'];
                                         $endtime = $row['endtime'];
-
                                     ?>
                                     <td class="hidden md:table-cell lg:table-cell px-6 py-2 whitespace-nowrap">
                                         <div class="flex flex-col">
@@ -212,8 +205,8 @@
                                         </style>
                                        <?php 
 					                        // determine if user has already liked this post
-                                            $results = mysqli_query($db, "SELECT * FROM likes WHERE userid=1 AND postid=".$row['id']."");
-                                           if (mysqli_num_rows($results) == 1 ): ?>
+                                            $results = mysqli_query($db, "SELECT * FROM studentsAcc WHERE userid=$id AND postid=".$row['id']."");
+                                           if (mysqli_num_rows($results) == 0 ): ?>
                                                 <!-- user already likes post -->
                                                  <i class="unlike hide fas fa-star text-blue-300 text-xl" data-id="<?php echo $row['id']; ?>"></i>
                                                  <i class="like far fa-star text-gray-300 hover:text-blue-200 text-xl cursor-pointer transition-all" data-id="<?php echo $row['id']; ?>"></i>
@@ -222,7 +215,7 @@
                                                  <i class="like far fa-star text-gray-300 hover:text-blue-200 text-xl cursor-pointer transition-all" data-id="<?php echo $row['id']; ?>"></i>
                                                  <i class="unlike hide fas fa-star text-blue-300 text-xl" data-id="<?php echo $row['id']; ?>"></i>
                                             <?php endif ?>
-                                            <span class="likes_count"><?php echo $row['likes']; ?> likes</span>
+                                            <span class="likes_count"><?php echo $row['likes']; ?> stars</span>
                                             <span class="like fa fa-thumbs-o-up" data-id="<?php echo $row['id']; ?>"></span> 
 
                                     </td>

@@ -11,7 +11,7 @@ scrollbar-width: none;  /* Firefox */
 
 </style>
 <div class="block md:flex lg:flex gap-5 py-10 mx-6 md:mx-0 lg:mx-0 container w-full">
-    <div class="bg-white md:rounded-lg lg:rounded-lg h-96 w-full p-6 shadow-sm">
+    <div class="bg-white md:rounded-lg lg:rounded-lg h-full w-full p-6 shadow-sm">
     <!-- start -->  
     <div class="flex justify-between">
         <div class="flex items-center gap-4 pb-3">
@@ -66,6 +66,9 @@ scrollbar-width: none;  /* Firefox */
                     </th>
                      <th scope="col" class=" hidden md:table-cell lg:table-cell px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
                         Rules
+                    </th>
+                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
+                       
                     </th>
                      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
                        
@@ -135,13 +138,38 @@ scrollbar-width: none;  /* Firefox */
                         
                         ?>
                     </td>
-                    <td class="text-right md:px-6 lg:px-6 py-2 whitespace-nowrap space-x-2">
+                    <td class="text-right px-2 md:px-2 lg:px-2 py-2 whitespace-nowrap space-x-2">
                         <!-- <a href="#view<?php echo $row['id'];?>" data-toggle="modal" class="sm:hidden md:hidden lg:hidden"><i class="fas fa-info text-gray-400 cursor-pointer hover:text-blue-300 transition-all" style="font-size:12px"></i></a> -->
                         <a href="#viewE<?php echo $row['id'];?>" data-toggle="modal" class=" sm:hidden md:hidden lg:hidden text-blue-400 hover:text-white hover:bg-blue-400 w-full px-3 py-1 bg-blue-50 font-semibold rounded transition-colors text-xs">View</a>
                         <a href="#viewE<?php echo $row['id'];?>" data-toggle="modal" class="hidden sm:inline md:inline lg:inline text-blue-400 hover:text-white hover:bg-blue-400 w-full px-3 py-1 bg-blue-50 font-semibold rounded transition-colors text-xs">View More</a>
                         <a href="#edit<?php echo $row['id'];?>" data-toggle="modal" >
                             <i class="far fa-edit text-gray-400 cursor-pointer hover:text-blue-300 transition-all" style="font-size: 13px"></i>
                         </a> 
+                    </td>
+                    <td>
+                      <?php
+                            date_default_timezone_set("Asia/Manila");
+                            $currentDate = date("Y-m-d");
+                            $tommorow = date('Y-m-d', strtotime(' +1 day'));
+                            $upcoming = date('Y-m-d', strtotime(' +2 day'));
+                            if ($row['startdate'] == $currentDate) {
+                                echo '
+                                    <div class="bg-green-300 mt-1 w-8 h-2"></div>
+                                ';
+                            }else if($row['startdate'] == $tommorow){
+                                echo'
+                                    <div class="bg-blue-300 mt-1 w-8 h-2"></div>
+                                ';
+                            }else if($row['startdate'] >= $upcoming){
+                                echo'
+                                    <div class="bg-pink-300 mt-1 w-8 h-2"></div>
+                                ';
+                            }else {
+                                echo '
+                                    <div class="bg-yellow-300 mt-1 w-8 h-2"></div>
+                                ';
+                            }
+                        ?>
                     </td>
                 </tr>
             <?php }?>

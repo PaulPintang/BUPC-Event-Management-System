@@ -30,6 +30,7 @@
 		echo $n-1;
 		exit();
 	}
+    include('./geteventsTotal.php');
 
     if (isset($_SESSION['id']) && (isset($_SESSION['name']))) {
 ?>
@@ -97,12 +98,135 @@
                         <div><small class="text-gray-400 text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit veniam placeat. Omnis, sint accusantium?</small></div>
                         <div class="pt-3 flex items-center gap-3">
                             <!-- <i class="far fa-star text-blue-300 text-xl"></i> -->
-                            <i class="fas fa-star text-blue-300 text-2xl"></i>
+                            <!-- <i class="fas fa-star text-blue-300 text-2xl"></i>
                             <div class="flex flex-col">
                                 <span class="text-gray-600 italic text-sm" style="margin-bottom: -3px">123 stars</span>
                                 <div class="flex gap-3 items-center">
                                     <p class="text-xl font-semibold text-gray-700">Awesome</p>
                                     <img src="./images/emoji.png" alt="" style="width: 23px; height: 23px">
+                                </div>
+                            </div> -->
+
+                            <div class="flex gap-5 text-gray-700 italic text-sm">
+                                <div>
+                                    <div class="flex gap-3 items-center">
+                                        <div class="bg-green-300 w-5 h-2"></div>
+                                        <small>
+                                            <?php
+                                                if ($today == 0) {
+                                                    echo'
+                                                    No event tommorow
+                                                    ';
+                                                }else{
+                                                    echo '
+                                                    '.$today.'
+                                                    ';
+                                                }
+                                            ?>
+                                            <?php
+                                                if ($today >= 2) {
+                                                    echo '
+                                                        '.$more.'
+                                                    ';
+                                                }else if($today == 1){
+                                                    echo '
+                                                        '.$justOne.'
+                                                    ';
+                                                }else{
+                                                    echo'';
+                                                }
+                                            ?>
+                                        </small>
+                                    </div>
+                                    <div class="flex gap-3 items-center">
+                                        <div class="bg-blue-300 w-5 h-2"></div>
+                                        <small>
+                                            <?php
+                                                if ($tommorowEvent == 0) {
+                                                    echo'
+                                                    No event tommorow
+                                                    ';
+                                                }else{
+                                                    echo '
+                                                    '.$tommorowEvent.'
+                                                    ';
+                                                }
+                                            ?>
+                                            <?php
+                                                if ($tommorowEvent >= 2) {
+                                                    echo '
+                                                        '.$more.'
+                                                    ';
+                                                }else if($tommorowEvent == 1){
+                                                    echo '
+                                                        '.$justOne.'
+                                                    ';
+                                                }else{
+                                                    echo'';
+                                                }
+                                            ?>
+                                        </small>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex gap-3 items-center">
+                                        <div class="w-5 h-2 bg-pink-300"></div>
+                                         <small>
+                                            <?php
+                                                if ($upcomingEvents == 0) {
+                                                    echo'
+                                                    No event tommorow
+                                                    ';
+                                                }else{
+                                                    echo '
+                                                        '.$upcomingEvents.'
+                                                    ';
+                                                }
+                                            ?>
+                                            <?php
+                                                if ($upcomingEvents >= 2) {
+                                                    echo '
+                                                        '.$more.'
+                                                    ';
+                                                }else if($upcomingEvents == 1){
+                                                    echo '
+                                                        '.$justOne.'
+                                                    ';
+                                                }else{
+                                                    echo'';
+                                                }
+                                            ?>
+                                        </small>
+                                    </div>
+                                    <div class="flex gap-3 items-center">
+                                        <div class="bg-yellow-300 w-5 h-2"></div>
+                                       <small>
+                                            <?php
+                                                if ($pastEvents == 0) {
+                                                    echo'
+                                                    No event tommorow
+                                                    ';
+                                                }else{
+                                                    echo '
+                                                    '.$pastEvents.'
+                                                    ';
+                                                }
+                                            ?>
+                                            <?php
+                                                if ($pastEvents >= 2) {
+                                                    echo '
+                                                        '.$more.'
+                                                    ';
+                                                }else if($pastEvents == 1){
+                                                    echo '
+                                                        '.$justOne.'
+                                                    ';
+                                                }else{
+                                                    echo'';
+                                                }
+                                            ?>
+                                        </small>
+                                    </div>
                                 </div>
                             </div>
                         </div>

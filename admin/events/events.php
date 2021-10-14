@@ -10,7 +10,7 @@ scrollbar-width: none;  /* Firefox */
 }
 
 </style>
-<div class`="block md:flex lg:flex gap-5 py-10 mx-6 md:mx-0 lg:mx-0 container w-full">
+<div class="block md:flex lg:flex gap-5 py-10 mx-6 md:mx-0 lg:mx-0 container w-full">
     <div class="bg-white md:rounded-lg lg:rounded-lg h-96 w-full p-6 shadow-sm">
     <!-- start -->  
     <div class="flex justify-between">

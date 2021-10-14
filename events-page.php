@@ -238,7 +238,7 @@
                                             date_default_timezone_set("Asia/Manila");
                                             $currentDate = date("Y-m-d");
                                             $tommorow = date('Y-m-d', strtotime(' +1 day'));
-                                            $upcoming = date('Y-m-d', strtotime(' +3 day'));
+                                            $upcoming = date('Y-m-d', strtotime(' +2 day'));
                                             if ($row['startdate'] == $currentDate) {
                                                 echo '
                                                     <div class="bg-green-300 w-8 h-2"></div>
@@ -247,7 +247,7 @@
                                                 echo'
                                                     <div class="bg-blue-300 w-8 h-2"></div>
                                                 ';
-                                            }else if($row['startdate'] == $upcoming){
+                                            }else if($row['startdate'] >= $upcoming){
                                                 echo'
                                                     <div class="bg-pink-300 w-8 h-2"></div>
                                                 ';

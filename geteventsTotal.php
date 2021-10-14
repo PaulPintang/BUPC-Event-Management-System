@@ -2,10 +2,15 @@
 
     include('./conn.php');
 
+   
     date_default_timezone_set("Asia/Manila");
     $currentDate = date("Y-m-d");
     $tommorow = date('Y-m-d', strtotime(' +1 day'));
     $upcoming = date('Y-m-d', strtotime(' +2 day'));
+    // get title of today event
+    $eventName = mysqli_query($db, "SELECT * FROM events WHERE startdate='$currentDate'");
+    // $record = mysqli_fetch_array($eventName);
+    // $eName = $record['eName'];
 
     // today event
     $sql = "SELECT count(id) AS total FROM events WHERE startdate='$currentDate'";

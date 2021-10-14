@@ -115,7 +115,7 @@
                                             <?php
                                                 if ($today == 0) {
                                                     echo'
-                                                    No event tommorow
+                                                    No event today
                                                     ';
                                                 }else{
                                                     echo '
@@ -175,7 +175,7 @@
                                             <?php
                                                 if ($upcomingEvents == 0) {
                                                     echo'
-                                                    No event tommorow
+                                                    No upcoming events
                                                     ';
                                                 }else{
                                                     echo '
@@ -204,7 +204,7 @@
                                             <?php
                                                 if ($pastEvents == 0) {
                                                     echo'
-                                                    No event tommorow
+                                                    No past events
                                                     ';
                                                 }else{
                                                     echo '
@@ -245,8 +245,20 @@
                 <div class="h-full w-full bg-blue-300 rounded-t flex justify-center items-center">
                     <span class="day uppercase text-lg text-white"></span>
                 </div>
+                
                 <div class="w-full bg-white flex justify-center items-center py-16 flex-col">
+                    <div class="text-sm text-center">
+                        <?php while ($row = mysqli_fetch_array($eventName)) { ?>
+                        <p class="text-gray-700 "> <span class="font-extrabold">Yoohoooo!!</span> We have an event today:</p>
+                        <span class="text-green-500 font-bold block"><?php echo $row['eName'] ?></span>
+                        <div class="text-gray-500 font-semibold text-xs">
+                            <span><?php echo $row['startime']?> - </span>
+                            <span><?php echo $row['endtime']?></span>
+                        </div>
+                        <?php } ?>
+                    </div>
                     <span class="month text-2xl text-gray-500"></span>
+                   
                     <span class="date uppercase text-7xl text-gray-700 font-extralight"></span>
                 </div>
                 <div class="h-full w-full bg-blue-300 rounded-b flex justify-center items-center">

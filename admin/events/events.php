@@ -13,8 +13,8 @@ scrollbar-width: none;  /* Firefox */
 <div class="block md:flex lg:flex gap-5 py-10 mx-6 md:mx-0 lg:mx-0 container w-full">
     <div class="bg-white md:rounded-lg lg:rounded-lg h-full w-full p-6 shadow-sm">
     <!-- start -->  
-    <div class="flex justify-between">
-        <div class="flex items-center gap-4 pb-3">
+    <div class="md:flex lg:flex justify-between">
+        <div class="flex flex-wrap justify-start md:flex lg:flex items-center gap-2 md:gap-4 lg:gap-4 pb-3">
                 <div class="flex gap-3 items-center">
                     <div class="bg-green-300 w-8 h-2"></div>
                     <small>Today</small>
@@ -62,7 +62,7 @@ scrollbar-width: none;  /* Firefox */
                         <span class="font-extrabold text-green-500">Start</span> date/time
                     </th>
                     <th scope="col" class="hidden md:table-cell lg:table-cell px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
-                        <span class="font-extrabold text-red-400">Edit</span> date/time
+                        <span class="font-extrabold text-red-400">End</span> date/time
                     </th>
                      <th scope="col" class=" hidden md:table-cell lg:table-cell px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
                         Rules

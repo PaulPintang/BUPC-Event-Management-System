@@ -25,7 +25,7 @@
                                     style="object-fit: cover; width: 100%; height: 100%"
                                         src="<?php echo '../modals/upload/' . $row['picture']; ?>"
                                         name="picture"
-                                        onClick="triggerClickE()" 
+                                        onClick="triggerClickE(this)" 
                                         id="profileDisplayE"
                                     >
                                     </div>
@@ -53,7 +53,7 @@
                                 </div>
                             </div>
                              <select class="rounded" name="role" style="padding: 9px; width: 100%; background:#F3F4F6 " required>
-                                <option value="" disabled selected hidden>Role</option>
+                                <option value="<?php echo $row['role']; ?>"  selected hidden><?php echo $row['role']; ?></option>
                                 <option value="President">President</option>
                                 <option value="Vice Presiden">Vice President</option>
                                 <option value="Secretary">Secretary</option>

@@ -1,7 +1,7 @@
 
 <!-- Start of modal -->
 <?php while ($row = mysqli_fetch_array($userEdit)) { ?>
-    <div id="editU<?php echo $row['id'] ?>" class="show fade">
+    <div id="update<?php echo $row['id'] ?>" class="show fade">
         <div style="max-width: 400px" class="mx-auto flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center">
                     <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
             <!-- <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>s -->
@@ -53,7 +53,7 @@
                                 </div>
                             </div>
                              <select class="rounded" name="role" style="padding: 9px; width: 100%; background:#F3F4F6 " required>
-                                <option value="" disabled selected hidden>Role</option>
+                                <option value="<?php echo $row['role']; ?>"  selected hidden><?php echo $row['role']; ?></option>
                                 <option value="President">President</option>
                                 <option value="Vice Presiden">Vice President</option>
                                 <option value="Secretary">Secretary</option>

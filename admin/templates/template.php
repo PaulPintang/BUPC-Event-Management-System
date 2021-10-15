@@ -148,7 +148,6 @@
     <div><?php include '../events/modals/view_event_modal.php';?></div>
     <div><?php include '../events/modals/edit_event_modal.php';?></div>
 
-    <div><?php include '../modals/user_edit_modal.php';?></div>
     <div><?php include '../modals/user_add_modal.php';?></div>
     <div><?php include '../modals/about_modal.php';?></div>
 

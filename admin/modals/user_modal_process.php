@@ -23,7 +23,7 @@
         // if the input file has a value
         if (empty($error)) {
             if(move_uploaded_file($_FILES["profileImage"]["tmp_name"], $target_file)) {
-                    mysqli_query($db, "INSERT INTO users (picture) VALUES ('$picture')");
+                    mysqli_query($db, "INSERT INTO users (picture) VALUES ('$picture') WHERE id='$id'");
             } else {
                 $error = "There was an erro uploading the file";
                 $msg = "alert-danger";
@@ -61,5 +61,8 @@
          header("location: ../home");
         // end
 
+        }
+        if(isset($_POST['delete'])){
+            
         }
 ?>

@@ -68,7 +68,7 @@ scrollbar-width: none;  /* Firefox */
                                     </td>
 
                                     <td class="md:px-6 lg:px-6 py-4 whitespace-nowrap text-right font-medium" style="font-size: 13px">
-                                        <a href="#editU<?php echo $row['id']; ?>" data-toggle="modal" class="text-indigo-600 hover:text-indigo-900 w-full transition-all">
+                                        <a href="#update<?php echo $row['id']; ?>" data-toggle="modal" class="text-indigo-600 hover:text-indigo-900 w-full transition-all">
                                             <i class="far fa-edit text-gray-400 cursor-pointer hover:text-blue-300 transition-all" style="font-size: 13px"></i>
                                         </a>
                                     </td>

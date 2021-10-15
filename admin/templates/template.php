@@ -150,8 +150,8 @@
     <div><?php include '../events/modals/view_event_modal.php';?></div>
     <div><?php include '../events/modals/edit_event_modal.php';?></div>
 
-    <div><?php include '../modals/user_edit_modal.php';?></div>
     <div><?php include '../modals/user_add_modal.php';?></div>
+    <div><?php include '../modals/user_edit_modal.php';?></div>
     <div><?php include '../modals/about_modal.php';?></div>
     
    </body>
@@ -166,6 +166,23 @@
    </script> -->
    <script src="../js/jquery-1.12.4.js"></script>
    <script src="../js/bootstrap.min.js"></script>
+   <script>
+        function triggerClick(e) {
+            document.querySelector("#profileImage").click();
+        }
+
+        function displayImage(e) {
+            if (e.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    document
+                        .querySelector("#profileDisplay")
+                        .setAttribute("src", e.target.result);
+                };
+                reader.readAsDataURL(e.files[0]);
+            }
+        }
+    </script>
 </html>
 <?php
     }else{

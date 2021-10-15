@@ -85,19 +85,21 @@
  <!-- end modal -->
 
 <script>
-function triggerClickE(e) {
-    document.querySelector("#profileImageE").click();
-}
-
-function displayImageE(e) {
-    if (e.files[0]) {
-        var reader = new FileReader();
-        reader.onload = function(e) {
-            document
-                .querySelector("#profileDisplayE")
-                .setAttribute("src", e.target.result);
-        };
-        reader.readAsDataURL(e.files[0]);
+    function triggerClickE(e) {
+        document.querySelector("#profileImageE").click();
     }
-}
+
+    function displayImageE(e) {
+        if (e.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                document
+                    .querySelector("#profileDisplayE")
+                    .setAttribute("src", e.target.result);
+            };
+            reader.readAsDataURL(e.files[0]);
+        }
+    }
+
 </script>
+

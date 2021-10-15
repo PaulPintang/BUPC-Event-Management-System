@@ -99,13 +99,14 @@ scrollbar-width: none;  /* Firefox */
         <div class="flex justify-between pb-2">
             <h1 class="font-medium text-gray-700">User <span class="text-yellow-400">Status</span></h1>
         </div>
+          <div class="overflow-y-auto example" style="height: 280px">
         <table class="min-w-full divide-y divide-gray-200">
-            <thead class="">
+            <thead class="sticky top-0">
                 <tr>
-                    <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th scope="col" class="bg-white px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider shadow-sm">
                         Name
                     </th>
-                    <th scope="col" class="px-3 md:px-6 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th scope="col" class="bg-white px-3 md:px-6 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider shadow-sm">
                         Status
                     </th>
                 </tr>
@@ -144,5 +145,6 @@ scrollbar-width: none;  /* Firefox */
             <?php } ?>
             </tbody>
         </table>
+    </div>
     </div>
 </div>

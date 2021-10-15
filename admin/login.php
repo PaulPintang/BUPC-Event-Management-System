@@ -50,7 +50,7 @@
                     $row = mysqli_fetch_assoc($result);
                     $_SESSION['username'] = $row['username'];
                     $_SESSION['id'] = $row['id'];
-                    header('location: home.php');
+                    header('location: home');
 
                 }
                     else{

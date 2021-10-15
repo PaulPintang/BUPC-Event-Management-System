@@ -1,28 +1,16 @@
 <?php
-session_start();
-// code for retrieve from database
-// USERS
-include('../conn.php');
-$users = mysqli_query($db, "SELECT * FROM users");
-// in user modal
-$userEdit = mysqli_query($db, "SELECT * FROM users");
-// end
-$ID = $_SESSION['id'];
-$currentUser = mysqli_query($db, "SELECT * FROM users WHERE id=$ID");
-$userlogs = mysqli_query($db, "SELECT * FROM logs");
+    session_start();
+    // code for retrieve from database
+    // USERS
+    include('../conn.php');
+    $users = mysqli_query($db, "SELECT * FROM users");
+    // in user modal
+    $userEdit = mysqli_query($db, "SELECT * FROM users");
+    // end
+    $ID = $_SESSION['id'];
+    $currentUser = mysqli_query($db, "SELECT * FROM users WHERE id=$ID");
+    $userlogs = mysqli_query($db, "SELECT * FROM logs");
 
-$name = "";
-$id = 0;
-if (isset($_GET['edit'])) {
-    $id = $_GET['edit'];
-    $rec = mysqli_query($db, "SELECT * FROM users WHERE id=$id");
-    $record = mysqli_fetch_array($rec);
-    $name = $record['name'];
-    $username = $record['username'];
-    $password = $record['password'];
-    $id = $record['id'];
-}
-// end
 
 if (isset($_SESSION['id']) && (isset($_SESSION['username']))) {
 ?>
@@ -38,7 +26,7 @@ if (isset($_SESSION['id']) && (isset($_SESSION['username']))) {
         <link rel="stylesheet" href="index.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <title>College Student Council 2021</title>
-        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>   
+        <!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>    -->
 
     </head>
 
@@ -122,7 +110,7 @@ if (isset($_SESSION['id']) && (isset($_SESSION['username']))) {
                     <div class="flex justify-between pb-5">
                         <h1 class="font-medium text-gray-700">Users</h1>
                         <div>
-                            <a href="" onclick="toggleModal('user_add_modal')" class="" data-toggle="modal">
+                           <a href="#addUser" data-toggle="modal" class="">
                                 <i class="fas fa-plus text-gray-400"></i>
                             </a>
                         </div>
@@ -169,38 +157,25 @@ if (isset($_SESSION['id']) && (isset($_SESSION['username']))) {
                     </table>
                 </div>
             </div>
-
-            <!-- <div class="container mx-auto">
-            <div class="bg-white rounded-lg h-screen p-8">
-                <div class="flex justify-between">
-                    <h1>Calendar</h1>
-                    <a href="#" class="py-2 px-5 bg-yellow-400 rounded text-white hover:bg-yellow-300" onclick="toggleModal('event_modal')">
-                        <div class="flex items-center gap-2">
-                            <div>
-                                <i class="fas fa-plus"></i>
-                            </div>
-                            <div>
-                                <span>Add event</span>
-                            </div>
-                        </div>
-                        </a>
-                </div>
-                <div id='calendar'></div>
-            </div>
-        </div> -->
-            <div>
-            </div>
-        </section>
-
-        <div class="flex justify-center py-5 text-gray-500">
-            <small>BUPC College Student Council &copy; 2021 </small>
+         
         </div>
+    </section>
 
-        <!-- MODALS -->
-        <div><?php include './modals/about_modal.php'; ?></div>
-        <div><?php include './modals/user_modal.php'; ?></div>
-        <div><?php include './modals/events_modal.php'; ?></div>
-        <!-- END -->
+    <div class="flex justify-center py-5 text-gray-500">
+        <small>BUPC College Student Council &copy; 2021 </small>
+    </div>
+
+    <!-- MODALS -->
+    <div>
+         <?php include './modals/user_edit_modal.php'; ?>
+    </div>
+    <div>
+        <?php include './modals/user_add_modal.php'; ?>
+    </div>
+    <div>
+         <?php include './modals/about_modal.php'; ?>
+    </div>
+    <!-- END -->
 
     </body>
     <!-- script for modal -->
@@ -216,26 +191,6 @@ if (isset($_SESSION['id']) && (isset($_SESSION['username']))) {
         }
     </script>
     <!-- END -->
-
-    <!-- script for attaching image -->
-    <script>
-        function triggerClick(e) {
-            document.querySelector("#profileImage").click();
-        }
-
-        function displayImage(e) {
-            if (e.files[0]) {
-                var reader = new FileReader();
-                reader.onload = function(e) {
-                    document
-                        .querySelector("#profileDisplay")
-                        .setAttribute("src", e.target.result);
-                };
-                reader.readAsDataURL(e.files[0]);
-            }
-        }
-    </script>
-    <!-- end -->
 
     </html>
 <?php

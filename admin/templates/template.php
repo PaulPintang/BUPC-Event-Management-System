@@ -25,6 +25,9 @@
             $ID = $_SESSION['id'];
             $currentUser = mysqli_query($db, "SELECT * FROM users WHERE id=$ID");
 
+            // in user modal
+            $userEdit = mysqli_query($db, "SELECT * FROM users");
+            // end
             // $id = 0;
             // if(isset($_GET['edit'])){
             //     $id = $_GET['edit'];
@@ -43,7 +46,6 @@
             // }
 
     // end
-
     if (isset($_SESSION['id']) && (isset($_SESSION['username']))) {
 ?>
 <!DOCTYPE html>
@@ -117,7 +119,7 @@
             <div class="h-4 bg-gray-200" style="width: 1.2px"></div>
             <div class="flex justify-between items-center w-full">
                 <div class="flex gap-3 items-center ">
-                    <a href="../home.php" class="text-gray-400 hover:text-yellow-400 active:text-blue-400 font-medium transition-all">Home</a>
+                    <a href="../home" class="text-gray-400 hover:text-yellow-400 active:text-blue-400 font-medium transition-all">Home</a>
                     <a href="../events" class="text-blue-400 hover:text-yellow-400 active:text-blue-400 font-medium transition-all">Events</a>
                     <a href="../logs" class="text-gray-400 active:text-blue-400 hover:text-yellow-400 font-medium transition-all">Logs</a>
                 </div>
@@ -145,6 +147,10 @@
     <div><?php include '../events/modals/events_modal.php';?></div>
     <div><?php include '../events/modals/view_event_modal.php';?></div>
     <div><?php include '../events/modals/edit_event_modal.php';?></div>
+
+    <div><?php include '../modals/user_edit_modal.php';?></div>
+    <div><?php include '../modals/user_add_modal.php';?></div>
+    <div><?php include '../modals/about_modal.php';?></div>
 
    </body>
    <!-- script for modal -->

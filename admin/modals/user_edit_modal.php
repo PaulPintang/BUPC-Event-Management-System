@@ -2,7 +2,7 @@
 <!-- Start of modal -->
 <?php while ($row = mysqli_fetch_array($userEdit)) { ?>
     <div id="editU<?php echo $row['id'] ?>" class="show fade">
-        <div style="max-width: 400px" class="mx-auto flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center">
+        <div style="max-width: 400px" class="flex mx-auto overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center">
                     <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
             <!-- <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>s -->
                     <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all">

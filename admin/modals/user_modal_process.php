@@ -34,7 +34,7 @@
         $query = "INSERT INTO users (name, username, password, picture, role) VALUES ('$name', '$username', '$password', '$picture', '$role')";
         mysqli_query($db, $query);
         // echo '<script>window.location="../home.php"</script>';
-         header("location: ../index.php");
+         header("location: ../home");
     }
 
    
@@ -58,7 +58,7 @@
         // the variable picture include here because if it has a image attach, it will insert to database
         mysqli_query($db, "UPDATE users SET name='$name', username='$username', password='$password', role='$role' WHERE id=$id");
         // echo '<script>window.location="../home.php"</script>';
-         header("location: ../index.php");
+         header("location: ../home");
         // end
 
         }

@@ -8,7 +8,7 @@
                             <h1 class="font-semibold text-gray-600 text-xl">Add user</h1>
                             <i class="fas fa-close text-gray-300 cursor-pointer" data-dismiss="modal"></i>
                         </div>
-                        <form action="./modals/user_modal_process.php" method="post" class="space-y-2" enctype="multipart/form-data">
+                        <form action="../modals/user_modal_process.php" method="post" class="space-y-2" enctype="multipart/form-data">
                             <div class="flex justify-center">
                                 <div class="space-y-0">
                                     <div class="rounded-full overflow-hidden" style="width: 150px; height: 150px; margin-bottom: -2rem">

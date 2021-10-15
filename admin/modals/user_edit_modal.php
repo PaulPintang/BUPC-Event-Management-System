@@ -1,8 +1,8 @@
 
 <!-- Start of modal -->
 <?php while ($row = mysqli_fetch_array($userEdit)) { ?>
-    <div id="edit<?php echo $row['id'] ?>" class="show fade">
-        <div style="max-width: 400px" class="mx-auto flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center" id="user_modal">
+    <div id="editU<?php echo $row['id'] ?>" class="show fade">
+        <div style="max-width: 400px" class="mx-auto flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center">
                     <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
             <!-- <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>s -->
                     <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all">
@@ -16,7 +16,7 @@
                                  <i class="fas fa-close text-gray-300 cursor-pointer" data-dismiss="modal"></i>
                             </div>
                         </div>
-                        <form action="./modals/user_modal_process.php" method="post" class="space-y-2" enctype="multipart/form-data">
+                        <form action="../modals/user_modal_process.php" method="post" class="space-y-2" enctype="multipart/form-data">
                         <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
                             <div class="flex justify-center">
                                 <div class="space-y-4">

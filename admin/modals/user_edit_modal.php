@@ -81,8 +81,7 @@
             </div>
         </div>
     </div>
-    
-<!-- <?php } ?> -->
+<?php } ?> 
  <!-- end modal -->
 
 <script>

@@ -138,10 +138,12 @@
         </div>
     </section>
 
+   
+    
     <div class="flex justify-center items-end py-5 text-gray-500">
         <small>BUPC College Student Council &copy; 2021 </small>
     </div>
-
+    
     <div><?php include '../logs/modals/about_modal.php';?></div>
     <div><?php include '../logs/modals/view_activity_modal.php';?></div>
     <div><?php include '../events/modals/events_modal.php';?></div>
@@ -151,7 +153,7 @@
     <div><?php include '../modals/user_edit_modal.php';?></div>
     <div><?php include '../modals/user_add_modal.php';?></div>
     <div><?php include '../modals/about_modal.php';?></div>
-
+    
    </body>
    <!-- script for modal -->
    <!-- <script type="text/javascript">

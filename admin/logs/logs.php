@@ -17,7 +17,7 @@ scrollbar-width: none;  /* Firefox */
     <!-- start -->  
         <div class="flex justify-between items-center pb-2">
             <h1 class="font-medium text-gray-700  " styke="top:40px">User <span class="text-yellow-400">Logs</span></h1>
-             <a href="process.php?clear=<?php echo $ID;?>" name="clear" class="bg-red-300 text-white rounded hover:bg-red-400 px-2 py-1 transition-all">Clear logs</a>
+             <a href="process.php?clear" name="clear" class="bg-red-300 text-white rounded hover:bg-red-400 px-2 py-1 transition-all">Clear logs</a>
         </div>
         <div class="overflow-y-auto example" style="height: 300px">
         <table class="min-w-full divide-y divide-gray-200 border-collapse w-full">
@@ -46,9 +46,7 @@ scrollbar-width: none;  /* Firefox */
                 <tr>
                     <td class="px-3 md:px-6 lg:px-6 py-2 whitespace-nowrap">
                         <div class="flex items-center">
-                        <div class="flex-shrink-0 h-10 w-10">
-                            <img class="h-10 w-10 rounded-full" src="../images/undraw_profile.svg" alt="">
-                        </div>
+                       
                         <div class="ml-4">
                             <small><?php echo $row['username']?></small>
                         </div>
@@ -80,9 +78,9 @@ scrollbar-width: none;  /* Firefox */
                                     </div>
                                 ';
                             }else{
-                                echo`
-                                    echo '<small>'$timeOut'</small>';
-                                `;
+                                echo
+                                    "<small>$timeOut</small>";
+                                ;
                             }
                         ?>
                     </td>
@@ -118,7 +116,7 @@ scrollbar-width: none;  /* Firefox */
                     <td class="px-3 py-2 whitespace-nowrap">
                         <div class="flex items-center">
                         <div class="flex-shrink-0 h-10 w-10">
-                            <img class="h-10 w-10 rounded-full" src="../images/undraw_profile.svg" alt="">
+                            <img class="h-10 w-10 rounded-full" src="<?php echo '../modals/upload/' . $row['picture']; ?>" alt="">
                         </div>
                         <div class="ml-4">
                             <small><?php echo $row['name']?></small>

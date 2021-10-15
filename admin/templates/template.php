@@ -74,7 +74,7 @@
                        <span> <?php echo $row['name']?> </span>
                     </div>
                     <div class="flex-shrink-0 h-10 w-10 pl-2">
-                        <img class="h-10 w-10 rounded-full block" src="../images/undraw_profile_3.svg" alt="">
+                        <img class="h-10 w-10 rounded-full block" src="<?php echo '../modals/upload/' . $row['picture']; ?>" alt="">
                     </div>
                 <?php } ?>
                 <div class="opacity-10">|</div>

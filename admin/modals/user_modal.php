@@ -11,30 +11,29 @@
                             <h1 class="font-semibold text-gray-600 text-xl">Edit user account</h1>
                             <i class="fas fa-close text-gray-300 cursor-pointer" data-dismiss="modal"></i>
                         </div>
-                        <form action="./modals/user_modal_process.php" method="post" class="space-y-2">
+                        <form action="./modals/user_modal_process.php" method="post" class="space-y-2" enctype="multipart/form-data">
                         <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
                             <div class="flex justify-center">
                                 <div class="space-y-4">
-                                    <div class="rounded-full overflow-hidden"style="width: 150px; height: 150px;">
-                                        <div class="relative">
+                                <div class="rounded-full overflow-hidden"style="width: 150px; height: 150px;">
+                                       
                                             <img 
-                                                src="./images/undraw_profile_3.svg"
+                                            style="object-fit: cover; width: 100%; height: 100%"
+                                                src="<?php echo '../../../capstone-csc-2021/admin/modals/upload/' . $row['picture'];  ?>"
+                                                name="picture"
                                                 onClick="triggerClick()" 
                                                 id="profileDisplay"
-                                                style="object-fit: cover; width: 100%; height: 100%"
-                                                name="picture"
-                                                class="relative"
                                             >
-                                            <input 
-                                                class="absolute"
+                                            </div>
+                                <input 
+                                                
                                                 type="file" 
                                                 name="profileImage" 
-                                                class="absolute"
+                                                style=" top: -60px; margin-right: -120px; display: flex;"
                                                 onChange="displayImage(this)" 
                                                 id="profileImage" 
                                             >
-                                        </div>
-                                </div>
+                               
                                 </div>
                             </div>
                             <div class="space-y-2">
@@ -70,3 +69,20 @@
     </div>
 <?php } ?>
  <!-- end modal -->
+ <script>
+	function triggerClick(e) {
+		document.querySelector("#profileImage").click();
+	}
+
+	function displayImage(e) {
+		if (e.files[0]) {
+			var reader = new FileReader();
+			reader.onload = function(e) {
+				document
+					.querySelector("#profileDisplay")
+					.setAttribute("src", e.target.result);
+			};
+			reader.readAsDataURL(e.files[0]);
+		}
+	}
+</script>

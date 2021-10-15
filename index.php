@@ -41,14 +41,14 @@
               </div>
             </div>
             <div class="hidden md:block md:ml-8 md:pr-4 md:space-x-8">
-              <a href="#" class="font-bold text-gray-500 hover:text-yellow-300 transition-all">Home</a>
+              <a href="#" class="font-medium text-gray-500 hover:text-yellow-300 transition-all">Home</a>
 
-              <a href="#officers" class="font-bold text-gray-500 hover:text-yellow-300 transition-all">Officers</a>
-              <a href="#about" class="font-bold text-gray-500 hover:text-yellow-300 transition-all">About</a>
+              <a href="#officers" class="font-medium text-gray-500 hover:text-yellow-300 transition-all">Officers</a>
+              <a href="#about" class="font-medium text-gray-500 hover:text-yellow-300 transition-all">About</a>
               <?php
                if (isset($_SESSION['id']) && (isset($_SESSION['name'])))  {
-                 echo '<a href="events-page.php" class="hover:text-yellow-500 text-gray-500 font-bold transition-all">Events</a>';
-                 echo '<a href="logout.php" class="font-bold text-red-300 hover:text-red-200 transition-all">Logout</a>';
+                 echo '<a href="events-page.php" class="hover:text-yellow-300 text-gray-500 font-medium transition-all">Events</a>';
+                 echo '<a href="logout.php" class="font-medium text-red-300 hover:text-red-200 transition-all">Logout</a>';
                } else{
                  echo '<a href="#" onclick="toggleModal(`user_modal`)" class="font-bold text-indigo-600 hover:text-indigo-500 transition-all" >Log in</a>';
                  echo '

@@ -70,10 +70,39 @@
                                     <i class="fas fa-map-marker-alt text-gray-400"></i>
                                     <p><?php echo $row['eLocation']?></p>
                                 </div>
-                                <div class="flex items-center gap-3" style="width: 300px">
+                                <!-- <div class="flex items-center gap-3" style="width: 300px"> -->
                                         <!-- <i class="fas fa-star text-gray-300 hover:text-blue-200 text-xl cursor-pointer transition-all"></i> -->
-                                      <i class="far fa-star text-gray-300 hover:text-blue-200 text-xl cursor-pointer transition-all"></i>
-                                      <small class="text-xs text-gray-400">Please let us know that your are interested to this event by clicking this star</small>
+                                      <!-- <i class="far fa-star text-gray-300 hover:text-blue-200 text-xl cursor-pointer transition-all"></i>
+                                      <small class="text-xs text-gray-400">Please let us know that your are interested to this event by clicking this star</small> -->
+                                <!-- </div> -->
+                                 <div class="flex items-center gap-3">
+                                    <?php
+                                            date_default_timezone_set("Asia/Manila");
+                                            $currentDate = date("Y-m-d");
+                                            $tommorow = date('Y-m-d', strtotime(' +1 day'));
+                                            $upcoming = date('Y-m-d', strtotime(' +2 day'));
+                                            if ($row['startdate'] == $currentDate) {
+                                                echo '
+                                                    <div class="bg-green-300 w-8 h-2"></div>
+                                                    <span class="text-gray-700 text-sm font-extrabold">Today</span>
+                                                ';
+                                            }else if($row['startdate'] == $tommorow){
+                                                echo'
+                                                    <div class="bg-blue-300 w-8 h-2"></div>
+                                                     <span class="text-gray-700 text-sm font-extrabold">Tommorow</span>
+                                                ';
+                                            }else if($row['startdate'] >= $upcoming){
+                                                echo'
+                                                    <div class="bg-pink-300 w-8 h-2"></div>
+                                                     <span class="text-gray-700 text-sm font-extrabold">Upcoming Event</span>
+                                                ';
+                                            }else {
+                                                echo '
+                                                    <div class="bg-yellow-300 w-8 h-2"></div>
+                                                     <span class="text-gray-700 text-sm font-extrabold">Past Event</span>
+                                                ';
+                                            }
+                                        ?>
                                 </div>
                             </div>
                         

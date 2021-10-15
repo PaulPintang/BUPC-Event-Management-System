@@ -56,8 +56,24 @@
     <link rel="stylesheet" href="../index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>College Student Council 2021</title>
+    <script>
+        function display_ct6() {
+            var x = new Date()
+            var ampm = x.getHours( ) >= 12 ? ' PM' : ' AM';
+            hours = x.getHours( ) % 12;
+            hours = hours ? hours : 12;
+            // var x1=x.getMonth() + 1+ "/" + x.getDate() + "/" + x.getFullYear(); 
+            x1 = hours + ":" +  x.getMinutes() + ":" +  x.getSeconds() + ":" + ampm;
+            document.getElementById('ct6').innerHTML = x1;
+            display_c6();
+        }
+        function display_c6(){
+            var refresh=1000; // Refresh rate in milli seconds
+            mytime=setTimeout('display_ct6()',refresh)
+        }
+    </script>
 </head>
-<body>
+<body onload=display_c6();>
     <section class="px-6">
         <div class="flex mx-auto container justify-between items-center">
             <div class="flex items-center gap-3 py-7">

@@ -77,6 +77,35 @@
                                     <i class="fas fa-user text-gray-400"></i>
                                     <p class="text-gray-500 italic text-xs">Username: <span class="text-gray-800 font-bold "><?php echo $row['addby']?></span>  add this event!</p>
                                 </div>
+                                <div class="flex items-center gap-3">
+                                    <?php
+                                            date_default_timezone_set("Asia/Manila");
+                                            $currentDate = date("Y-m-d");
+                                            $tommorow = date('Y-m-d', strtotime(' +1 day'));
+                                            $upcoming = date('Y-m-d', strtotime(' +2 day'));
+                                            if ($row['startdate'] == $currentDate) {
+                                                echo '
+                                                    <div class="bg-green-300 w-8 h-2"></div>
+                                                    <span class="text-gray-700 text-sm font-extrabold">Today</span>
+                                                ';
+                                            }else if($row['startdate'] == $tommorow){
+                                                echo'
+                                                    <div class="bg-blue-300 w-8 h-2"></div>
+                                                     <span class="text-gray-700 text-sm font-extrabold">Tommorow</span>
+                                                ';
+                                            }else if($row['startdate'] >= $upcoming){
+                                                echo'
+                                                    <div class="bg-pink-300 w-8 h-2"></div>
+                                                     <span class="text-gray-700 text-sm font-extrabold">Upcoming Event</span>
+                                                ';
+                                            }else {
+                                                echo '
+                                                    <div class="bg-yellow-300 w-8 h-2"></div>
+                                                     <span class="text-gray-700 text-sm font-extrabold">Past Event</span>
+                                                ';
+                                            }
+                                        ?>
+                                </div>
 
                             </div>
                         

@@ -81,10 +81,10 @@
             </div>
         </div>
     </div>
+
 <?php } ?> 
  <!-- end modal -->
-
-<script>
+     <script>
     function triggerClickE(e) {
         document.querySelector("#profileImageE").click();
     }
@@ -102,4 +102,6 @@
     }
 
 </script>
+
+
 

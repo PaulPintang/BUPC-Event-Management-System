@@ -9,7 +9,7 @@
 <!-- code for: if the user leave his/her account logged in and if they access the website again, they will redirect to homepage not in log in page -->
 <!-- <?php session_start();
     if(isset($_SESSION['id'])&&!empty($_SESSION['id'])){
-    header("Location: home.php");
+    header("Location: home");
     exit();
     }
 ?> -->

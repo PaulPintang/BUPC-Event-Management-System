@@ -76,7 +76,6 @@
                 </div>
             </div>
         </div>
-            <!-- script for attaching image -->
-    
-    <!-- end -->
+        
+
    

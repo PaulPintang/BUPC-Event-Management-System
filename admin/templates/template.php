@@ -150,23 +150,15 @@
     <div><?php include '../events/modals/view_event_modal.php';?></div>
     <div><?php include '../events/modals/edit_event_modal.php';?></div>
 
-    <div><?php include '../modals/user_add_modal.php';?></div>
     <div><?php include '../modals/user_edit_modal.php';?></div>
+    <div><?php include '../modals/user_add_modal.php';?></div>
     <div><?php include '../modals/about_modal.php';?></div>
     
-   </body>
-   <!-- script for modal -->
-   <!-- <script type="text/javascript">
-        function toggleModal(modalID){
-            document.getElementById(modalID).classList.toggle("hidden");
-            document.getElementById(modalID + "-backdrop").classList.toggle("hidden");
-            document.getElementById(modalID).classList.toggle("flex");
-            document.getElementById(modalID + "-backdrop").classList.toggle("flex");
-        }
-   </script> -->
-   <script src="../js/jquery-1.12.4.js"></script>
-   <script src="../js/bootstrap.min.js"></script>
-   <script>
+    <script src="../js/jquery-1.12.4.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+
+               <!-- script for attaching image -->
+    <script>
         function triggerClick(e) {
             document.querySelector("#profileImage").click();
         }
@@ -183,6 +175,10 @@
             }
         }
     </script>
+    <!-- end -->
+   </body>
+   
+   
 </html>
 <?php
     }else{

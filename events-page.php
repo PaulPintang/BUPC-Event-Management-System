@@ -106,28 +106,18 @@
 
 
     <div class="mx-auto px-5 md:px-0 lg:px-0" style="max-width: 1200px">
-        <div class="flex justify-between w-full gap-24 pb-16">
+        <div class="md:flex md:justify-between w-full md:gap-24 pb-16">
             <div>
                 <div class="py-10 space-y-1">
                     <p class="text-2xl font-medium">BU-Polangui Campus <span class="text-yellow-400">Events</span> </p>
                     <div class="h-0.5 w-28 bg-blue-200"></div>
                 </div>
-                <div class="flex gap-10">
-                    <div class="bg-gray-50 rounded-2xl p-10 shadow-sm w-80 space-y-3">
+                <div class="flex md:gap-10 lg:gap-10">
+                    <div class="bg-gray-50 rounded-2xl p-9 shadow-sm w-full md:w-80 lg:w-80 space-y-3">
                         <div><p class="text-4xl font-extrabold">Hi, <?php echo $_SESSION['name']?></p></div>
                         <div><small class="text-gray-400 text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit veniam placeat. Omnis, sint accusantium?</small></div>
                         <div class="pt-3 flex items-center gap-3">
-                            <!-- <i class="far fa-star text-blue-300 text-xl"></i> -->
-                            <!-- <i class="fas fa-star text-blue-300 text-2xl"></i>
-                            <div class="flex flex-col">
-                                <span class="text-gray-600 italic text-sm" style="margin-bottom: -3px">123 stars</span>
-                                <div class="flex gap-3 items-center">
-                                    <p class="text-xl font-semibold text-gray-700">Awesome</p>
-                                    <img src="./images/emoji.png" alt="" style="width: 23px; height: 23px">
-                                </div>
-                            </div> -->
-
-                            <div class="flex gap-5 text-gray-700 italic text-sm">
+                            <div class="flex flex-wrap justify-between w-full text-gray-700 italic text-sm">
                                 <div>
                                     <div class="flex gap-3 items-center">
                                         <div class="bg-green-300 w-5 h-2"></div>
@@ -251,7 +241,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="w-96">
+                    <div class="w-full absolute right-2 opacity-10 md:w-96 lg:w-96 md:relative lg:relative md:opacity-100 lg:opacity-100">
                         <img src="./images/events-show.png" class="w-full" alt="">
                     </div>
                 </div>
@@ -296,7 +286,7 @@
              </div>
              <div class="flex justify-between">
                  <div>
-                     <div class="flex items-center gap-4 pb-6">
+                     <div class="flex flex-wrap items-center gap-4 pb-6">
                          <div class="flex gap-3 items-center">
                             <div class="bg-green-300 w-8 h-2"></div>
                             <small>Today</small>
@@ -314,7 +304,7 @@
                             <small>Past</small>
                          </div>
                      </div>
-                     <div class="bg-white md:rounded-lg lg:rounded-lg h-96 w-full p-6 shadow-sm">
+                     <div class="bg-white md:rounded-lg lg:rounded-lg h-96 p-6 shadow-sm w-full">
                     <!-- start -->  
                         <div class="overflow-y-auto example" style="height: 300px">
                         <table class="min-w-full divide-y divide-gray-200 border-collapse w-full">
@@ -334,7 +324,7 @@
                                     </th>
                                     <th scope="col" class=" hidden md:table-cell lg:table-cell px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
                                      </th>
-                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
+                                    <th scope="col" class=" px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
                                     
                                     </th>
                         
@@ -347,6 +337,31 @@
                                     <td class="md:px-2 lg:px-2 py-2 whitespace-nowrap">
                                         <div class="md:ml-4 lg:ml-4">
                                             <small><?php echo $row['eName']?></small>
+                                            <div class="md:hidden lg:hidden">
+                                                <?php
+                                                    date_default_timezone_set("Asia/Manila");
+                                                    $currentDate = date("Y-m-d");
+                                                    $tommorow = date('Y-m-d', strtotime(' +1 day'));
+                                                    $upcoming = date('Y-m-d', strtotime(' +2 day'));
+                                                    if ($row['startdate'] == $currentDate) {
+                                                        echo '
+                                                            <div class="bg-green-300 w-8 h-2"></div>
+                                                        ';
+                                                    }else if($row['startdate'] == $tommorow){
+                                                        echo'
+                                                            <div class="bg-blue-300 w-8 h-2"></div>
+                                                        ';
+                                                    }else if($row['startdate'] >= $upcoming){
+                                                        echo'
+                                                            <div class="bg-pink-300 w-8 h-2"></div>
+                                                        ';
+                                                    }else {
+                                                        echo '
+                                                            <div class="bg-yellow-300 w-8 h-2"></div>
+                                                        ';
+                                                    }
+                                                ?>
+                                            </div>
                                         </div>
                                     </td>
                                     <?php
@@ -389,7 +404,7 @@
                                         <a href="#viewE<?php echo $row['id'];?>" data-toggle="modal" class="hidden sm:inline md:inline lg:inline text-blue-400 hover:text-white hover:bg-blue-400 w-full px-3 py-1 bg-blue-50 font-semibold rounded transition-colors text-xs">View More</a>
                                     </td>
 
-                                    <td>
+                                    <td class="hidden md:table-cell lg:table-cell">
                                         <?php
                                             date_default_timezone_set("Asia/Manila");
                                             $currentDate = date("Y-m-d");
@@ -421,7 +436,7 @@
                         </div>
                     </div>
                  </div>
-                <div>
+                <div class="hidden md:flex lg:flex">
                     <img src="./images/show1.png" alt="" style="-webkit-transform: scaleX(-1); transform: scaleX(-1);">
                 </div>
              </div>
@@ -437,7 +452,7 @@
     <script src="./admin/calendar/js/main.js"></script>
     <script src="./admin/js/bootstrap.min.js"></script>
     <script src="./admin/js/jquery-1.12.4.js"></script>
-    <script>
+    <!-- <script>
         $(document).ready(function(){
          	$('.like').on('click', function(){
 			var postid = $(this).data('id');
@@ -476,7 +491,7 @@
                 });
             });
         });
-    </script>
+    </script> -->
 </body>
 </html>
 <?php

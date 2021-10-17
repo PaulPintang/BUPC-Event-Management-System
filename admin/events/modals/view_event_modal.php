@@ -11,7 +11,7 @@
                         <a href="../events/modals/events_modal_process.php?del=<?php echo $row['id'];?>" name="del">
                             <i class="fas fa-trash text-gray-300 cursor-pointer hover:text-red-400 transition-all" style="font-size: 13px" onclick="toggleModal('view_event')"></i>
                         </a>
-                        <a href="../events" class="fas fa-close text-gray-300 cursor-pointer hover:text-blue-300 transition-all" style="font-size: 18px" onclick="toggleModal('view_event')"></a>
+                         <i class="fas fa-close text-gray-300 cursor-pointer"  data-dismiss="modal"></i>
                     </div>
                     
                     <div class="space-y-5 px-10 pt-6 pb-10">

@@ -10,7 +10,8 @@ session_start();
         $password = $_POST['password'];
         $role = $_POST['role'];
 
-        $picture = time() . '-' . $_FILES["profileImage"]["name"];
+        // $picture = time() . '-' . $_FILES["profileImage"]["name"];
+        $picture = $_FILES["profileImage"]["name"];
         $target_dir = "./upload/";
         $target_file = $target_dir . basename($picture);
         if($_FILES['profileImage']['size'] > 200000) {

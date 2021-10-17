@@ -54,7 +54,11 @@ scrollbar-width: none;  /* Firefox */
                                     <td class="md:px-6 lg:px-6 py-2 whitespace-nowrap">
                                         <div class="flex items-center">
                                             <div class="flex-shrink-0 h-10 w-10">
-                                                <img class="h-10 w-10 rounded-full" src="<?php echo '../modals/upload/' . $row['picture']; ?>" alt="">
+                                                <?php if ($row['picture'] == NULL): ?>
+                                                    <img class="h-10 w-10 rounded-full" src="../images/user1.png" alt="">
+                                                <?php else: ?>
+                                                    <img class="h-10 w-10 rounded-full" src="<?php echo '../modals/upload/' . $row['picture'] ?>" alt="">
+                                                <?php endif; ?>
                                             </div>
                                             <div class="ml-4 text-gray-800">
                                                 <small><?php echo $row['name'] ?></small>

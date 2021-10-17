@@ -24,6 +24,7 @@
                                 <div class="rounded-full overflow-hidden" style="width: 150px; height: 150px; margin-bottom: -2rem">
                                     <img 
                                          style="object-fit: cover; width: 100%; height: 100%"
+                                         
                                         src="<?php echo '../modals/upload/' . $row['picture']; ?>"
                                         name="picture"
                                         onClick="triggerClickE()" 

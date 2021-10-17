@@ -59,6 +59,27 @@ scrollbar-width: none;  /* Firefox */
                                         onClick="triggerClick()" 
                                         id="profileDisplay"
                                     >
+                                     <?php if ($row['picture'] == NULL): ?>
+                                        <img 
+                                            class="h-10 w-10 rounded-full"
+                                            src="../images/user1.png" 
+                                            style="object-fit: cover; width: 100%; height: 100%"
+                                            name="picture"
+                                            onClick="triggerClick()" 
+                                            id="profileDisplay"
+                                            alt=""
+                                        >
+                                    <?php else: ?>
+                                        <img
+                                            class="h-10 w-10 rounded-full" 
+                                            src="<?php echo '../modals/upload/' . $row['picture'] ?>" 
+                                            style="object-fit: cover; width: 100%; height: 100%"
+                                            name="picture"
+                                            onClick="triggerClick()" 
+                                            id="profileDisplay"
+                                            alt=""
+                                         >
+                                    <?php endif; ?>
                                     </div>
                                     <input 
                                         type="file" 

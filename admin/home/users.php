@@ -1,4 +1,4 @@
-      <style>
+<style>
     /* Hide scrollbar for Chrome, Safari and Opera */
 .example::-webkit-scrollbar {
     display: none;

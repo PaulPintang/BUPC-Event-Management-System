@@ -18,7 +18,7 @@
                             </div>
                         </div>
                         <form action="../modals/user_modal_process.php" method="post" class="space-y-2" enctype="multipart/form-data">
-                        <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                        <input type="" name="id" value="<?php echo $row['id']; ?>">
                             <div class="flex justify-center">
                                 <div class="space-y-4">
                                 <div class="rounded-full overflow-hidden" style="width: 150px; height: 150px; margin-bottom: -2rem">
@@ -54,7 +54,7 @@
                                 </div>
                             </div>
                              <select class="rounded" name="role" style="padding: 9px; width: 100%; background:#F3F4F6 " required>
-                                <option value="" disabled selected hidden>Role</option>
+                                <option value="<?php echo $row['role']; ?>" selected hidden><?php echo $row['role']; ?></option>
                                 <option value="President">President</option>
                                 <option value="Vice Presiden">Vice President</option>
                                 <option value="Secretary">Secretary</option>

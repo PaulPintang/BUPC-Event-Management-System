@@ -8,6 +8,10 @@ switch ($view) {
 		$content    = 'users.php';		
 		break;
 
+	case 'edit' :
+		$content    = 'edit.php';		
+		break;
+
 	default :
 		$content    = 'users.php';		
 }

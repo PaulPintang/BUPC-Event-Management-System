@@ -1,6 +1,7 @@
 
 <!-- Start of modal -->
 <?php while ($row = mysqli_fetch_array($userEdit)) { ?>
+      <?php $userID = $row['id']; ?>
     <div id="editU<?php echo $row['id'] ?>" class="show fade">
         <div style="max-width: 400px" class="flex mx-auto overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center">
                     <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
@@ -22,11 +23,11 @@
                                 <div class="space-y-4">
                                 <div class="rounded-full overflow-hidden" style="width: 150px; height: 150px; margin-bottom: -2rem">
                                     <img 
-                                    style="object-fit: cover; width: 100%; height: 100%"
+                                         style="object-fit: cover; width: 100%; height: 100%"
                                         src="<?php echo '../modals/upload/' . $row['picture']; ?>"
                                         name="picture"
                                         onClick="triggerClickE()" 
-                                        id="profileDisplayE"
+                                        id="<?php echo $userID?>"
                                     >
                                     </div>
                                     <input 
@@ -81,27 +82,25 @@
             </div>
         </div>
     </div>
+    <?php echo '
+        <script>
+            function triggerClickE(e) {
+                document.querySelector("#profileImageE").click();
+            }
 
-<?php } ?> 
+            function displayImageE(e) {
+                if (e.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        document
+                            .getElementById("'.$userID.'")
+                            .setAttribute("src", e.target.result);
+                    };
+                    reader.readAsDataURL(e.files[0]);
+                }
+            }
+        </script>
+    ';
+    ?>
  <!-- end modal -->
-     <script>
-    function triggerClickE(e) {
-        document.querySelector("#profileImageE").click();
-    }
-
-    function displayImageE(e) {
-        if (e.files[0]) {
-            var reader = new FileReader();
-            reader.onload = function(e) {
-                document
-                    .querySelector("#profileDisplayE")
-                    .setAttribute("src", e.target.result);
-            };
-            reader.readAsDataURL(e.files[0]);
-        }
-    }
-
-</script>
-
-
-
+<?php } ?> 

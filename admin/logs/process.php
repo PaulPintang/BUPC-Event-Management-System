@@ -9,7 +9,7 @@
             mysqli_query($db, "TRUNCATE TABLE logs");
             header('location: ../logs');
             $_SESSION['status'] = "Woo hoo!";
-            $_SESSION['text'] = "Event deleted successfully!";
+            $_SESSION['text'] = "All logs deleted successfully!";
         }
 
 ?>

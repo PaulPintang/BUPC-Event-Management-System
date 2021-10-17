@@ -8,8 +8,8 @@
             $id = $_GET['clear'];
             mysqli_query($db, "TRUNCATE TABLE logs");
             header('location: ../logs');
-            $_SESSION['message'] = "Logs deleted successfully";
-            $_SESSION['msg_type'] = "green-500";
+            $_SESSION['status'] = "Woo hoo!";
+            $_SESSION['text'] = "Event deleted successfully!";
         }
 
 ?>

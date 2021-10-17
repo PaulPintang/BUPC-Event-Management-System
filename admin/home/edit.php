@@ -39,7 +39,7 @@ scrollbar-width: none;  /* Firefox */
                         <div class="flex justify-between items-center pb-8">
                             <h1 class="font-semibold text-gray-600 text-xl">Edit user account</h1>
                             <div class="flex items-center gap-5">
-                                <a href="process.php?del=<?php echo $row['id'];?>" name="del">
+                                <a href="../modals/user_modal_process.php?del=<?php echo $row['id'];?>" name="del">
                                     <i class="fas fa-trash text-gray-300 cursor-pointer hover:text-red-400 transition-all" style="font-size: 13px" onclick="toggleModal('view_event')"></i>
                                 </a>
                                 <a href="../home">

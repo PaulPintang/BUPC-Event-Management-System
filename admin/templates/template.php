@@ -28,22 +28,6 @@
             // in user modal
             $userEdit = mysqli_query($db, "SELECT * FROM users");
             // end
-            // $id = 0;
-            // if(isset($_GET['edit'])){
-            //     $id = $_GET['edit'];
-            //     $rec = mysqli_query($db, "SELECT * FROM events WHERE id=$id");
-                
-            //     $eName = $record['eName'];
-            //     $eDescription = $record['eDescription'];
-            //     $eObjectives = $record['eObjectives'];
-            //     $rules = $record['rules'];
-            //     $eLocation = $record['eLocation'];
-            //     $startdate = $record['startdate'];
-            //     $startime = $record['startime'];
-            //     $enddate = $record['enddate'];
-            //     $endtime = $record['endtime'];
-            //     $id = $record['id'];
-            // }
 
     // end
     if (isset($_SESSION['id']) && (isset($_SESSION['username']))) {
@@ -55,6 +39,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="../index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>College Student Council 2021</title>
@@ -137,8 +122,6 @@
             <?php require_once $content; ?> 
         </div>
     </section>
-
-   
     
     <div class="flex justify-center items-end py-5 text-gray-500">
         <small>BUPC College Student Council &copy; 2021 </small>
@@ -153,11 +136,14 @@
     <div><?php include '../modals/user_edit_modal.php';?></div>
     <div><?php include '../modals/user_add_modal.php';?></div>
     <div><?php include '../modals/about_modal.php';?></div>
+
+    <div><?php include 'alertSession.php';?></div>
     
     <script src="../js/jquery-1.12.4.js"></script>
     <script src="../js/bootstrap.min.js"></script>
+    <script src="sweetalert2.all.min.js"></script>
 
-               <!-- script for attaching image -->
+  <!-- script for attaching image -->
     <script>
         function triggerClick(e) {
             document.querySelector("#profileImage").click();
@@ -175,10 +161,7 @@
             }
         }
     </script>
-    <!-- end -->
    </body>
-   
-   
 </html>
 <?php
     }else{

@@ -8,7 +8,7 @@
                 <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all">
                 <div class="bg-white mx-5 mb-5 mt-2" style="max-width: 600px">
                     <div class="flex justify-end items-center gap-7 pr-3 pt-4">
-                        <a href="process.php?del=<?php echo $row['id'];?>" name="del">
+                        <a href="../events/modals/events_modal_process.php?del=<?php echo $row['id'];?>" name="del">
                             <i class="fas fa-trash text-gray-300 cursor-pointer hover:text-red-400 transition-all" style="font-size: 13px" onclick="toggleModal('view_event')"></i>
                         </a>
                         <a href="../events" class="fas fa-close text-gray-300 cursor-pointer hover:text-blue-300 transition-all" style="font-size: 18px" onclick="toggleModal('view_event')"></a>

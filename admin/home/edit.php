@@ -84,7 +84,7 @@ scrollbar-width: none;  /* Firefox */
                                 </div>
                             </div>
                              <select class="rounded" name="role" style="padding: 9px; width: 100%; background:#F3F4F6 " required>
-                                <option value="" disabled selected hidden>Role</option>
+                                <option value="<?php echo $row['role']; ?>"  selected hidden><?php echo $row['role']; ?></option>
                                 <option value="President">President</option>
                                 <option value="Vice Presiden">Vice President</option>
                                 <option value="Secretary">Secretary</option>

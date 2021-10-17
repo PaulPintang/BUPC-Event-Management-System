@@ -44,12 +44,12 @@
         $mail->isSMTP();
         $mail->Host = "smtp.gmail.com";
         $mail->SMTPAuth = true;
-        $mail->Username = "studentprofilingsystem.ted@gmail.com"; //enter you email address
-        $mail->Password = 'santiano'; //enter you email password
+        $mail->Username = "collegestudent.council1@gmail.com"; //enter you email address
+        $mail->Password = 'CSCpassword'; //enter you email password
         $mail->Port = 465;
         $mail->SMTPSecure = "ssl";
        
-        $mail->From = "admin.studentprofilingsystem.ted@bicol-u.edu.ph";
+        $mail->From = "admin.collegestudent.council1@bicol-u.edu.ph";
         $mail->FromName = "BUPC College Student Council 2021";
         while ($row=mysqli_fetch_assoc($rec)) {
             $mail->addAddress($row['buEmail']);

@@ -1,5 +1,6 @@
 <?php
 
+session_start();
    include('../../conn.php');
 
    if(isset($_POST['save'])){
@@ -33,8 +34,12 @@
         // the variable picture include here because if it has a image attach, it will insert to database
         $query = "INSERT INTO users (name, username, password, picture, role) VALUES ('$name', '$username', '$password', '$picture', '$role')";
         mysqli_query($db, $query);
+
         // echo '<script>window.location="../home.php"</script>';
          header("location: ../home");
+         $_SESSION['status'] = "Woo hoo!";
+          $_SESSION['text'] = "New user added successfully!";
+        $_SESSION['status_code'] = "success";
     }
 
    
@@ -57,9 +62,22 @@
         // and if no value
         // the variable picture include here because if it has a image attach, it will insert to database
         mysqli_query($db, "UPDATE users SET name='$name', username='$username', password='$password', role='$role' WHERE id=$id");
+        
         // echo '<script>window.location="../home.php"</script>';
          header("location: ../home");
+          $_SESSION['status'] = "Woo hoo!";
+          $_SESSION['text'] = "User details updated successfully!";
+          $_SESSION['status_code'] = "info";
         // end
 
+        }
+
+           if (isset($_GET['del'])) {
+            $id = $_GET['del'];
+           mysqli_query($db, "DELETE FROM users WHERE id=$id");
+            header('location: ../home');
+            $_SESSION['status'] = "Woo hoo!";
+            $_SESSION['text'] = "User deleted successfully!";
+            $_SESSION['status_code'] = "success";
         }
 ?>

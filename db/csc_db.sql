@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 14, 2021 at 02:13 AM
+-- Generation Time: Oct 18, 2021 at 05:22 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -47,15 +47,9 @@ CREATE TABLE `events` (
 --
 
 INSERT INTO `events` (`id`, `eName`, `eDescription`, `eLocation`, `startdate`, `enddate`, `endtime`, `eObjectives`, `rules`, `startime`, `addby`, `editby`) VALUES
-(1, 'test', 'dasdsadsad', 'dsadasd', '2021-10-08', '2021-10-08', 'asdas', 'asdasd', 'Not Required', 'asdasd', 'eddessa', 'jusswaaa'),
-(2, 'jhkhk', 'dsadasdsa', 'dsasa', '2021-10-09', '2021-10-09', 'ad', 'dasd', 'Not Required', 'dsad', 'eddessa', 'eddessa'),
-(3, 'cdfdf', 'asdsaddsadasdsda', 'dasdas', '2021-10-09', '2021-10-09', 'asd', 'asdasd', 'Required', 'dasd', 'eddessa', 'jusswaaa'),
-(4, 'Today', 'fsdfs', 'fdsfsf', '2021-10-13', '2021-10-13', 'fsdf', 'dfsdf', 'Required', 'sdfsd', 'tricia', 'tricia'),
-(5, 'fsdfds', 'fsdf', 'sdfsdf', '2021-10-14', '2021-10-14', 'fsdfs', 'fdsfsdf', 'Required', 'fdfsdf', 'tricia', NULL),
-(6, 'dasdas', 'dasdasd', 'dasdasd', '2021-10-16', '2021-10-16', 'dsad', 'asdasda', 'Required', 'asdas', 'tricia', 'tricia'),
-(7, 'fsdf', 'sdfdsf', 'fsdfd', '2021-10-19', '2021-10-19', 'fsdfds', 'sdfsd', 'Not Required', 'fdsfds', 'tricia', NULL),
-(8, 'dasdfsdf', 'asdasdas', 'adsadas', '2021-10-29', '2021-10-29', 'dfsdf', 'adsadas', 'Required', 'dfsdf', 'tricia', NULL),
-(9, 'dfsdfds', 'fdsfdsf', 'dfsdf', '2021-11-11', '2021-11-11', 'dsfsd', 'dsfdsf', 'Not Required', 'afdfdf', 'tricia', NULL);
+(18, 'sadasd', 'asd', 'asdas', '2021-10-17', '2021-10-17', 'dsad', 'adasda', 'Required', 'dasda', 'paul', NULL),
+(20, 'Welcome Party 2021', 'asdas', 'dasd', '2021-10-14', '2021-10-17', 'dasda', 'dasd', 'Required', 'asdas', 'paul', 'paul'),
+(22, 'dasda', 'sdasd', 'asdas', '2021-10-18', '2021-10-18', 'dsad', 'asda', 'Not Required', 'asdas', 'paul', NULL);
 
 -- --------------------------------------------------------
 
@@ -89,12 +83,9 @@ CREATE TABLE `logs` (
 --
 
 INSERT INTO `logs` (`id`, `username`, `date`, `login`, `logout`) VALUES
-(1, 'jusswaaa', 'Mon Oct 11, 2021', '11:12: AM', '11:13 AM'),
-(2, 'jusswaaa', 'Tue Oct 12, 2021', '09:11: AM', '09:12 AM'),
-(3, 'jusswaaa', 'Tue Oct 12, 2021', '08:46: PM', '08:54 PM'),
-(4, 'jusswaaa', 'Wed Oct 13, 2021', '07:36: PM', '07:51 PM'),
-(5, 'tricia', 'Wed Oct 13, 2021', '08:03: PM', NULL),
-(6, 'tricia', 'Thu Oct 14, 2021', '07:59: AM', NULL);
+(1, 'paul', 'Sun Oct 17, 2021', '10:49: PM', '12:00 AM'),
+(2, 'paul', 'Sun Oct 17, 2021', '11:40: PM', NULL),
+(3, 'paul', 'Mon Oct 18, 2021', '11:16: AM', NULL);
 
 -- --------------------------------------------------------
 
@@ -108,18 +99,16 @@ CREATE TABLE `studentsAcc` (
   `course` varchar(255) NOT NULL,
   `studentId` varchar(255) NOT NULL,
   `buEmail` varchar(255) NOT NULL,
-  `setEmails` int(255) NOT NULL,
-  `postid` int(11) DEFAULT NULL,
-  `userid` int(11) DEFAULT NULL
+  `setEmails` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `studentsAcc`
 --
 
-INSERT INTO `studentsAcc` (`id`, `name`, `course`, `studentId`, `buEmail`, `setEmails`, `postid`, `userid`) VALUES
-(3, 'Paul', 'BSIS-4A', '2000', 'pauljustineprena.pintang@bicol-u.edu.ph', 1, NULL, NULL),
-(4, 'joshua', 'BSIS-4A', '2000', 'puldyastin@gmail.com', 1, NULL, NULL);
+INSERT INTO `studentsAcc` (`id`, `name`, `course`, `studentId`, `buEmail`, `setEmails`) VALUES
+(3, 'Paul', 'BSIS-4A', '2000', 'pauljustineprena.pintang@bicol-u.edu.ph', 1),
+(4, 'joshua', 'BSIS-4A', '2000', 'puldyastin@gmail.com', 1);
 
 -- --------------------------------------------------------
 
@@ -132,7 +121,7 @@ CREATE TABLE `users` (
   `name` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `picture` varchar(255) NOT NULL,
+  `picture` varchar(255) DEFAULT NULL,
   `role` varchar(255) NOT NULL,
   `status` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -142,10 +131,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `password`, `picture`, `role`, `status`) VALUES
-(1, 'Joshua Booban', 'jusswaaa', '1234', '1633443226-', 'President', 'Offline'),
-(2, 'Ma. Roseanne Pandaan', 'roseanne', '1234', '1633364673-', 'Vice President', 'Offline'),
-(3, 'Eddessa Joy Legson', 'eddessa', '1234', '1632971941-', 'Secretary', 'Offline'),
-(5, 'Tricia Kaye Moya', 'tricia', '1234', '1632972015-', 'Representative', 'Online');
+(27, 'Paul', 'paul', '1', '1634486050-undraw_profile_3.svg', 'Represendtative', 'Online'),
+(31, 'sds', 'dsf', 'sdfsdf', '1634527001-office.png', 'P.I.O', NULL),
+(32, 'dasd', 'das', 'dsada', '', 'Auditor', NULL);
 
 --
 -- Indexes for dumped tables
@@ -189,7 +177,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `likes`
@@ -201,7 +189,7 @@ ALTER TABLE `likes`
 -- AUTO_INCREMENT for table `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `studentsAcc`
@@ -213,7 +201,7 @@ ALTER TABLE `studentsAcc`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

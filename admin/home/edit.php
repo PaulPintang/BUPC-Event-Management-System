@@ -51,43 +51,36 @@ scrollbar-width: none;  /* Firefox */
                         <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
                             <div class="flex justify-center">
                                 <div class="space-y-4">
-                                <div class="rounded-full overflow-hidden" style="width: 150px; height: 150px; margin-bottom: -2rem">
-                                    <img 
-                                         style="object-fit: cover; width: 100%; height: 100%"
-                                        src="<?php echo '../modals/upload/' . $row['picture']; ?>"
-                                        name="picture"
-                                        onClick="triggerClick()" 
-                                        id="profileDisplay"
-                                    >
-                                     <?php if ($row['picture'] == NULL): ?>
-                                        <img 
-                                            class="h-10 w-10 rounded-full"
-                                            src="../images/user1.png" 
-                                            style="object-fit: cover; width: 100%; height: 100%"
-                                            name="picture"
-                                            onClick="triggerClick()" 
-                                            id="profileDisplay"
-                                            alt=""
-                                        >
-                                    <?php else: ?>
-                                        <img
-                                            class="h-10 w-10 rounded-full" 
-                                            src="<?php echo '../modals/upload/' . $row['picture'] ?>" 
-                                            style="object-fit: cover; width: 100%; height: 100%"
-                                            name="picture"
-                                            onClick="triggerClick()" 
-                                            id="profileDisplay"
-                                            alt=""
-                                         >
-                                    <?php endif; ?>
+                                    <div class="rounded-full overflow-hidden" style="width: 150px; height: 150px; margin-bottom: -2rem">
+                                        <?php if ($row['picture'] == NULL): ?>
+                                            <img 
+                                                class="h-10 w-10 rounded-full"
+                                                src="../images/user1.png" 
+                                                style="object-fit: cover; width: 100%; height: 100%"
+                                                name="picture"
+                                                onClick="triggerClick()" 
+                                                id="profileDisplay"
+                                                alt=""
+                                            >
+                                        <?php else: ?>
+                                            <img
+                                                class="h-10 w-10 rounded-full" 
+                                                src="<?php echo '../modals/upload/' . $row['picture'] ?>" 
+                                                style="object-fit: cover; width: 100%; height: 100%"
+                                                name="picture"
+                                                onClick="triggerClick()" 
+                                                id="profileDisplay"
+                                                alt=""
+                                            >
+                                        <?php endif; ?>
                                     </div>
-                                    <input 
-                                        type="file" 
-                                        name="profileImage" 
-                                        style=" top: -60px; margin-right: -120px; display: flex; opacity: 0"
-                                        onChange="displayImage(this)" 
-                                        id="profileImage" 
-                                    >
+                                        <input 
+                                            type="file" 
+                                            name="profileImage" 
+                                            style=" top: -60px; margin-right: -120px; display: flex; opacity: 0"
+                                            onChange="displayImage(this)" 
+                                            id="profileImage" 
+                                        >
                                 </div>
                             </div>
                             <div class="space-y-2">

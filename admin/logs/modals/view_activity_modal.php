@@ -11,7 +11,7 @@
                         <!-- <a href="process.php?del=<?php echo $row['id'];?>" name="del">
                             <i class="fas fa-trash text-gray-300 cursor-pointer hover:text-red-400 transition-all" style="font-size: 13px" onclick="toggleModal('activity')"></i>
                         </a> -->
-                        <a href="#" class="fas fa-close text-gray-300 cursor-pointer hover:text-blue-300 transition-all" style="font-size: 18px" data-dismiss="modal"></a>
+                        <a href="#" class="fas fa-close text-gray-300 cursor-pointer hover:text-blue-300 transition-all" style="font-size: 18px" data-dismiss="modal"></a>`
                     </div>
                     
                     <div class="space-y-2 px-10 pt-6 pb-10">

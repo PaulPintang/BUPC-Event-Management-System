@@ -19,7 +19,6 @@
                $record = mysqli_fetch_array($showEdit);
                $username = $record['username'];
             $viewActivity = mysqli_query($db, "SELECT * FROM logs");
-            $userActivity = mysqli_query($db, "SELECT * FROM userActivity");
             // end
 
             $ID = $_SESSION['id'];
@@ -77,7 +76,7 @@
                        <span> <?php echo $row['name']?> </span>
                     </div>
                     <div class="flex-shrink-0 h-10 w-10 pl-2">
-                        <img class="h-10 w-10 rounded-full block" src="<?php echo '../modals/upload/' . $row['picture']; ?>" alt="">
+                        <img class="h-10 w-10 rounded-full" src="<?php echo '../modals/upload/' . $row['picture']; ?>" alt="">
                     </div>
                 <?php } ?>
                 <div class="opacity-10">|</div>
@@ -107,6 +106,7 @@
                     <a href="../home" class="text-gray-400 hover:text-yellow-400 active:text-blue-400 font-medium transition-all">Home</a>
                     <a href="../events" class="text-blue-400 hover:text-yellow-400 active:text-blue-400 font-medium transition-all">Events</a>
                     <a href="../logs" class="text-gray-400 active:text-blue-400 hover:text-yellow-400 font-medium transition-all">Logs</a>
+                    <a href="../officers"><i class="fas fa-user-cog text-gray-500 hover:text-yellow-300 active:text-blue-500  transition-all"></i></a>
                 </div>
                 <div>
                    <a href="#about" data-toggle="modal">
@@ -136,6 +136,7 @@
     <div><?php include '../modals/user_edit_modal.php';?></div>
     <div><?php include '../modals/user_add_modal.php';?></div>
     <div><?php include '../modals/about_modal.php';?></div>
+    <div><?php include '../officers/modal/update_officer_modal.php' ?></div>
 
     <div><?php include 'alertSession.php';?></div>
     

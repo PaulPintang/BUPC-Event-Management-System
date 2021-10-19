@@ -198,7 +198,5 @@ scrollbar-width: none;  /* Firefox */
   <!-- end -->
   </div>
   <script src="../calendar/js/jquery.min.js"></script>
-  <!-- <script src="../calendar-10/js/popper.js"></script> -->
-  <!-- <script src="../calendar-10/js/bootstrap.min.js"></script> -->
   <script src="../calendar/js/main.js"></script>
 </div>

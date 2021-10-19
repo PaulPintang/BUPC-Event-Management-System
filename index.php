@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,16 +7,28 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./index.css">
   <title>Document</title>
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<style>
+  .show {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  display: none;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+}
+</style>
 </head>
 
 <body>
-
-  <?php include('register_process.php'); ?>
-
   <div class="relative bg-white overflow-hidden">
     <div class="max-w-7xl mx-auto">
       <div class="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
@@ -49,7 +62,7 @@
                  echo '<a href="logout.php" class="px-4 py-2 mt-2 text-red-400 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-red-500 focus:text-red-500 hover:bg-red-200 focus:bg-red-200 focus:outline-none focus:shadow-outline">Logout</a>';
                } else{
                  echo '<a href="#" onclick="toggleModal(`user_modal`)" class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" >Log in</a>';
-                 echo '<a href="#" onclick="toggleModal(`modal-id`)" class="px-4 py-2 mt-2 text-white-400 text-sm font-semibold  text-white-900 bg-yellow-500 rounded-lg dark-mode:bg-gray-700 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-yellow-300 focus:bg-yellow-300 focus:outline-none focus:shadow-outline" >Register</a>
+                 echo '<a href="#" onclick="toggleModal(`register_modal`)"  class="px-4 py-2 mt-2 text-white-400 text-sm font-semibold  text-white-900 bg-yellow-500 rounded-lg dark-mode:bg-gray-700 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-yellow-300 focus:bg-yellow-300 focus:outline-none focus:shadow-outline" >Register</a>
                   ';
                }
               ?>
@@ -232,6 +245,29 @@
 
   <div> <?php include './modals/register_modal.php'; ?></div>
   <div> <?php include './modals/login_modal.php'; ?></div>
+  <style>
+    .swal2-popup {
+            font-size: 12px !important;
+    }
+  </style>
+  <?php
+      if (isset($_SESSION['status']) && $_SESSION['status'] !='') {
+          ?>
+              <script>
+                      Swal.fire({
+                      position: 'center',
+                      imageUrl: '<?php echo $_SESSION['img'] ?>',
+                      title: '<?php echo $_SESSION['status']  ?>',
+                      text: '<?php echo $_SESSION['text'] ?>',
+                      width: '17rem',
+                      showConfirmButton: false,
+                      // timer: 1600
+                  })
+              </script>
+          <?php
+          unset($_SESSION['status']);
+      }
+  ?>
 
 </body>
 
@@ -244,5 +280,7 @@
     document.getElementById(modalID + "-backdrop").classList.toggle("flex");
   }
 </script>
+<script src="sweetalert2.all.min.js"></script>
+
 
 </html>

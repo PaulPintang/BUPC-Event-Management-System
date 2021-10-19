@@ -30,20 +30,25 @@
 
                     $row = mysqli_fetch_assoc($result);
                     $_SESSION['name'] = $row['name'];
-                    // $_SESSION['name'] = $row['name'];
                     $_SESSION['id'] = $row['id'];
 
-                    header('location: home.php');
-
+                    header('location: index.php');
+                    $_SESSION['status'] = "Woo hoo!";
+                    $_SESSION['img'] = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREdklY1YcgCVMSLmTwiQ8T-2tqvy3gNOLkog&usqp=CAU";
+                    $_SESSION['text'] = "Login successfull!";
                 }
                     else{
                     header("Location: index.php?error=name and studentId not match");
+                    $_SESSION['status'] = "Oopss!";
+                    $_SESSION['img'] = "https://assets.website-files.com/5b5f4cc1bb5a8369e423e901/5f6511fb6158287d9188ebb1_ugging_his_shoulders_1200x628_091020.svg";
+                    $_SESSION['text'] = "Please check your inputs";
+                 
                     exit();
               }
             }
 
     }else{
-        header(location: index.php);
+        header('location: index.php');
         exit();
     }
 

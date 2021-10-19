@@ -30,105 +30,7 @@ scrollbar-width: none;  /* Firefox */
                         </div>
                     </div>
                 </div>
-        <?php while ($row = mysqli_fetch_array($getUsers)) { ?>
-                 <div style="max-width: 400px" class="flex mx-auto overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center">
-                    <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
-            <!-- <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>s -->
-                    <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all">
-                    <div class="bg-white p-5 mx-5 my-5" style="max-width: 500px">
-                        <div class="flex justify-between items-center pb-8">
-                            <h1 class="font-semibold text-gray-600 text-xl">Edit user account</h1>
-                            <div class="flex items-center gap-5">
-                                <a href="../modals/user_modal_process.php?del=<?php echo $row['id'];?>" name="del">
-                                    <i class="fas fa-trash text-gray-300 cursor-pointer hover:text-red-400 transition-all" style="font-size: 13px" onclick="toggleModal('view_event')"></i>
-                                </a>
-                                <a href="../home">
-                                 <i class="fas fa-close text-gray-300 cursor-pointer"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <form action="../modals/user_modal_process.php" method="post" class="space-y-2" enctype="multipart/form-data">
-                        <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
-                            <div class="flex justify-center">
-                                <div class="space-y-4">
-                                    <div class="rounded-full overflow-hidden" style="width: 150px; height: 150px; margin-bottom: -2rem">
-                                        <?php if ($row['picture'] == NULL): ?>
-                                            <img 
-                                                class="h-10 w-10 rounded-full"
-                                                src="../images/user1.png" 
-                                                style="object-fit: cover; width: 100%; height: 100%"
-                                                name="picture"
-                                                onClick="triggerClick()" 
-                                                id="profileDisplay"
-                                                alt=""
-                                            >
-                                        <?php else: ?>
-                                            <img
-                                                class="h-10 w-10 rounded-full" 
-                                                src="<?php echo '../modals/upload/' . $row['picture'] ?>" 
-                                                style="object-fit: cover; width: 100%; height: 100%"
-                                                name="picture"
-                                                onClick="triggerClick()" 
-                                                id="profileDisplay"
-                                                alt=""
-                                            >
-                                        <?php endif; ?>
-                                    </div>
-                                        <input 
-                                            type="file" 
-                                            name="profileImage" 
-                                            style=" top: -60px; margin-right: -120px; display: flex; opacity: 0"
-                                            onChange="displayImage(this)" 
-                                            id="profileImage" 
-                                        >
-                                </div>
-                            </div>
-                            <div class="space-y-2">
-                                <p class="text-sm">Name <span class="text-red-500">*</span></p>
-                                <input type="text" value="<?php echo $row['name']; ?>" autocomplete="off" name="name" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
-                            </div>
-                            <div class="flex gap-3">
-                                <div class="space-y-2">
-                                    <p class="text-sm">Username<span class="text-red-500">*</span></p>
-                                    <input type="text" value="<?php echo $row['username']; ?>" autocomplete="off" name="username" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
-                                </div>
-                                <div class="space-y-2">
-                                    <p class="text-sm">Password <span class="text-red-500">*</span></p>
-                                    <input type="password" value="<?php echo $row['password']; ?>" autocomplete="off" name="password" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
-                                </div>
-                            </div>
-                             <select class="rounded" name="role" style="padding: 9px; width: 100%; background:#F3F4F6 " required>
-                                <option value="<?php echo $row['role']; ?>"  selected hidden><?php echo $row['role']; ?></option>
-                                <option value="President">President</option>
-                                <option value="Vice Presiden">Vice President</option>
-                                <option value="Secretary">Secretary</option>
-                                <option value="Treasurer">Treasurer</option>
-                                <option value="Auditor">Auditor</option>
-                                <option value="Business Manager">Business Manager</option>
-                                <option value="P.I.O">P.I.O</option>
-                                <option value="Represendtative">Represendtative</option>
-                            </select>
-                            <div>
-                                <small class="text-gray-500">Note: this account can also access this admin page. Thank you!</small>
-                            </div>
-                            <div class="flex justify-center">
-                                <div style="font-size: 14px">
-                                    <button type="button" data-dismiss="modal" class="px-6 py-2 bg-gray-100 rounded text-gray-500">
-                                     <a href="../home">
-                                            Cancel
-                                    </a>
-                                    </button>
-                                    <button class="px-6 bg-green-500 hover:bg-green-400 py-2 text-white rounded ml-3" name="update" type="submit" onclick="toggleModal('modal-id')">
-                                        Update
-                                    </button>
-                                </div>
-                            </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-        <?php } ?> 
+            
       <div class="bg-white rounded-lg p-6 md:shadow-sm lg:shadow-sm">
                     <div class="flex justify-between pb-5">
                         <h1 class="font-medium text-gray-700">Users</h1>
@@ -185,4 +87,104 @@ scrollbar-width: none;  /* Firefox */
                 </div>
             </div>
 
-         
+         <?php while ($row = mysqli_fetch_array($getUsers)) { ?>
+                 <div style="max-width: 400px" class="flex px-4 mx-auto overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center">
+                    <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+            <!-- <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>s -->
+                    <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all">
+                    <div class="bg-white p-5 mx-3 md:my-5 lg:my-5" style="max-width: 500px">
+                        <div class="flex justify-between items-center pb-8">
+                            <h1 class="font-semibold text-gray-600 text-xl">Edit user account</h1>
+                            <div class="flex items-center gap-5">
+                                <a href="../modals/user_modal_process.php?del=<?php echo $row['id'];?>" name="del">
+                                    <i class="fas fa-trash text-gray-300 cursor-pointer hover:text-red-400 transition-all" style="font-size: 13px" onclick="toggleModal('view_event')"></i>
+                                </a>
+                                <a href="../home">
+                                 <i class="fas fa-close text-gray-300 cursor-pointer"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <form action="../modals/user_modal_process.php" method="post" class="space-y-2 text-xs md:text-base lg:text-base" enctype="multipart/form-data">
+                        <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                            <div class="flex justify-center">
+                                <div class="space-y-4 relative">
+                                    <div class="rounded-full overflow-hidden" style="width: 140px; height: 140px; margin-top: -1rem ">
+                                        <?php if ($row['picture'] == NULL): ?>
+                                            <img 
+                                                class="h-10 w-10 rounded-full"
+                                                src="../images/user1.png" 
+                                                style="object-fit: cover; width: 100%; height: 100%"
+                                                name="picture"
+                                                onClick="triggerClick()" 
+                                                id="profileDisplay"
+                                                alt=""
+                                            >
+                                        <?php else: ?>
+                                            <img
+                                                class="h-10 w-10 rounded-full" 
+                                                src="<?php echo '../modals/upload/' . $row['picture'] ?>" 
+                                                style="object-fit: cover; width: 100%; height: 100%"
+                                                name="picture"
+                                                onClick="triggerClick()" 
+                                                id="profileDisplay"
+                                                alt=""
+                                            >
+                                        <?php endif; ?>
+                                    </div>
+                                    <div class="absolute bottom-3 text-xs opacity-0">
+                                        <input 
+                                            type="file" 
+                                            name="profileImage" 
+                                            style="opacity: "
+                                            onChange="displayImage(this)" 
+                                            id="profileImage" 
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <p class="text-sm">Name <span class="text-red-500">*</span></p>
+                                <input type="text" value="<?php echo $row['name']; ?>" autocomplete="off" name="name" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
+                            </div>
+                            <div class="flex gap-3">
+                                <div class="space-y-2">
+                                    <p class="text-sm">Username<span class="text-red-500">*</span></p>
+                                    <input type="text" value="<?php echo $row['username']; ?>" autocomplete="off" name="username" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
+                                </div>
+                                <div class="space-y-2">
+                                    <p class="text-sm">Password <span class="text-red-500">*</span></p>
+                                    <input type="password" value="<?php echo $row['password']; ?>" autocomplete="off" name="password" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
+                                </div>
+                            </div>
+                             <select class="rounded" name="role" style="padding: 9px; width: 100%; background:#F3F4F6 " required>
+                                <option value="<?php echo $row['role']; ?>"  selected hidden><?php echo $row['role']; ?></option>
+                                <option value="President">President</option>
+                                <option value="Vice Presiden">Vice President</option>
+                                <option value="Secretary">Secretary</option>
+                                <option value="Treasurer">Treasurer</option>
+                                <option value="Auditor">Auditor</option>
+                                <option value="Business Manager">Business Manager</option>
+                                <option value="P.I.O">P.I.O</option>
+                                <option value="Represendtative">Represendtative</option>
+                            </select>
+                            <div>
+                                <small class="text-gray-500">Note: this account can also access this admin page. Thank you!</small>
+                            </div>
+                            <div class="flex justify-center">
+                                <div style="font-size: 14px">
+                                    <button type="button" data-dismiss="modal" class="px-6 py-2 bg-gray-100 rounded text-gray-500">
+                                     <a href="../home">
+                                            Cancel
+                                    </a>
+                                    </button>
+                                    <button class="px-6 bg-green-500 hover:bg-green-400 py-2 text-white rounded ml-3" name="update" type="submit" onclick="toggleModal('modal-id')">
+                                        Update
+                                    </button>
+                                </div>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+        <?php } ?> 

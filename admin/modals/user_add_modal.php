@@ -1,17 +1,17 @@
     <div id="addUser" class="show fade" >
-        <div style="max-width: 400px" class="mx-auto flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center" id="user_modal">
+          <div style="max-width: 400px" class="flex px-4 mx-auto overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center">
                     <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
             <!-- <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>s -->
                 <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all">
-                    <div class="bg-white p-5 mx-5 my-5" style="max-width: 500px">
+                  <div class="bg-white p-5 mx-3 md:my-5 lg:my-5" style="max-width: 500px">
                         <div class="flex justify-between items-center pb-8">
                             <h1 class="font-semibold text-gray-600 text-xl">Add user</h1>
                             <i class="fas fa-close text-gray-300 cursor-pointer" data-dismiss="modal"></i>
                         </div>
-                        <form action="../modals/user_modal_process.php" method="post" class="space-y-2" enctype="multipart/form-data">
+                        <form action="../modals/user_modal_process.php" method="post" class="space-y-2 text-sm md:text-base lg:text-base" enctype="multipart/form-data">
                             <div class="flex justify-center">
-                                <div class="space-y-0">
-                                    <div class="rounded-full overflow-hidden" style="width: 150px; height: 150px; margin-bottom: -2rem">
+                                <div class="space-y-4 relative">
+                                    <div class="rounded-full overflow-hidden" style="width: 140px; height: 140px; margin-top: -1rem ">
                                             <img 
                                             style="object-fit: cover; width: 100%; height: 100%"
                                                 src="../images/user1.png"
@@ -20,13 +20,15 @@
                                                 id="profileDisplay"
                                             >
                                             </div>
-                                        <input 
-                                            type="file" 
-                                            name="profileImage" 
-                                            style=" top: -60px; margin-right: -120px; display: flex; opacity: 0"
-                                            onChange="displayImage(this)" 
-                                            id="profileImage" 
-                                        >
+                                             <div class="absolute bottom-3 text-xs opacity-0">
+                                                <input 
+                                                    type="file" 
+                                                    name="profileImage" 
+                                                    style="opacity: "
+                                                    onChange="displayImage(this)" 
+                                                    id="profileImage" 
+                                                >
+                                            </div>
                                     </div>
                             </div>
                             <div class="space-y-2">

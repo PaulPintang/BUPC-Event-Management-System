@@ -53,9 +53,9 @@
                   <div class="bg-white p-5 mx-5 my-5" style="max-width: 500px">
                       <div class="flex justify-between items-center pb-8">
                           <h1 class="font-semibold text-gray-600 text-xl">Login your account</h1>
-                          <i class="fas fa-close text-gray-300 cursor-pointer" data-dismiss="modal"></i>
+                          <i class="fas fa-close text-gray-300 cursor-pointer" onclick="toggleModal('user_modal')" ></i>
                       </div>
-                     <form method="POST" action="register_process.php" class="space-y-2">
+                     <form method="POST" action="login_process.php" class="space-y-2">
                      <input type="hidden" autocomplete="false">
                           <div class="space-y-2">
                               <p class="text-sm">Name <span class="text-red-500">*</span></p>

@@ -1,18 +1,27 @@
-
+<style>
+    .custom-xl{
+        height: 470px;
+    }
+    @media (min-width: 1024px) { 
+        .custom-xl{
+            height: 100%;
+        }
+    }
+</style>
 <!-- Start of modal -->
 <div id="add" class="show fade">
-<div class="flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center" id="event">
+<div class="mx-4 md:mx-0 lg:mx-0 flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center" id="event">
              <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
     <!-- <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>s -->
             <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all">
-            <div class="bg-white p-5 mx-5 my-3 overflow-auto example" style="max-width: 500px; height: 580px">
+            <div class="bg-white px-3 py-5 md:p-5 lg:px-5 mx-5 my-3 overflow-auto example custom-xl" style="max-width: 500px;">
                 <div class="flex justify-between items-center pb-8">
                     <h1 class="font-semibold text-gray-600 text-xl">Add event</h1>
                     <i class="fas fa-close text-gray-300 cursor-pointer" data-dismiss="modal"></i>
                 </div>
                  <div class="overflow-y-auto example" style="height: 470px">
                 <!-- <form action="../events/modals/events_modal_process.php" method="POST"> -->
-                <form action="../events/modals/events_modal_process.php" method="POST">
+                <form action="../events/modals/events_modal_process.php" class="text-xs md:text-sm lg:text-sm" method="POST">
                 <?php while ($row = mysqli_fetch_array($eventlogs)) { ?>
                     <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
                  <?php }?>
@@ -72,7 +81,6 @@
                         <?php while ($row = mysqli_fetch_array($toAct)) { ?>
                             <input type="hidden" name="user" value="<?php echo $row['username'] ?>">    
                         <?php }?>
-                        <input type="text" name="activity">
                         <!-- end -->
                         <div class="flex justify-center">
                             <div style="font-size: 14px">

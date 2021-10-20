@@ -82,7 +82,7 @@ scrollbar-width: none;  /* Firefox */
                 <tr>
                     <td class="md:px-2 lg:px-2 py-2 whitespace-nowrap">
                         <div class="md:ml-4 lg:ml-4">
-                            <small><?php echo $row['eName']?></small>
+                            <p class="truncate text-sm w-44 md:w-80"><?php echo $row['eName']?></p>
                             <?php
                             
                             $editby = $row['editby'];

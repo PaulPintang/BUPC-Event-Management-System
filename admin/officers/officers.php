@@ -16,20 +16,26 @@ scrollbar-width: none;  /* Firefox */
     <div class="bg-white md:rounded-lg lg:rounded-lg h-96 w-full p-6 shadow-sm">
     <!-- start -->  
         <div class="flex justify-between items-center pb-2">
-            <h1 class="font-medium text-gray-700  " styke="top:40px"><span class="text-yellow-400">CSC</span> - Officers 2021</h1>
-             <a href="process.php?clear" name="clear" class="bg-green-300 text-white rounded hover:bg-green-400 px-2 py-1 transition-all">Update</a>
+            <div>
+               <h1 class="font-medium text-gray-700  " styke="top:40px"><span class="text-yellow-400">CSC</span> - Officers 2021</h1>
+                <small class="text-gray-500 text-xs italic">Note: The list of  officers is in correct order!</small>
+            </div>
+            <div class="flex gap-1 items-center pb-3 font-normal">
+                <small class="text-yellow-300 font-semibold">Clock: </small>
+                <small class="text-gray-800" id='ct6'></small>
+            </div>
         </div>
-        <div class="overflow-y-auto example" style="height: 300px">
+        <div class="overflow-y-auto example" style="height: 280px">
         <table class="min-w-full divide-y divide-gray-200 border-collapse w-full">
             <thead class="sticky top-0">
                 <tr>
                     <th scope="col" class="px-3 md:px-6 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
                        Officer
                     </th>
-                    <th scope="col" class="hidden md:table-cell lg:table-cell px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
+                    <th scope="col" class="hidden md:table-cell lg:table-cell  px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
                         Position
                     </th>
-                    <th scope="col" class="px-3 md:px-6 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
+                    <th scope="col" class="hidden md:table-cell lg:table-cell px-3 md:px-6 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
                        Course/Year level
                     </th>
                     <th scope="col" class="hidden md:table-cell lg:table-cell px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
@@ -40,7 +46,7 @@ scrollbar-width: none;  /* Firefox */
                     </th>
                 </tr>
             </thead>
-             <?php $officers = mysqli_query($db, "SELECT * FROM officers"); ?>
+
             <?php while ($row = mysqli_fetch_array($officers)) { ?>
             <tbody class=" divide-y divide-gray-200 overflow-auto text-gray-500">
                 <tr>
@@ -48,13 +54,17 @@ scrollbar-width: none;  /* Firefox */
                         <div class="flex items-center">
                             <div class=" flex items-center gap-2">
                                 <div class="flex-shrink-0 h-10 w-10">
-                                  <img class="h-10 w-10 rounded-full" src="../images/undraw_profile_3.svg" alt="">
+                                 <?php if ($row['picture'] == NULL): ?>
+                                    <img class="h-10 w-10 rounded-full" src="../images/user1.png" alt="">
+                                <?php else: ?>
+                                    <img class="h-10 w-10 rounded-full" src="<?php echo './upload/' . $row['picture'] ?>" alt="">
+                                <?php endif; ?>
                                 </div>
                                 <small><?php echo $row['name'] ?></small>
                             </div>
                         </div>
                     </td>
-                    <td class=" hidden md:table-cell lg:table-cell px-6 py-2 whitespace-nowrap">
+                    <td class="hidden md:table-cell lg:table-cell  px-6 py-2 whitespace-nowrap">
                         <?php
                             $position = $row['position'];
                             if ($position == 'President') {
@@ -80,11 +90,11 @@ scrollbar-width: none;  /* Firefox */
                         ?>
                       
                     </td>
-                    <td class="px-3 md:px-6 lg:px-6 py-2 whitespace-nowrap">
+                    <td class="hidden md:table-cell lg:table-cell  px-3 md:px-6 lg:px-6 py-2 whitespace-nowrap">
                         <small><?php echo $row['course'] ?> <?php echo $row['yearLevel'] ?></small>
                     </td>
                     <td class="px-4 py-2 whitespace-nowrap">
-                       <a href="#officers<?php echo $row['id']?>" data-toggle="modal" >
+                       <a href="../officers?view=edit&id=<?php echo $row['id']?>" >
                             <i class="far fa-edit text-gray-400 cursor-pointer hover:text-blue-300 transition-all" style="font-size: 13px"></i>
                         </a> 
                     </td>

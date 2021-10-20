@@ -7,6 +7,10 @@ switch ($view) {
 	case 'list' :
 		$content    = 'officers.php';		
 		break;
+		
+	case 'edit' :
+		$content    = 'edit.php';		
+		break;
 
 	default :
 		$content    = 'officers.php';		

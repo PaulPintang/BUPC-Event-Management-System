@@ -7,6 +7,7 @@
          
             $ID = $_SESSION['id'];
             $users = mysqli_query($db, "SELECT * FROM users");
+            $officers = mysqli_query($db, "SELECT * FROM officers");
             $userlogs = mysqli_query($db, "SELECT * FROM logs");
             $events = mysqli_query($db, "SELECT * FROM events");
             // use for modals
@@ -136,7 +137,6 @@
     <div><?php include '../modals/user_edit_modal.php';?></div>
     <div><?php include '../modals/user_add_modal.php';?></div>
     <div><?php include '../modals/about_modal.php';?></div>
-    <div><?php include '../officers/modal/update_officer_modal.php' ?></div>
 
     <div><?php include 'alertSession.php';?></div>
     

@@ -100,6 +100,7 @@ scrollbar-width: none;  /* Firefox */
                     </td>
                 </tr>
           
+
             </tbody>
             <?php } ?>
         </table>

@@ -32,7 +32,7 @@
                 $msg = "alert-danger";
             }
         }
-        $query = "UPDATE officers SET name='$name', position='$position', course='$course', yearLevel='$yearLevel', buEmail='$buEmail', fb='$fb', picture='$picture' WHERE id=$id";
+        $query = "UPDATE officers SET name='$name', position='$position', course='$course', yearLevel='$yearLevel', buEmail='$buEmail', fb='$fb' WHERE id=$id";
         mysqli_query($db, $query);
         header('location: ../officers/');
     }

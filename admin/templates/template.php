@@ -100,12 +100,13 @@
         <hr class="opacity-30">
         <div class="flex gap-3 container mx-auto py-4 items-center" style="font-size: 12px">
             <!-- <button class="bg-gray-100 rounded py-3 px-5 text-gray-700">Dashboard</button> -->
-            <h1 class="text-xl font-medium text-gray-700">Dashboard</h1>
-            <div class="h-4 bg-gray-200" style="width: 1.2px"></div>
+            <h1 class="hidden md:flex lg:flex text-xl font-medium text-gray-700">Dashboard</h1>
+            <div class="hidden md:flex lg:flex h-4 bg-gray-200" style="width: 1.2px"></div>
             <div class="flex justify-between items-center w-full">
                 <div class="flex gap-3 items-center ">
                     <a href="../home" class="text-gray-400 hover:text-yellow-400 active:text-blue-400 font-medium transition-all">Home</a>
                     <a href="../events" class="text-blue-400 hover:text-yellow-400 active:text-blue-400 font-medium transition-all">Events</a>
+                    <a href="../reports" class="text-gray-400 hover:text-yellow-400 active:text-blue-400 font-medium transition-all">Reports</a>
                     <a href="../logs" class="text-gray-400 active:text-blue-400 hover:text-yellow-400 font-medium transition-all">Logs</a>
                     <a href="../officers"><i class="fas fa-user-cog text-gray-500 hover:text-yellow-300 active:text-blue-500  transition-all"></i></a>
                 </div>
@@ -137,6 +138,7 @@
     <div><?php include '../modals/user_edit_modal.php';?></div>
     <div><?php include '../modals/user_add_modal.php';?></div>
     <div><?php include '../modals/about_modal.php';?></div>
+    <div><?php include '../reports/modal/add_report_modal.php';?></div>
 
     <div><?php include 'alertSession.php';?></div>
     

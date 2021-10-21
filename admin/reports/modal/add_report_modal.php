@@ -3,7 +3,7 @@
                     <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
             <!-- <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>s -->
                 <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all" style="width: 340px">
-                  <div class="bg-white p-5 mx-3 md:my-5 lg:my-5" style="max-width: 500px">
+                  <div class="bg-white p-6 mx-3 my-4 md:my-5 lg:my-5" style="max-width: 500px">
                         <div class="flex justify-between items-center pb-8">
                             <h1 class="font-semibold text-gray-600 text-xl">Upload report</h1>
                             <i class="fas fa-close text-gray-300 cursor-pointer" data-dismiss="modal"></i>
@@ -35,12 +35,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="flex justify-center">
+                            <div class="flex justify-center pt-2">
                                 <div style="font-size: 14px">
-                                    <button type="button" data-dismiss="modal" class="px-6 py-1 bg-gray-100 rounded text-gray-500">
+                                    <button type="button" data-dismiss="modal" class="px-6 py-2 bg-gray-100 rounded text-gray-500">
                                         Cancel
                                     </button>
-                                    <button class="px-6 bg-yellow-500 hover:bg-yellow-400 py-1 text-white rounded ml-3" name="save" type="submit">
+                                    <button class="px-6 bg-yellow-500 hover:bg-yellow-400 py-2 text-white rounded ml-3" name="save" type="submit">
                                         Submit
                                     </button>
                                 </div>

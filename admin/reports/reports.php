@@ -96,7 +96,7 @@ scrollbar-width: none;  /* Firefox */
         </div>
     <!-- end -->
     </div>
-    <div class="bg-white rounded-lg flex items-center justify-center pt-10 md:pt-0 lg:pt-0 w-full lg:w-5/12">
+    <div class="bg-white rounded-lg flex items-center justify-center pt-10 md:pt-0 lg:pt-0 w-full lg:w-5/12 px-5 md:px-0 lg:px-0">
             <div class="flex flex-col h-full w-full font-light">
                 <div class="h-full w-full bg-blue-300 rounded-t flex justify-center items-center">
                     <span class="day uppercase text-lg text-white"></span>

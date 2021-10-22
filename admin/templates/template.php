@@ -8,6 +8,7 @@
             $ID = $_SESSION['id'];
             $users = mysqli_query($db, "SELECT * FROM users");
             $officers = mysqli_query($db, "SELECT * FROM officers");
+            $files = mysqli_query($db, "SELECT * FROM files");
             $userlogs = mysqli_query($db, "SELECT * FROM logs");
             $events = mysqli_query($db, "SELECT * FROM events");
             // use for modals
@@ -59,6 +60,11 @@
             mytime=setTimeout('display_ct6()',refresh)
         }
     </script>
+    <style>
+        iframe {
+            overflow: hidden;
+        }
+    </style>
 </head>
 <body onload=display_c6();>
     <section class="px-6">

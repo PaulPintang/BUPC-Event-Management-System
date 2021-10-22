@@ -52,46 +52,65 @@ scrollbar-width: none;  /* Firefox */
         </div>
         <div class="overflow-y-auto example" style="height: 300px">
         <table class="min-w-full divide-y divide-gray-200 border-collapse w-full">
-            <thead class="sticky top-0">
+            <thead class="sticky top-0 bg-white z-50">
                 <tr>
                     <th scope="col" class="px-3 md:px-6 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
-                        School Year
+                        File
                     </th>
                     <th scope="col" class="hidden md:table-cell lg:table-cell px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
-                        Semester
+                        School Year
                     </th>
-                    <th scope="col" class="px-3 md:px-6 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
-                        File
+                    <th scope="col" class="hidden md:table-cell lg:table-cell px-3 md:px-6 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
+                        Semester
                     </th>
                     <!-- <th scope="col" class="hidden md:table-cell lg:table-cell px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
                         Logout Time
                     </th> -->
-                     <th scope="col" class="md:hidden lg:hidden px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
+                     <th scope="col" class="hidden md:table-cell lg:table-cellpx-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-white shadow-sm">
                        
                     </th>
                 </tr>
             </thead>
+            <?php while ($row = mysqli_fetch_array($files)) { ?>
+
             <tbody class=" divide-y divide-gray-200 overflow-auto text-gray-700">
                 <tr>
-                    <td class="px-3 md:px-6 lg:px-6 py-2 whitespace-nowrap">
-                        <div class="flex items-center">
-                       
-                        <div class="ml-4">
-                            <small></small>
-                        </div>
-                        </div>
+                    <td class="pl-2 md:px-6 lg:px-6 py-2 whitespace-nowrap text-gray-900">
+                            <!-- <small>BUPC-CSC AR 2019-2020.pdf</small>
+                            <small class="text-gray-500 italic text-xs block" style="padding-top: -10px">Uploaded last week</small> -->
+                            <a href="" class="hover:text-yellow-500">
+                                <div class="flex items-center gap-2 border border-gray-200 rounded-md pr-4 w-full md:w-full lg:w-full">
+                                    <div style="width: 90px; height: 60px; overflow:hidden; " class="opacity-50 border border-gray-200">
+                                        <iframe src="<?php echo './files/' . $row['report']; ?>" frameBorder="0" scrolling="no" style="width: 100%; border: 0;" class="relative bottom-5 cursor-pointer"></iframe>
+                                    </div>
+                                    <div class="py-2">
+                                        <small style="font-size: 13px" class="hover:text-yellow-500"><?php echo $row['report'] ?></small>
+                                        <small class="text-gray-500 italic text-xs block" style="padding-top: -10px">Uploaded today</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="flex gap-2 py-2 md:hidden lg:hidden">
+                                <small><?php echo $row['sYear'] ?></small> 
+                                <small><?php echo $row['sem'] ?></small>
+                                <a href="../events/modals/events_modal_process.php?del=<?php echo $row['id'];?>" name="del">    
+                                     <i class="fas fa-trash text-gray-300 cursor-pointer hover:text-red-300 transition-all px-2" style="font-size: 13px" onclick="toggleModal('view_event')"></i>
+                                </a>
+                            </div>
                     </td>
                     <td class=" hidden md:table-cell lg:table-cell px-6 py-2 whitespace-nowrap">
-                        <small></small> 
+                        <small><?php echo $row['sYear'] ?></small> 
                     </td>
-                    <td class="px-3 md:px-6 lg:px-6 py-2 whitespace-nowrap">
-                        <small></small>
+                    <td class="hidden md:table-cell lg:table-cell px-3 md:px-6 lg:px-6 py-2 whitespace-nowrap">
+                        <small><?php echo $row['sem'] ?></small>
                     </td>
-                      <td class="px-0 py-2 whitespace-nowrap">
-                        <!-- <a href="#view<?php echo $row['id'];?>" data-toggle="modal" class="md:hidden lg:hidden text-blue-400 hover:text-white hover:bg-blue-400 w-full px-3 py-1 bg-blue-50 font-semibold rounded transition-colors text-xs">View</a> -->
+                    <td class="hidden md:table-cell lg:table-cell md:px-6 lg:px-6 py-2 whitespace-nowrap">
+                        <a href="../events/modals/events_modal_process.php?del=<?php echo $row['id'];?>" name="del">
+                            <i class="fas fa-trash text-gray-300 cursor-pointer hover:text-red-300 transition-all px-2" style="font-size: 13px" onclick="toggleModal('view_event')"></i>
+                        </a>
                     </td>
                 </tr>
             </tbody>
+            <?php }?>
         </table>
         </div>
     <!-- end -->

@@ -68,8 +68,8 @@
                                     <button type="button" data-dismiss="modal" class="px-6 py-2 bg-gray-100 rounded text-gray-500">
                                         Cancel
                                     </button>
-                                    <button class="px-6 bg-yellow-500 hover:bg-yellow-400 py-2 text-white rounded ml-3" name="save" type="submit">
-                                        Submit
+                                    <button class="relative px-6 bg-yellow-500 hover:bg-yellow-400 py-2 text-white rounded ml-3" name="save" type="submit" onclick="this.classList.toggle('button--loading')">
+                                       <span class="button-text">Submit</span> 
                                     </button>
                                 </div>
                             </div>

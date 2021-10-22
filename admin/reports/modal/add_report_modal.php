@@ -11,11 +11,11 @@
                         <form action="./process.php" method="post" class="space-y-3 text-sm md:text-base lg:text-base" enctype="multipart/form-data">
                             <div class="space-y-2">
                                 <p class="text-sm">School Year <span class="text-red-500">*</span></p>
-                                <input type="text" value="" autocomplete="off" name="sYear" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
+                                <input type="text" value="" placeholder="Ex. 2020-2021" autocomplete="off" name="sYear" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
                             </div>
                             <div class="space-y-2">
                                 <p class="text-sm">Semester <span class="text-red-500">*</span></p>
-                                <input type="text" value="" autocomplete="off" name="sem" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
+                                <input type="text" value="" placeholder="Ex. 1st Semester" autocomplete="off" name="sem" class="bg-gray-100 focus:outline-none border-none focus:bg-gray-200 rounded py-2 px-2 text-gray-500 w-full">
                             </div>
                             <div class="space-y-2">
                                   <p class="text-sm">File <span class="text-red-500">*</span></p>
@@ -43,7 +43,7 @@
                                         <input type="file" name="report" id="" class="cursor-pointer">
                                     </div>
                                 </div> -->
-                                    <button class="cursor-pointer py-2 rounded border border-opacity-70 bg-gray-50 border-gray-300 hover:bg-gray-50 hover:border-yellow-100 transition-all w-full">
+                                    <button type="button" class="cursor-pointer py-2 rounded border border-opacity-70 bg-gray-50 border-gray-300 hover:bg-gray-50 hover:border-yellow-100 transition-all w-full">
                                         <input type="file" class="text-xs flex flex-start pl-2" name="report">
                                     </button>
                             </div>
@@ -52,8 +52,8 @@
                                     <button type="button" data-dismiss="modal" class="px-6 py-2 bg-gray-100 rounded text-gray-500">
                                         Cancel
                                     </button>
-                                    <button class="px-6 bg-yellow-500 hover:bg-yellow-400 py-2 text-white rounded ml-3" name="upload" type="submit">
-                                        Upload
+                                    <button class="relative px-6 bg-yellow-500 hover:bg-yellow-400 py-2 text-white rounded ml-3" name="upload" type="button" onclick="this.classList.toggle('button--loading')">
+                                         <span class="button-text">Upload</span>
                                     </button>
                                 </div>
                             </div>
@@ -64,4 +64,3 @@
         </div>
         
 
-   

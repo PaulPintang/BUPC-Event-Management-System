@@ -78,21 +78,21 @@ scrollbar-width: none;  /* Firefox */
                     <td class="pl-2 md:px-6 lg:px-6 py-2 whitespace-nowrap text-gray-900">
                             <!-- <small>BUPC-CSC AR 2019-2020.pdf</small>
                             <small class="text-gray-500 italic text-xs block" style="padding-top: -10px">Uploaded last week</small> -->
-                            <a href="" class="hover:text-yellow-500">
+                            <a href="<?php echo './files/' . $row['report']; ?>" target="blank" class="hover:text-yellow-500">
                                 <div class="flex items-center gap-2 border border-gray-200 rounded-md pr-4 w-full md:w-full lg:w-full">
                                     <div style="width: 90px; height: 60px; overflow:hidden; " class="opacity-50 border border-gray-200">
                                         <iframe src="<?php echo './files/' . $row['report']; ?>" frameBorder="0" scrolling="no" style="width: 100%; border: 0;" class="relative bottom-5 cursor-pointer"></iframe>
                                     </div>
                                     <div class="py-2">
                                         <small style="font-size: 13px" class="hover:text-yellow-500"><?php echo $row['report'] ?></small>
-                                        <small class="text-gray-500 italic text-xs block" style="padding-top: -10px">Uploaded today</small>
+                                        <small class="text-gray-500 italic text-xs block" style="padding-top: -10px">Upload date: <?php echo $row['uploadDate'] ?></small>
                                     </div>
                                 </div>
                             </a>
                             <div class="flex gap-2 py-2 md:hidden lg:hidden">
                                 <small><?php echo $row['sYear'] ?></small> 
                                 <small><?php echo $row['sem'] ?></small>
-                                <a href="../events/modals/events_modal_process.php?del=<?php echo $row['id'];?>" name="del">    
+                                <a href="process.php?del=<?php echo $row['id'];?>" name="del">    
                                      <i class="fas fa-trash text-gray-300 cursor-pointer hover:text-red-300 transition-all px-2" style="font-size: 13px" onclick="toggleModal('view_event')"></i>
                                 </a>
                             </div>
@@ -104,7 +104,7 @@ scrollbar-width: none;  /* Firefox */
                         <small><?php echo $row['sem'] ?></small>
                     </td>
                     <td class="hidden md:table-cell lg:table-cell md:px-6 lg:px-6 py-2 whitespace-nowrap">
-                        <a href="../events/modals/events_modal_process.php?del=<?php echo $row['id'];?>" name="del">
+                        <a href="process.php?del=<?php echo $row['id'];?>" name="del">
                             <i class="fas fa-trash text-gray-300 cursor-pointer hover:text-red-300 transition-all px-2" style="font-size: 13px" onclick="toggleModal('view_event')"></i>
                         </a>
                     </td>

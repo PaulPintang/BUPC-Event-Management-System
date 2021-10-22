@@ -77,8 +77,8 @@
                                 <button type="button"  data-dismiss="modal" class="px-6 py-2 bg-gray-100 rounded text-gray-500">
                                     Cancel
                                 </button>
-                                <button class="px-6 bg-green-500 focus:bg-green-600 py-2 text-white rounded ml-3" name="update" type="submit">
-                                    Update
+                                <button class="relative px-6 bg-green-500 focus:bg-green-600 py-2 text-white rounded ml-3" name="update" type="submit" onclick="this.classList.toggle('button--loading')">
+                                  <span class="button-text">Update</span>
                                 </button>
                             </div>
                         </div>

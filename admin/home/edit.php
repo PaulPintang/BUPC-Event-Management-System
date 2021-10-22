@@ -177,8 +177,8 @@ scrollbar-width: none;  /* Firefox */
                                             Cancel
                                     </a>
                                     </button>
-                                    <button class="px-6 bg-green-500 hover:bg-green-400 py-2 text-white rounded ml-3" name="update" type="submit" onclick="toggleModal('modal-id')">
-                                        Update
+                                    <button class="relative px-6 bg-green-500 hover:bg-green-400 py-2 text-white rounded ml-3" name="update" type="submit" onclick="this.classList.toggle('button--loading')">
+                                      <span class="button-text">Update</span>
                                     </button>
                                 </div>
                             </div>

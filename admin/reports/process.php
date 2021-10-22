@@ -1,10 +1,16 @@
 <?php
 
+    session_start();
     include('../conn.php');
+
+     // correct timezone
+    date_default_timezone_set("Asia/Manila");
+    $uploadDate =date("D M d, Y");
     if (isset($_POST['upload'])) {
         $sYear = $_POST['sYear'];
         $sem = $_POST['sem'];
         $report = $_FILES["report"]["name"];
+        $uploadDate =date("D M d, Y");
         $target_dir = "./files/";
         $target_file = $target_dir . basename($report);
         if($_FILES['report']['size'] > 20000000) {
@@ -26,18 +32,25 @@
         }
         // and if no value
         // the variable picture include here because if it has a image attach, it will insert to database
-        $query = "INSERT INTO files (sYear, sem, report) VALUES ('$sYear', '$sem', '$report')";
+        $query = "INSERT INTO files (sYear, sem, report, uploadDate) VALUES ('$sYear', '$sem', '$report', '$uploadDate')";
         mysqli_query($db, $query);
 
         // echo '<script>window.location="../home.php"</script>';
          header("location: ../reports");
-        //  $_SESSION['status'] = "Woo hoo!";
-        //   $_SESSION['text'] = "New user added successfully!";
-        // $_SESSION['status_code'] = "success";
+         $_SESSION['status'] = "Woo hoo!";
+          $_SESSION['text'] = "Report added successfully!";
+        $_SESSION['status_code'] = "success";
     }
 
 
-
+           if (isset($_GET['del'])) {
+            $id = $_GET['del'];
+             mysqli_query($db, "DELETE FROM files WHERE id=$id");
+            header('location: ../reports');
+            $_SESSION['status'] = "Woo hoo!";
+            $_SESSION['text'] = "Report deleted successfully!";
+            $_SESSION['status_code'] = "success";
+        }
 
 
 ?>

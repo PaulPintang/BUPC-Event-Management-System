@@ -13,5 +13,5 @@ Website
 Admin / Home
 ![This is an image](/screenshot/home.png) <br>
 Events
-![This is an image](/screenshot/events.png.png) <br>
+![This is an image](/screenshot/events.png) <br>
 ![This is an image](/screenshot/viewevent.png) <br>
